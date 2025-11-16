@@ -1,0 +1,26 @@
+{
+  "updated_at": "2025-11-16T13:16:54.725172Z",
+  "core": {
+    "last_decision": null,
+    "last_decision_time": null
+  },
+  "reflection": {},
+  "memory": [],
+  "planner": {
+    "generated_at": null,
+    "signals": {},
+    "goals": [],
+    "tasks": []
+  },
+  "last_actions": [
+    {
+      "id": "goal_stability_check_health_endpoints",
+      "goal_id": "goal_stability",
+      "title": "헬스 엔드포인트 정합성 점검",
+      "status": "pending",
+      "result": "failed",
+      "time": "2025-11-16T13:16:54.725060Z"
+    }
+  ],
+  "system": {}
+}
