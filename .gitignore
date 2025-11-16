@@ -1,0 +1,22 @@
+# === Logs & Temp Files ===
+logs/
+__pycache__/
+*.log
+*.bak
+*.tmp
+
+# === Environments ===
+venv/
+rc25h_env/
+.env
+
+# === Build Artifacts ===
+*.tar.gz
+*.zip
+*.whl
+build/
+dist/
+
+# === Node / React builds ===
+rc25s_dashboard_app/rc25s_frontend/node_modules/
+rc25s_dashboard_app/rc25s_frontend/build/
