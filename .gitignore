@@ -1,22 +1,15 @@
-# === Logs & Temp Files ===
+# === Ignore logs and cache ===
 logs/
 __pycache__/
 *.log
 *.bak
 *.tmp
 
-# === Environments ===
+# === Virtual environments ===
 venv/
 rc25h_env/
 .env
 
-# === Build Artifacts ===
-*.tar.gz
-*.zip
-*.whl
-build/
-dist/
-
-# === Node / React builds ===
+# === Node/React build ===
 rc25s_dashboard_app/rc25s_frontend/node_modules/
 rc25s_dashboard_app/rc25s_frontend/build/
