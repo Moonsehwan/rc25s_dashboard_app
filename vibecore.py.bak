@@ -1,0 +1,44 @@
+import os
+import json
+import datetime
+import requests
+import subprocess
+import tempfile
+from typing import List
+
+BASE_URL = "https://api.mcpvibe.org"
+
+def fetch_chat_context(limit: int = 20) -> List[dict]:
+    try:
+        res = requests.get(f"{BASE_URL}/log/chat")
+        if res.status_code != 200:
+            return []
+        return res.json()[-limit:]
+    except Exception:
+        return []
+
+def format_context(chatlog: List[dict]) -> str:
+    return "\n".join(f"{entry['sender']}: {entry['text']}" for entry in chatlog)
+
+def save_chat_message(sender: str, text: str) -> bool:
+    try:
+        payload = {"sender": sender, "text": text}
+        res = requests.post(f"{BASE_URL}/log/chat", json=payload)
+        return res.status_code == 200
+    except Exception:
+        return False
+
+def run_code(code: str) -> dict:
+    start = datetime.datetime.now(datetime.UTC)
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".py") as f:
+        f.write(code.encode("utf-8"))
+        f.flush()
+        result = subprocess.run(["python3", f.name], capture_output=True, text=True)
+    duration = (datetime.datetime.now(datetime.UTC) - start).total_seconds() * 1000
+    return {
+        "passed": result.returncode == 0,
+        "stdout": result.stdout,
+        "stderr": result.stderr,
+        "exit_code": result.returncode,
+        "duration_ms": int(duration)
+    }

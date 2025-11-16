@@ -1,0 +1,11 @@
+[2025-11-14 21:23:10] 🚀 Deploying RC25H Dashboard to api.mcpvibe.org...
+Warning: Permanently added 'api.mcpvibe.org' (ED25519) to the list of known hosts.
+sending incremental file list
+created directory /var/www/html/dashboard
+./
+index.html
+assets/
+assets/index-RQjVk0yp.js
+
+sent 3,763 bytes  received 115 bytes  119.32 bytes/sec
+total size is 8,600  speedup is 2.22

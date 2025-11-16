@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>RC25S AGI 실시간 대시보드</title>
+<style>
+body {font-family:Pretendard, sans-serif; background:#111; color:#eee; margin:0; padding:0;}
+#log {height:70vh; overflow-y:auto; background:#000; padding:1em; border-radius:12px; margin:1em;}
+input {width:80%; padding:10px; border-radius:8px; border:none;}
+button {padding:10px 20px; border:none; border-radius:8px; background:#1e90ff; color:#fff;}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">🧠 RC25S-AGI 실시간 대시보드</h2>
+<div id="log"></div>
+<div style="text-align:center;">
+<input id="msg" placeholder="AGI에게 한글로 무엇이든 물어보세요..." />
+<button onclick="send()">보내기</button>
+</div>
+<script>
+const ws = new WebSocket("ws://" + location.host + "/ws");
+ws.onmessage = (ev)=>{
+ const d = JSON.parse(ev.data);
+ const log=document.getElementById("log");
+ if(d.type==="reply"){
+   log.innerHTML += `<p><b>👤 사용자:</b> ${d.user}</p><p><b>🤖 AGI:</b> ${d.agi}</p><hr/>`;
+ } else log.innerHTML += `<p>${d.msg}</p>`;
+ log.scrollTop=log.scrollHeight;
+};
+function send(){
+ const v=document.getElementById("msg").value;
+ ws.send(v);
+ document.getElementById("msg").value="";
+}
+</script>
+</body>
+</html>

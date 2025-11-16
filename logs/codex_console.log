@@ -1,0 +1,64 @@
+nohup: ignoring input
+INFO:     Started server process [3229774]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:444 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54800 - "GET /chat HTTP/1.1" 200 OK
+INFO:     182.214.37.45:0 - "GET /chat HTTP/1.0" 200 OK
+[2025-11-15 19:56:06] EXEC: ls
+[2025-11-15 19:56:06] OUT: __init__.py
+__pycache__
+agentkit
+agi_autofix_loop.py
+agi_autofix_loop.py.patch
+agi_autofix_setup.sh
+agi_core
+agi_loop.py
+agi_loop_autosetup.sh
+agi_system_manager.py
+ai_react_autobuilder.py
+ai_react_autoloop.py
+ai_react_builder.py
+app_generator.py
+autofix_memory.jsonl
+autofix_target.py
+config
+dashboa
+INFO:     182.214.37.45:0 - "POST /exec HTTP/1.0" 200 OK
+[2025-11-15 19:57:53] EXEC: curl -s https://api.mcpvibe.org/health
+[2025-11-15 19:57:53] OUT: {"detail":"Not Found"}
+INFO:     182.214.37.45:0 - "POST /exec HTTP/1.0" 200 OK
+INFO:     127.0.0.1:58276 - "GET /chat HTTP/1.0" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3229774]
+INFO:     Started server process [3248079]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:444 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49972 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     3.143.33.63:47550 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.143.33.63:38982 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.155.68:34504 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.155.68:44568 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.155.68:44598 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.155.68:34456 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     89.248.167.131:51540 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     147.185.132.48:63868 - "GET / HTTP/1.1" 404 Not Found
+INFO:     45.79.207.111:47979 - "GET / HTTP/1.1" 404 Not Found
+INFO:     66.228.53.157:10148 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     127.0.0.1:36506 - "GET / HTTP/1.1" 404 Not Found

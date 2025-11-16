@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/RC25H_CentralCore.py", line 2, in <module>
+    from rc25_kernel_pro_R3 import ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_pro_R3'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/RC25H_CentralCore.py", line 2, in <module>
+    from rc25_kernel_pro_R3 import ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_pro_R3'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/RC25H_CentralCore.py", line 2, in <module>
+    from rc25_kernel_pro_R3 import ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_pro_R3'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/RC25H_CentralCore.py", line 2, in <module>
+    from rc25_kernel_pro_R3 import ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_pro_R3'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/RC25H_CentralCore.py", line 2, in <module>
+    from rc25_kernel_pro_R3 import ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_pro_R3'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/rc25h_centralcore_loop.py", line 1, in <module>
+    import time, requests, subprocess, datetime, os, psutil, json
+ModuleNotFoundError: No module named 'psutil'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/rc25h_centralcore_loop.py", line 1, in <module>
+    import time, requests, subprocess, datetime, os, psutil, json
+ModuleNotFoundError: No module named 'psutil'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/rc25h_centralcore_loop.py", line 1, in <module>
+    import time, requests, subprocess, datetime, os, psutil, json
+ModuleNotFoundError: No module named 'psutil'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/rc25h_centralcore_loop.py", line 1, in <module>
+    import time, requests, subprocess, datetime, os, psutil, json
+ModuleNotFoundError: No module named 'psutil'
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/rc25h_centralcore_loop.py", line 1, in <module>
+    import time, requests, subprocess, datetime, os, psutil, json
+ModuleNotFoundError: No module named 'psutil'
+Failed to restart mcp.service: Unit mcp.service not found.
+Failed to restart mcp.service: Unit mcp.service not found.
+Job for mcp.service failed.
+See "systemctl status mcp.service" and "journalctl -xeu mcp.service" for details.
+Job for mcp.service failed because the control process exited with error code.
+See "systemctl status mcp.service" and "journalctl -xeu mcp.service" for details.

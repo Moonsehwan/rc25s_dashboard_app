@@ -1,0 +1,6 @@
+/bin/sh: 1: Syntax error: end of file unexpected
+Warning: The unit file, source configuration file or drop-ins of agi-loop.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+Warning! D-Bus connection terminated.
+Failed to wait for response: Connection reset by peer
+Failed to restart agi-autofix.service: Transport endpoint is not connected
+See system logs and 'systemctl status agi-autofix.service' for details.

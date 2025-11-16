@@ -1,0 +1,8 @@
+# --- Patch: Relax LLM Code Recognition ---
+def extract_code(content: str) -> str:
+    \"\"\"GPT 응답에서 코드 블록을 추출하거나, 없으면 전체 반환\"\"\"
+    import re
+    code_blocks = re.findall(r"```(?:python)?(.*?)```", content, re.DOTALL)
+    if code_blocks:
+        return code_blocks[0].strip()
+    return content.strip()

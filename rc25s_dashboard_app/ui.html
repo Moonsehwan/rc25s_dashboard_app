@@ -1,0 +1,24 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>🧠 RC25S Agent Dashboard</title>
+<style>
+body{background:#0e0e0e;color:#eee;font-family:Pretendard,sans-serif;text-align:center;padding-top:40px}
+#log{background:#111;padding:12px;border-radius:10px;width:80%;max-width:900px;margin:20px auto;text-align:left;white-space:pre-wrap;overflow-y:auto;max-height:70vh}
+button,input{padding:10px;border-radius:8px;margin:4px;border:none}
+button{background:#00ffc8;color:#000;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>🧠 RC25S Sentient AGI 실시간 Agent Dashboard</h1>
+<div id="log">📡 연결 대기 중...</div>
+<input id="msg" placeholder="명령 입력..." style="width:60%"><button onclick="send()">전송</button>
+<script>
+const ws = new WebSocket("wss://" + location.host + "/agi/ws");
+const log = document.getElementById("log");
+ws.onmessage = e => {log.innerHTML += "\\n" + e.data;log.scrollTop=log.scrollHeight;}
+ws.onopen = ()=>log.innerHTML="✅ AGI 대시보드 연결됨. 명령을 입력하세요.";
+function send(){const v=document.getElementById("msg").value;ws.send(v);document.getElementById("msg").value="";}
+</script>
+</body>
+</html>

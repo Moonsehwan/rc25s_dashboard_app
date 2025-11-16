@@ -1,0 +1,14 @@
+{
+  "workspace": {
+    "type": "remote",
+    "endpoint": "https://api.mcpvibe.org/codex/command",
+    "auth": {
+      "type": "bearer",
+      "token": "YOUR_SECRET_TOKEN"
+    }
+  },
+  "permissions": {
+    "network_access": true,
+    "workspace_write": true
+  }
+}

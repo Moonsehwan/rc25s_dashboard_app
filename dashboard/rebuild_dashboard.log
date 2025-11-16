@@ -1,0 +1,6 @@
+[2025-11-14 21:56:04] 🚀 Rebuilding AGI Dashboard from scratch...
+[2025-11-14 21:56:04] ✅ vite.config.js rewritten.
+[2025-11-14 21:56:04] ⚙️ Running Vite build...
+[2025-11-14 21:56:04] ✅ Build JS reference detected: /dashboard/assets/index-RQjVk0yp.js
+[2025-11-14 21:56:04] ✅ Nginx restarted successfully.
+[2025-11-14 21:56:04] 🎯 Dashboard rebuild complete. Visit: https://api.mcpvibe.org/dashboard

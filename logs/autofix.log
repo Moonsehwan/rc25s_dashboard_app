@@ -1,0 +1,424 @@
+[2025-11-14T00:15:22.431928] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T00:15:22.438823] 🧠 Calling GPT first...
+[2025-11-14T00:15:22.739201] ⚠️ GPT error: {
+    "error": {
+        "message": "Incorrect API key provided: sk-proj-********************************************************************************************************************************************************PnoA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "invalid_api_key"
+    }
+}
+
+[2025-11-14T00:15:22.739307] 🔁 Falling back to local LLM (Mistral)
+[2025-11-14T00:16:22.803076] ❌ Local LLM failed: HTTPConnectionPool(host='localhost', port=8001): Read timed out. (read timeout=60)
+[2025-11-14T00:16:22.803218] ⚠️ No improvement generated.
+[2025-11-14T00:18:43.520725] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T00:18:43.524056] 🧠 Calling GPT first...
+[2025-11-14T00:18:43.888483] ⚠️ GPT error: {
+    "error": {
+        "message": "Incorrect API key provided: sk-proj-********************************************************************************************************************************************************uZEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "invalid_api_key"
+    }
+}
+
+[2025-11-14T00:18:43.888604] 🔁 Falling back to local LLM (Mistral)
+[2025-11-14T00:18:43.908019] ⚠️ Local LLM error: Internal Server Error
+[2025-11-14T00:18:43.908256] ⚠️ No improvement generated.
+[2025-11-14T00:19:39.046799] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T00:19:39.047153] 🧠 Calling GPT first...
+[2025-11-14T00:19:39.327090] ⚠️ GPT error: {
+  "error": {
+    "message": "Incorrect API key provided: sk-proj-********************************************************************************************************************************************************uZEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+    "type": "invalid_request_error",
+    "code": "invalid_api_key",
+    "param": null
+  }
+}
+[2025-11-14T00:19:39.327222] 🔁 Falling back to local LLM (Mistral)
+[2025-11-14T00:19:39.340398] ⚠️ Local LLM error: Internal Server Error
+[2025-11-14T00:19:39.340680] ⚠️ No improvement generated.
+[2025-11-14T00:21:50.785721] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T00:21:50.785948] 🧠 Calling GPT first...
+[2025-11-14T00:21:51.098839] ⚠️ GPT error: {
+    "error": {
+        "message": "Incorrect API key provided: sk-proj-********************************************************************************************************************************************************uZEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "invalid_api_key"
+    }
+}
+
+[2025-11-14T00:21:51.098947] 🔁 Falling back to local LLM (Mistral)
+[2025-11-14T00:21:51.133273] ⚠️ Local LLM error: Internal Server Error
+[2025-11-14T00:21:51.133848] ⚠️ No improvement generated.
+[2025-11-14T00:30:01.659991] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T00:30:01.660444] 🧠 Calling GPT first (project-key compatible)...
+[2025-11-14T00:30:01.985125] ⚠️ GPT error: {
+    "error": {
+        "message": "Incorrect API key provided: sk-proj-********************************************************************************************************************************************************uZEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "invalid_api_key"
+    }
+}
+
+[2025-11-14T00:30:01.985251] 🔁 Falling back to local LLM (Mistral)
+[2025-11-14T00:30:01.999011] ⚠️ Local LLM error: Internal Server Error
+[2025-11-14T00:30:01.999294] ⚠️ No improvement generated.
+[2025-11-14T00:32:08.798909] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T00:32:08.799125] 🧠 Calling GPT (Project-key compatible API)...
+[2025-11-14T00:32:09.041843] ⚠️ GPT error: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+[2025-11-14T00:32:09.041968] 🔁 Falling back to local LLM (Mistral via free_llm_server)
+[2025-11-14T00:32:09.054241] ⚠️ Local LLM error: Internal Server Error
+[2025-11-14T00:32:09.054510] ⚠️ No improvement generated.
+[2025-11-14T00:32:52.116781] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T00:32:52.116955] 🧠 Calling GPT (Project-key compatible API)...
+[2025-11-14T00:32:52.343971] ⚠️ GPT error: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+[2025-11-14T00:32:52.344208] 🔁 Falling back to local LLM (Mistral via free_llm_server)
+[2025-11-14T00:32:52.359771] ⚠️ Local LLM error: Internal Server Error
+[2025-11-14T00:32:52.360233] ⚠️ No improvement generated.
+[2025-11-14T01:04:18.335754] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T01:04:18.350629] 🧠 Calling GPT (Project-key verified API)...
+[2025-11-14T01:04:18.683583] ⚠️ GPT error: {
+    "error": {
+        "message": "Incorrect API key provided: sk-proj-********************************************************************************************************************************************************PnoA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "invalid_api_key"
+    }
+}
+
+[2025-11-14T01:04:18.683715] 🔁 Falling back to local LLM (Mistral via free_llm_server)
+[2025-11-14T01:05:18.765636] ❌ Local LLM failed: HTTPConnectionPool(host='localhost', port=8001): Read timed out. (read timeout=60)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 472, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 539, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 371, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=8001): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 46, in call_llm
+    resp = requests.post(
+           ^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 532, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=8001): Read timed out. (read timeout=60)
+
+[2025-11-14T01:05:18.765763] ⚠️ No improvement generated.
+[2025-11-14T01:09:26.741048] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T01:09:26.741252] 🧠 Calling GPT via OpenAI SDK (Project-key mode)...
+[2025-11-14T01:09:27.451957] ❌ GPT SDK call failed: Error code: 401 - {'error': {'message': "No such project: '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'", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_project'}}
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 24, in call_llm
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': "No such project: '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'", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_project'}}
+
+[2025-11-14T01:09:27.452072] 🔁 Falling back to local LLM (Mistral via free_llm_server)
+[2025-11-14T14:16:16.494284] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T14:16:16.502963] 🧠 Calling GPT via OpenAI SDK (Project-key + Project-ID mode)...
+[2025-11-14T14:16:17.375917] ❌ Authentication Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************PnoA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2025-11-14T14:16:17.376107] 🔁 Falling back to local LLM (Mistral via free_llm_server)
+[2025-11-14T14:17:17.476077] ❌ Local LLM failed: HTTPConnectionPool(host='localhost', port=8001): Read timed out. (read timeout=60)
+Traceback (most recent call last):
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/repo/venv/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/srv/repo/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=8001): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 44, in call_llm
+    resp = requests.post(
+           ^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/requests/adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=8001): Read timed out. (read timeout=60)
+
+[2025-11-14T14:17:17.478829] ⚠️ No improvement generated.
+[2025-11-14T14:24:13.465550] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T14:24:13.485977] 🧠 Calling GPT via OpenAI SDK (Project-key + Project-ID mode)...
+[2025-11-14T14:24:15.335426] ❌ GPT SDK call failed: Connection error.
+Traceback (most recent call last):
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 86, in handle_request
+    self._send_request_headers(**kwargs)
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 144, in _send_request_headers
+    with map_exceptions({h11.LocalProtocolError: LocalProtocolError}):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.LocalProtocolError: Illegal header value b'Bearer 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\n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.LocalProtocolError: Illegal header value b'Bearer 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\n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 28, in call_llm
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+
+[2025-11-14T14:24:15.335816] 🔁 Falling back to local LLM (Mistral via free_llm_server)
+[2025-11-14T14:27:43.493838] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T14:27:43.494132] 🧠 Calling GPT via OpenAI SDK (Project-key + Project-ID mode)...
+[2025-11-14T14:27:45.284658] ❌ GPT SDK call failed: Connection error.
+Traceback (most recent call last):
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 86, in handle_request
+    self._send_request_headers(**kwargs)
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 144, in _send_request_headers
+    with map_exceptions({h11.LocalProtocolError: LocalProtocolError}):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.LocalProtocolError: Illegal header value b'Bearer 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\n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/srv/repo/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.LocalProtocolError: Illegal header value b'Bearer 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\n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 28, in call_llm
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+
+[2025-11-14T14:27:45.285336] 🔁 Falling back to local LLM (Mistral via free_llm_server)
+[2025-11-14T14:28:39.740024] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T14:28:39.740214] 🧠 Calling GPT via OpenAI SDK (Project-key + Project-ID mode)...
+[2025-11-14T14:28:59.349301] ✅ Code improved successfully: /srv/repo/vibecoding/vibecore.py
+[2025-11-14T14:29:44.557320] 🔁 자율 코드 개선 루프 실행 중...
+[2025-11-14T14:29:44.557617] ❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.
+[2025-11-14T14:29:44.557687] ⚠️ No improvement generated.
+[2025-11-14T14:59:44.559268] ❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.
+[2025-11-14T14:59:44.561544] ⚠️ No improvement generated.

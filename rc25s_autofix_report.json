@@ -1,0 +1,8 @@
+{
+  "agi-memory.service": "activating\n",
+  "agi-reflection.service": "activating\n",
+  "agi-autofix.service": "activating\n",
+  "ai-react-loop.service": "inactive\n",
+  "rc25s-dashboard.service": "active",
+  "mcp-server.service": "inactive\n"
+}

@@ -1,0 +1,111 @@
+
+
+===== agi-memory.service =====
+[Unit]
+Description=agi-memory.service - VibeCoding AGI Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/repo/vibecoding
+Environment=PYTHONPATH=/srv/repo/vibecoding
+ExecStart=/srv/repo/vibecoding/rc25h_env/bin/python -m vibecoding.agi-memory
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+===== agi-reflection.service =====
+[Unit]
+Description=agi-reflection.service - VibeCoding AGI Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/repo/vibecoding
+Environment=PYTHONPATH=/srv/repo/vibecoding
+ExecStart=/srv/repo/vibecoding/rc25h_env/bin/python -m vibecoding.agi-reflection
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+===== agi-autofix.service =====
+[Unit]
+Description=agi-autofix.service - VibeCoding AGI Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/repo/vibecoding
+Environment=PYTHONPATH=/srv/repo/vibecoding
+ExecStart=/srv/repo/vibecoding/rc25h_env/bin/python -m vibecoding.agi-autofix
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+===== ai-react-loop.service =====
+[Unit]
+Description=ai-react-loop - VibeCoding AGI Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/srv/repo/vibecoding/rc25h_env/bin/python -m vibecoding.ai_react_autoloop
+WorkingDirectory=/srv/repo/vibecoding
+Restart=always
+EnvironmentFile=/etc/vibecoding/env
+StandardOutput=append:/srv/repo/vibecoding/logs/ai-react-loop.log
+StandardError=append:/srv/repo/vibecoding/logs/ai-react-loop_error.log
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+===== rc25s-dashboard.service =====
+[Unit]
+Description=RC25S AGI 실시간 대시보드
+After=network.target
+
+[Service]
+ExecStart=/srv/repo/vibecoding/rc25h_env/bin/python /srv/repo/vibecoding/rc25s_dashboard/agi_status_dashboard.py
+Restart=always
+RestartSec=2
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+===== mcp-server.service =====
+[Unit]
+Description=mcp-server - VibeCoding AGI Service
+After=network.target
+
+[Service]
+Environment=PYTHONPATH=/srv/repo/vibecoding
+WorkingDirectory=/srv/repo/vibecoding
+Environment=PYTHONPATH=/srv/repo/vibecoding
+Type=simple
+ExecStart=/srv/repo/vibecoding/rc25h_env/bin/python -m vibecoding.mcp_server
+WorkingDirectory=/srv/repo/vibecoding
+Restart=always
+EnvironmentFile=/etc/vibecoding/env
+StandardOutput=append:/srv/repo/vibecoding/logs/mcp-server.log
+StandardError=append:/srv/repo/vibecoding/logs/mcp-server_error.log
+
+[Install]
+WantedBy=multi-user.target
+

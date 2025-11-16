@@ -1,0 +1,16 @@
+{
+  "name": "agi-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npx vite build"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0",
+    "@vitejs/plugin-react": "^4.3.1"
+  }
+}

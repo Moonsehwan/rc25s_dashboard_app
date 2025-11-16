@@ -1,0 +1,63 @@
+{
+  "timestamp": "2025-11-16 10:53:49",
+  "FastAPI Health": {
+    "status": "✅ OK",
+    "info": "108 bytes"
+  },
+  "LLM Backend (POST)": {
+    "status": "✅ OK",
+    "info": "107 bytes"
+  },
+  "Memory Vector": {
+    "status": "✅ OK",
+    "info": "434 bytes"
+  },
+  "Reflection Memory": {
+    "status": "✅ OK",
+    "info": "182 bytes"
+  },
+  "Autofix Log": {
+    "status": "✅ OK",
+    "info": "5221181 bytes"
+  },
+  "Reflection Log": {
+    "status": "✅ OK",
+    "info": "1335938 bytes"
+  },
+  "Dashboard Root": {
+    "status": "⚠️ FAIL",
+    "info": "404 {\"detail\":\"Not Found\"}"
+  },
+  "MCP Health": {
+    "status": "❌ ERROR",
+    "info": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7708817dd100>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+  },
+  "Ollama Models": {
+    "status": "✅ OK",
+    "info": "qwen2.5:7b-instruct, qwen2.5:7b-instruct-q4_0, mistral:latest, phi:latest, nomic-embed-text:latest"
+  },
+  "Service agi-memory.service": {
+    "status": "⚠️ FAIL",
+    "info": "activating"
+  },
+  "Service agi-reflection.service": {
+    "status": "✅ OK",
+    "info": "active"
+  },
+  "Service agi-autofix.service": {
+    "status": "✅ OK",
+    "info": "active"
+  },
+  "Service ai-react-loop.service": {
+    "status": "✅ OK",
+    "info": "active"
+  },
+  "Service rc25s-dashboard.service": {
+    "status": "✅ OK",
+    "info": "active"
+  },
+  "Service mcp-server.service": {
+    "status": "✅ OK",
+    "info": "active"
+  }
+}

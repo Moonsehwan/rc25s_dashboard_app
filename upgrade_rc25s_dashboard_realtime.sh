@@ -1,0 +1,131 @@
+#!/bin/bash
+set -e
+
+FRONTEND="/srv/repo/vibecoding/rc25s_dashboard_app/rc25s_frontend"
+LOG="/srv/repo/vibecoding/logs/rc25s_realtime_upgrade.log"
+APP_FILE="$FRONTEND/src/App.tsx"
+SERVICE="rc25s-dashboard.service"
+
+echo "🚀 [RC25S] WebSocket Realtime Dashboard Upgrade Started: $(date)" | tee -a "$LOG"
+
+# 백업
+mkdir -p "$(dirname "$LOG")"
+if [ -f "$APP_FILE" ]; then
+    cp "$APP_FILE" "${APP_FILE}.bak.$(date +%Y%m%d%H%M%S)"
+    echo "🧩 Backed up existing App.tsx" | tee -a "$LOG"
+fi
+
+# WebSocket 업그레이드 버전 코드 작성
+cat > "$APP_FILE" <<'TSX'
+import React, { useState, useEffect, useRef } from "react";
+
+function App() {
+  const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const wsRef = useRef<WebSocket | null>(null);
+
+  // ✅ WebSocket 연결
+  useEffect(() => {
+    const ws = new WebSocket("wss://api.mcpvibe.org/ws");
+    wsRef.current = ws;
+
+    ws.onopen = () => {
+      setMessages((prev) => [...prev, { sender: "system", text: "🔌 WebSocket 연결됨" }]);
+    };
+
+    ws.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        if (data.type === "status") {
+          setMessages((prev) => [
+            ...prev,
+            { sender: "system", text: \`🧠 상태: CPU \${data.cpu}% / RAM \${data.memory}%\` },
+          ]);
+        } else if (data.type === "llm_output") {
+          setMessages((prev) => [...prev, { sender: "ai", text: data.output }]);
+        }
+      } catch {
+        setMessages((prev) => [...prev, { sender: "ai", text: event.data }]);
+      }
+    };
+
+    ws.onclose = () => {
+      setMessages((prev) => [...prev, { sender: "system", text: "⚠️ WebSocket 연결 끊김" }]);
+    };
+
+    return () => ws.close();
+  }, []);
+
+  const sendMessage = async () => {
+    if (!input.trim()) return;
+    setMessages((prev) => [...prev, { sender: "user", text: input }]);
+    setLoading(true);
+
+    try {
+      const res = await fetch("https://api.mcpvibe.org/llm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: input }),
+      });
+
+      const text = await res.text();
+      const json = JSON.parse(text);
+      setMessages((prev) => [...prev, { sender: "ai", text: json.output || "응답이 없습니다." }]);
+    } catch (e) {
+      console.error("Fetch error:", e);
+      setMessages((prev) => [...prev, { sender: "system", text: "🚫 서버 응답 오류" }]);
+    } finally {
+      setLoading(false);
+      setInput("");
+    }
+  };
+
+  return (
+    <div className="p-6 max-w-3xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">🤖 RC25S AGI Realtime Dashboard</h1>
+      <div className="border rounded-2xl p-4 bg-gray-50 min-h-[400px] overflow-y-auto mb-4">
+        {messages.map((msg, i) => (
+          <div key={i} className="mb-2">
+            <b>{msg.sender}:</b> {msg.text}
+          </div>
+        ))}
+        {loading && <div className="text-gray-400 italic">🤔 thinking...</div>}
+      </div>
+      <div className="flex space-x-2">
+        <input
+          type="text"
+          className="flex-grow border rounded-full px-4 py-2 focus:outline-none"
+          placeholder="명령을 입력하세요..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+        />
+        <button
+          onClick={sendMessage}
+          className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
+          disabled={loading}
+        >
+          {loading ? "..." : "Send"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+TSX
+
+# Build + Reload
+cd "$FRONTEND"
+echo "⚙️  Building updated React app..." | tee -a "$LOG"
+npm install --silent
+npm run build --silent
+
+echo "🔁 Restarting dashboard service..." | tee -a "$LOG"
+systemctl restart "$SERVICE"
+
+echo "🌐 Testing backend health..." | tee -a "$LOG"
+curl -s https://api.mcpvibe.org/health | tee -a "$LOG"
+
+echo "✅ [RC25S] Realtime Dashboard Upgrade Completed Successfully ✅" | tee -a "$LOG"

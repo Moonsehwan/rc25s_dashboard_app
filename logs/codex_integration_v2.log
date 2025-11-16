@@ -1,0 +1,14 @@
+[2025-11-15 19:13:48] 🚀 Installing Codex Integration v2 (Full Auto System)...
+[2025-11-15 19:13:48] 🧩 Injecting Codex router into MCP server...
+[2025-11-15 19:13:48] 🔁 Restarting MCP server...
+● mcp-server.service - MCP HTTPS API Server (VibeCoding)
+     Loaded: loaded (/etc/systemd/system/mcp-server.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2025-11-15 19:13:48 KST; 2s ago
+   Main PID: 3219251 (python3)
+      Tasks: 6 (limit: 9486)
+     Memory: 35.4M (peak: 35.8M)
+        CPU: 690ms
+     CGroup: /system.slice/mcp-server.service
+             └─3219251 /srv/repo/venv/bin/python3 -m uvicorn vibecoding.mcp_server_realtime:app --host 0.0.0.0 --port 8000
+
+Nov 15 19:13:48 vmi2859588 systemd[1]: Started mcp-server.service - MCP HTTPS API Server (VibeCoding).
