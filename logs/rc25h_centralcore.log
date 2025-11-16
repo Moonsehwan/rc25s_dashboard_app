@@ -3279,3 +3279,5 @@
 [2025-11-17 07:50:02] ⚠️ MCP Server unresponsive — attempting restart
 [2025-11-17 07:50:07] ✅ MCP Restart Result: FAILED
 [2025-11-17 07:55:00] ✅ MCP Restart Result: FAILED
+[2025-11-17 08:05:18] {"time": "2025-11-17T08:05:18.969668", "MCP": "DOWN", "RC25H": "OK", "CPU": "100.0%", "MEM": "31.0%"}
+[2025-11-17 08:05:18] ⚠️ MCP Server unresponsive — attempting restart
