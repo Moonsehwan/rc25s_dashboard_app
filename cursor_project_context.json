@@ -1,0 +1,79 @@
+{
+  "project_name": "RC25S VibeCoding AGI",
+  "root_path": "/srv/repo/vibecoding",
+  "description": "Autonomous realtime coding & self-healing system. AI가 스스로 코드를 수정하고, 배포하고, 복구하고, 개발까지 이어가는 자율형 개발 환경.",
+
+  "languages": ["python", "typescript", "javascript", "bash"],
+  "frameworks": ["fastapi", "react", "vite", "nginx"],
+
+  "entry_points": {
+    "agi_core": [
+      "RC25H_CentralCore.py",
+      "rc25_kernel_pro_R3.py",
+      "rc25s_autofix_system.py",
+      "reflection_engine.py",
+      "memory_engine.py"
+    ],
+    "dashboard_backend": [
+      "rc25s_agent_backend.py",
+      "rc25s_dashboard/agi_status_dashboard.py"
+    ],
+    "dashboard_frontend": [
+      "rc25s_dashboard_app/rc25s_frontend/src/App.jsx",
+      "rc25s_dashboard_app/rc25s_frontend/src/wsClient.js"
+    ],
+    "llm_services": [
+      "llm_router.py",
+      "free_llm_server.py",
+      "rc25s_openai_wrapper.py"
+    ]
+  },
+
+  "documentation": [
+    "RC25S_SYSTEM_OVERVIEW.md",
+    "RC25S_DEV_CONTEXT.md",
+    "RC25S_DASHBOARD_STATUS.md"
+  ],
+
+  "critical_scripts": [
+    "upgrade_rc25s_autoheal_full.sh",
+    "setup_rc25s_full_agi.sh",
+    "setup_dashboard_full.sh",
+    "rc25s-selfcheck.sh",
+    "RC25S_AI_Autoheal.sh",
+    "nginx_full_repair_clean.sh"
+  ],
+
+  "config_files": [
+    "config/codex.json",
+    "free_llm_port.json"
+  ],
+
+  "services_and_ports": {
+    "dashboard_backend": {
+      "type": "fastapi",
+      "port": 4545,
+      "file": "rc25s_agent_backend.py"
+    },
+    "agi_status_dashboard": {
+      "type": "fastapi",
+      "port": 4545,
+      "file": "rc25s_dashboard/agi_status_dashboard.py"
+    }
+  },
+
+  "goals": [
+    "Self-Healing: nginx / FastAPI / React 빌드 오류 자동 감지 및 복구",
+    "Self-Improvement: Cursor + Apidog을 통한 자동 리팩토링 및 API 문서 동기화",
+    "Self-Development: AGI가 스스로 신규 기능을 제안하고 구현",
+    "Self-Orchestration: 배포/모니터링/최적화를 AI가 주도"
+  ],
+
+  "notes_for_agents": [
+    "대규모 구조 변경 전에 RC25S_SYSTEM_OVERVIEW.md 와 RC25S_DEV_CONTEXT.md 를 먼저 읽고 전체 구조를 파악하세요.",
+    "Dashboard 관련 수정 시 RC25S_DASHBOARD_STATUS.md 를 참고하여 실제 빌드/배포 경로와 Self-Check 스크립트의 기대 경로가 일치하는지 확인하세요.",
+    "Self-Healing 스크립트(rc25s-selfcheck.sh, RC25S_AI_Autoheal.sh 등)를 수정할 때는 systemd 유닛/타이머와 Nginx 설정 스크립트(fix_nginx_*.sh, rebuild_nginx_*.sh)와의 관계를 반드시 고려하세요."
+  ]
+}
+
+
