@@ -3,6 +3,7 @@ from rc25_kernel_pro_R3 import ProKernel
 from reflection_engine import run_reflection
 from memory_engine import update_memory
 from autofix_loop import auto_fix
+from world_state import update_reflection_memory, update_core_decision
 
 class RC25H_CentralCore:
     def __init__(self):
@@ -15,6 +16,8 @@ class RC25H_CentralCore:
         try:
             reflection = json.load(open(self.state_path))
             memory = json.load(open(self.mem_path))
+            # world_state에 동기화
+            update_reflection_memory(reflection, memory)
             return reflection, memory
         except Exception:
             return None, None
@@ -33,6 +36,8 @@ class RC25H_CentralCore:
     def execute(self, decision, context=""):
         with open(self.log, "a") as f:
             f.write(f"[{datetime.datetime.now()}] Decision: {decision}\n")
+        # world_state에 최근 결정 기록
+        update_core_decision(decision)
         if decision == "REFLECT":
             run_reflection()
         elif decision == "MEMORY":

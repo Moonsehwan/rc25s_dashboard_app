@@ -21,6 +21,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any
 
+from world_state import update_planner
+
 ROOT = Path(__file__).resolve().parent
 AUTOHEAL_AI_LOG = Path("/var/log/rc25s-autoheal-ai.log")
 SELF_CHECK_LOG = Path("/var/log/rc25s-autoheal.log")
@@ -212,14 +214,17 @@ def run_planner() -> PlannerState:
   signals = analyze_signals()
   goals = generate_goals_from_signals(signals)
   tasks = generate_tasks(goals, signals)
-  state = PlannerState(
+   state = PlannerState(
     generated_at=datetime.utcnow().isoformat() + "Z",
     signals=signals,
     goals=goals,
     tasks=tasks,
   )
-  PLANNER_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-  PLANNER_STATE_PATH.write_text(json.dumps(state.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
+   # world_state 및 로컬 플래너 상태 동기화
+   state_dict = state.to_dict()
+   update_planner(state_dict)
+   PLANNER_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+   PLANNER_STATE_PATH.write_text(json.dumps(state_dict, ensure_ascii=False, indent=2), encoding="utf-8")
   return state
 
 
