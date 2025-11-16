@@ -245,3 +245,162 @@ Cursor가 이어서 할 작업 예시:
 **생성 시점 기준 실제 서버 상태**: 이 문서는 `/srv/repo/vibecoding` 및 `systemctl` 정보를 기반으로 자동 요약되었습니다.  
 추후 디렉토리/파일/서비스 구조가 바뀌면, Cursor를 통해 이 문서를 다시 업데이트해야 최신 상태를 반영할 수 있습니다.
 
+---
+
+## 🧠 (업데이트) RC25S AGI 코어 루프 + Planner/Executor/World State 구조
+
+> ✅ 이 섹션은 2025-11-16 이후에 추가된 **AGI 코어/플래너/태스크 실행기/월드 상태** 관련 구현을 요약합니다.  
+> Cursor 세션이 끊겨도, 이 섹션만 보면 **지금 AGI가 어떻게 스스로 판단·계획·실행하는지**를 복구할 수 있습니다.
+
+### 1) 중앙 AGI 코어 루프 (systemd 서비스)
+
+- **파일**: `RC25H_CentralCore.py`
+- **역할**:
+  - `reflection_engine.run_reflection()` / `memory_engine.update_memory()` / `autofix_loop.auto_fix()` 등을 호출해  
+    **REFLECT / MEMORY / AUTOFIX / CREATIVE** 모드를 순환하는 중앙 루프.
+  - 최근 결정은 `world_state.update_core_decision(decision)` 으로 `world_state.json`에 기록됨.
+- **실행 방식**:
+  - systemd 유닛: `_systemd/rc25s-agi-core.service`
+  - 배포/등록 스크립트: `setup_rc25s_agi_core.sh`
+  - 실제 ExecStart:
+    - `/srv/repo/vibecoding/rc25h_env/bin/python /srv/repo/vibecoding/RC25H_CentralCore.py`
+  - 로그:
+    - `/srv/repo/vibecoding/logs/centralcore.log`
+
+> Cursor에서 AGI 코어를 수정할 때는, 이 유닛/스크립트와 함께 보고 설계해야 합니다.  
+> `centralcore.log`를 tail 해서 실제 의사결정 흐름을 확인하는 것이 좋습니다.
+
+### 2) World State (`world_state.py` / `world_state.json`)
+
+- **파일**:
+  - 코드: `world_state.py`
+  - 데이터: `world_state.json`
+- **역할**:
+  - RC25S 전체의 **단일 월드 상태(Single Source of Truth)** 역할.
+  - 주요 섹션:
+    - `core`: 마지막 AGI 의사결정 (`last_decision`, `last_decision_time`)
+    - `reflection`: 최신 리플렉션 JSON
+    - `memory`: 메모리 스냅샷
+    - `planner`: `rc25s_planner`가 생성한 `signals`, `goals`, `tasks`
+    - `last_actions`: 최근 태스크 실행 로그 (최대 50개)
+    - `metrics`: 헬스 점수, 프론트엔드 이슈 카운트 등 정량 지표
+    - `task_stats`: 태스크별 `success`/`fail` 카운트
+- **주요 함수**:
+  - `load_world_state()`, `save_world_state()`
+  - `update_reflection_memory(reflection, memory)`
+  - `update_core_decision(decision)`
+  - `update_planner(planner_state)`
+  - `append_action_log(action)`
+  - `update_task_stats(task_id, success)`
+  - `update_metrics_from_signals(signals)`
+
+### 3) Planner (`rc25s_planner.py`)
+
+- **파일**: `rc25s_planner.py`
+- **입력**:
+  - `/var/log/rc25s-autoheal-ai.log`, `/var/log/rc25s-autoheal.log` 의 tail 을 분석해 `signals` 생성.
+- **출력**:
+  - `memory_store/rc25s_planner_state.json`
+  - `world_state.planner`, `world_state.metrics`
+- **기능**:
+  - `signals`에서 `autoheal_frontend_issues`, `selfcheck_frontend_issues` 등을 계산.
+  - `Goal` 목록 생성:
+    - `goal_stability`, `goal_frontend_reliability`, `goal_self_improvement` 등.
+  - `Task` 목록 생성:
+    - `goal_stability_check_health_endpoints`
+    - `goal_frontend_reliability_review_nginx`
+    - `goal_frontend_reliability_align_selfcheck_autoheal`
+    - `goal_self_improvement_expose_logs_in_dashboard`
+    - `goal_self_improvement_plan_llm_integration`
+  - **의존성/멀티스텝**:
+    - `Task.depends_on` 필드로 선행 태스크를 지정.
+    - 예시:
+      - `goal_frontend_reliability_align_selfcheck_autoheal`  
+        → `["goal_frontend_reliability_review_nginx"]` 완료 후에만 실행.
+      - `goal_self_improvement_plan_llm_integration`  
+        → `["goal_self_improvement_expose_logs_in_dashboard"]` 완료 후 실행.
+  - **학습 기반 우선순위 조정**:
+    - `world_state.task_stats[task_id]`를 읽어 성공/실패 횟수에 따라 priority 수정:
+      - 실패 3회 이상 & 성공 0 → priority −15
+      - 성공 3회 이상 & 실패 0 → priority +10
+    - 이렇게 해서 **시간이 지날수록 “잘 되는 루틴”에 더 가중치를 주고, 계속 실패하는 작업은 다소 후순위로 미룸.**
+
+### 4) Task Executor (`rc25s_task_executor.py`) + Action Metadata (`rc25s_actions.py`)
+
+- **파일**:
+  - 실행기: `rc25s_task_executor.py`
+  - 액션 메타데이터: `rc25s_actions.py`
+- **입력**:
+  - `memory_store/rc25s_planner_state.json` (Planner가 생성한 상태)
+- **기능**:
+  - `find_pending_tasks()`:
+    - `status == "pending"` 이고,
+    - `depends_on` 에 있는 태스크들이 모두 `"done"` 인 작업만 큐에 올림.
+  - `execute_task(task)`:
+    - `goal_stability_check_health_endpoints`  
+      → `http://127.0.0.1:4545/health`, `/llm` 호출로 실제 헬스 체크.
+    - `goal_frontend_reliability_review_nginx`  
+      → `repair_nginx_rc25s_dashboard.sh` 실행.
+    - `goal_frontend_reliability_align_selfcheck_autoheal`  
+      → `rc25s-selfcheck.sh`, `RC25S_AI_Autoheal.sh` 연속 실행.
+    - `goal_self_improvement_sync_apidog_spec` (플래너에 추가 시)  
+      → `rc25s_dashboard_app/backend/utils/apidog_sync.py` 실행.
+  - **위험도/롤백/테스트**:
+    - `rc25s_actions.ACTIONS[task.id]` 로 `ActionMeta` 참조:
+      - `risk`: `"L0" | "L1" | "L2"`
+      - `post_tests`: 실행 후 AutoTest 여부
+      - `rollback_hint`: 실패 시 권장 롤백 전략 설명
+    - `RC25S_MAX_RISK_LEVEL` 환경변수로 **최대 허용 위험도** 설정 (기본 L2).
+      - 태스크 위험도가 상한을 넘으면 그 태스크는 **스킵**.
+    - 위험도 L2 작업 전:
+      - `create_backup_vibe_agi.sh`가 있으면 자동 실행(선행 백업).
+    - `post_tests=True` + 태스크 성공 시:
+      - `rc25s_autotest_runner.py` 실행 → 실패하면 태스크 결과를 **실패로 다시 표시**.
+  - **world_state 연동**:
+    - 실행 후:
+      - `append_action_log({...})` → `world_state.last_actions`에 기록.
+      - `update_task_stats(task.id, success)` → 성공/실패 카운트 업데이트.
+
+### 5) Reflection Engine (`reflection_engine.py`)의 Self-Evaluation 루프
+
+- **파일**: `reflection_engine.py`
+- **LLM 호출 경로**:
+  - 직접 `openai`를 쓰지 않고, `rc25s_openai_wrapper.rc25s_chat()`을 사용.
+- **입력**:
+  - `memory_store/memory_vector.json`
+  - `world_state.metrics`
+  - `world_state.last_actions` (최근 액션들)
+  - `world_state.planner` (signals/goals/tasks)
+- **프롬프트 역할**:
+  - 위 네 가지 정보를 모두 넘겨서,
+  - **“현재 시스템 상태에 대한 자기 평가 + 다음에 집중할 목표/태스크 피드백”** 을 요청.
+- **출력 JSON 구조**:
+  - `insight`: 현재 상태에 대한 요약 인사이트
+  - `improvement_goal`: 다음으로 추구해야 할 개선 목표
+  - `confidence`: 0.0 ~ 1.0 신뢰도 스코어
+  - `planner_feedback`:
+    - `focus_goal_ids`: 더 집중해야 할 goal id 리스트
+    - `deprioritize_task_ids`: 우선순위를 낮춰도 되는 task id 리스트
+    - `notes`: 이유/설명
+- **저장/동기화**:
+  - 결과는 `memory_store/reflection.json`에 저장.
+  - 동시에 `update_reflection_memory(reflection, memory)` 로  
+    `world_state["reflection"]`, `world_state["memory"]`에 반영.
+
+---
+
+## 📌 “세션이 끊겨도 어디서 다시 시작하면 되는지” 요약
+
+1. **AGI 코어 상태 확인**
+   - `sudo systemctl status rc25s-agi-core.service`
+   - `tail -n 50 /srv/repo/vibecoding/logs/centralcore.log`
+2. **월드 상태/플랜/액션 로그 확인**
+   - `cat /srv/repo/vibecoding/world_state.json`
+   - `cat /srv/repo/vibecoding/memory_store/rc25s_planner_state.json`
+3. **다음 개발 포인트 찾기**
+   - `RC25S_SYSTEM_OVERVIEW.md` → 큰 그림
+   - `RC25S_DEV_CONTEXT.md` (이 파일) → 실제 구현/서비스/스크립트 관계
+   - `RC25S_DASHBOARD_STATUS.md` → Dashboard/LLM/Self-Check 관련 세부 상태
+
+이 세 가지를 보면, Cursor/AGI는 이전 대화 세션이 없어도 **현재 AGI가 무엇을 하고 있는지, 다음에 무엇을 개선해야 하는지**를 바로 복구할 수 있습니다.
+
