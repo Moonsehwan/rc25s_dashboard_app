@@ -17,9 +17,11 @@ from __future__ import annotations
 import json
 import subprocess
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List
+
+import requests
 
 
 ROOT = Path(__file__).resolve().parent
@@ -44,7 +46,7 @@ def load_planner_state() -> Dict[str, Any]:
 
 
 def save_planner_state(state: Dict[str, Any]) -> None:
-    state["generated_at"] = datetime.utcnow().isoformat() + "Z"
+    state["generated_at"] = datetime.now(timezone.utc).isoformat()
     PLANNER_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     PLANNER_STATE_PATH.write_text(
         json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
@@ -80,7 +82,83 @@ def execute_task(task: Task) -> bool:
     단일 task를 실행한다.
     - 성공하면 True, 실패/스킵하면 False.
     """
-    # Apidog 스펙 동기화 작업
+    # 1) 헬스 엔드포인트 정합성 점검
+    if task.id.endswith("check_health_endpoints"):
+        ok = True
+        # /health (GET)
+        try:
+            url = "http://127.0.0.1:4545/health"
+            res = requests.get(url, timeout=5)
+            print(f"🌐 Health check {url} -> {res.status_code}")
+            if res.status_code >= 400:
+                ok = False
+        except Exception as e:
+            print(f"⚠️ Health check failed for /health: {e}")
+            ok = False
+
+        # /llm (POST)
+        try:
+            url = "http://127.0.0.1:4545/llm"
+            res = requests.post(url, json={"prompt": "ping", "provider": "local"}, timeout=10)
+            print(f"🌐 LLM check {url} -> {res.status_code}")
+            if res.status_code >= 400:
+                ok = False
+        except Exception as e:
+            print(f"⚠️ LLM check failed for /llm: {e}")
+            ok = False
+
+        return ok
+
+    # 2) Nginx /agi 라우팅 재점검 (복구 스크립트 실행)
+    if task.id.endswith("review_nginx"):
+        script = ROOT / "repair_nginx_rc25s_dashboard.sh"
+        if not script.exists():
+            print(f"⚠️ Nginx repair script not found: {script}")
+            return False
+        try:
+            result = subprocess.run(
+                ["bash", str(script)],
+                capture_output=True,
+                text=True,
+            )
+            print("🛠 Nginx repair stdout:")
+            print(result.stdout)
+            if result.stderr:
+                print("⚠️ Nginx repair stderr:")
+                print(result.stderr)
+            return result.returncode == 0
+        except Exception as e:
+            print("❌ Failed to run Nginx repair task:", e)
+            return False
+
+    # 3) SelfCheck와 Autoheal 기준 정렬 → 두 스크립트를 연달아 실행
+    if task.id.endswith("align_selfcheck_autoheal"):
+        ok = True
+        for script_name in ["rc25s-selfcheck.sh", "RC25S_AI_Autoheal.sh"]:
+            script = ROOT / script_name
+            if not script.exists():
+                print(f"⚠️ Script not found: {script}")
+                ok = False
+                continue
+            try:
+                result = subprocess.run(
+                    ["bash", str(script)],
+                    capture_output=True,
+                    text=True,
+                )
+                print(f"🩺 {script_name} stdout:")
+                print(result.stdout)
+                if result.stderr:
+                    print(f"⚠️ {script_name} stderr:")
+                    print(result.stderr)
+                if result.returncode != 0:
+                    ok = False
+            except Exception as e:
+                print(f"❌ Failed to run {script_name}:", e)
+                ok = False
+        return ok
+
+    # 4) Apidog 스펙 동기화 작업
     if task.id.endswith("sync_apidog_spec"):
         script = ROOT / "rc25s_dashboard_app" / "backend" / "utils" / "apidog_sync.py"
         if not script.exists():
@@ -131,7 +209,7 @@ def main() -> int:
     for t in state.get("tasks", []):
         if t.get("id") == task.id:
             t["status"] = "done" if success else t.get("status", "pending")
-            t["last_executed_at"] = datetime.utcnow().isoformat() + "Z"
+            t["last_executed_at"] = datetime.now(timezone.utc).isoformat()
             t["last_result"] = "success" if success else "failed"
             break
 
@@ -143,5 +221,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
 
