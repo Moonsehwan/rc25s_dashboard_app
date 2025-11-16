@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-16T11:49:23.585709Z",
+  "generated_at": "2025-11-16T14:19:53.228533Z",
   "signals": {
     "autoheal_cycles": 1,
     "autoheal_rebuilds": 0,
@@ -62,7 +62,9 @@
       "title": "헬스 엔드포인트 정합성 점검",
       "description": "rc25s-selfcheck.sh와 RC25S_AI_Autoheal.sh에서 사용하는 /health, /llm, /agi URL들이 실제 서비스와 일치하는지 검증한다.",
       "priority": 90,
-      "status": "pending"
+      "status": "pending",
+      "last_executed_at": "2025-11-16T14:19:53.224476Z",
+      "last_result": "failed"
     },
     {
       "id": "goal_frontend_reliability_review_nginx",
