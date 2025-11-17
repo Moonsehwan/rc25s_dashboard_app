@@ -347,3 +347,32 @@ def sync_apidog():
 > RC25S가 스스로 자신의 상태를 정확히 이해하고 관리할 수 있습니다.
 
 
+---
+
+## 📌 2025-11-17 업데이트 메모
+
+- **백엔드 교체**  
+  - `/srv/repo/vibecoding/mcp_server_realtime.py`를 “RC25S Realtime Console” 버전으로 전면 교체.  
+  - 기능: `world_state` 주기 브로드캐스트, 명령 실행 로그, 프리텍스트 LLM 응답, 링크 분석 잡, `/ws/system` 모니터링.  
+  - `systemd` 서비스(`mcp.service`)가 해당 파일을 로드하도록 확인 완료.
+
+- **World State & 인사이트 엔진**  
+  - `world_state.py`에 `reflection.videos / reflection.web_links` 버킷 및 `append_reflection_media()` 추가.  
+  - `rc25s_youtube_reflector.py`는 YouTube/일반 웹 URL 모두 처리 → LLM 분석 → world_state 갱신 흐름으로 확장.
+
+- **프론트엔드 대시보드**  
+  - `dashboard/src/App.jsx`를 RC25S Self-Improvement Console 형태로 재작성.  
+  - 카드 구성: 리플렉션, 목표/작업, 커널 제안, 시스템 상태, Quick Commands, 프리 텍스트/LLM 대화, 실행 프리뷰, 미디어 인사이트 등.  
+  - `npm run build` 완료 후 Nginx `/` 루트에서 최신 번들 서빙 중.
+
+- **Nginx 정리**  
+  - `/etc/nginx/sites-enabled` 내 중복 server 블록 제거 (`codex_console.conf` 계열).  
+  - 현재는 `api_mcpvibe_rc25s.conf` 한 개만 활성화되어 `/ws/agi`, `/ws/system` 프록시를 맡음.
+
+- **남은 이슈**  
+  - `/ws/system` WebSocket이 아직 403을 반환 → FastAPI가 최신 코드로 완전히 재시작하지 않은 것으로 추정.  
+  - 재현: `python - <<'PY' ... websockets.connect('ws://127.0.0.1:8000/ws/system')` 실행 시 403 발생.  
+  - 해결 계획: `mcp_server_realtime.py` 재배포 확인 후 `mcp.service` 재시작, 로컬 WS 테스트 → 브라우저 `Ctrl+F5`.
+
+이 섹션은 “어디까지 구현되었고, 무엇이 남았는지”를 빠르게 파악하기 위한 스냅샷입니다. 이후 수정 시 이 구간을 추가 업데이트해 주세요.
+
