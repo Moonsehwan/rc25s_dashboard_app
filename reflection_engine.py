@@ -1,16 +1,23 @@
 from rc25s_openai_wrapper import rc25s_chat
-from rc25_kernel_RC25S import RC25SKernel
-kernel = RC25SKernel()
 
 #!/usr/bin/env python3
 # =======================================================
-# RC25H Hybrid Kernel | Reflection Engine v3.0 (Synced)
-# Unified with MCP Server Reflection Logic
+# RC25H Hybrid Kernel | Reflection Engine v3.x
+# - rc25s_openai_wrapper 기반 하이브리드 LLM 호출
+# - world_state와 연동하여 자기평가 결과를 공유 상태에 반영
 # =======================================================
 
-import os, json, datetime, re, traceback
-import sys; sys.path.append("/srv/repo/vibecoding")
-from openai import OpenAI
+import os
+import json
+import datetime
+import re
+import traceback
+import sys
+
+sys.path.append("/srv/repo/vibecoding")
+
+from world_state import load_world_state, update_reflection_memory
+
 
 LOG_PATH = "/srv/repo/vibecoding/logs/agi_reflection.log"
 MEMORY_PATH = "/srv/repo/vibecoding/memory_store/memory_vector.json"
@@ -19,20 +26,23 @@ REFLECTION_PATH = "/srv/repo/vibecoding/memory_store/reflection.json"
 os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
 os.makedirs(os.path.dirname(MEMORY_PATH), exist_ok=True)
 
-def log(msg):
+
+def log(msg: str) -> None:
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{ts}] {msg}"
     print(line, flush=True)
     with open(LOG_PATH, "a", encoding="utf-8") as f:
         f.write(line + "\n")
 
-def safe_parse_json(text):
+
+def safe_parse_json(text: str) -> dict:
+    """LLM 응답을 최대한 안전하게 JSON으로 파싱."""
     if not text or not isinstance(text, str) or len(text.strip()) == 0:
-        log("⚠️ Empty GPT response detected — using fallback JSON.")
+        log("⚠️ Empty LLM response detected — using fallback JSON.")
         return {
             "insight": "No reflection generated",
             "improvement_goal": "Investigate API response issue",
-            "confidence": 0.0
+            "confidence": 0.0,
         }
     text = re.sub(r"[\u200B-\u200D\uFEFF]", "", text)
     text = re.sub(r"```[a-zA-Z]*", "", text).replace("```", "").strip()
@@ -46,42 +56,31 @@ def safe_parse_json(text):
     except json.JSONDecodeError as e:
         log(f"⚠️ JSONDecodeError: {e} | text snippet: {text[:200]}")
         return {
-            "insight": "Failed to decode GPT reflection",
+            "insight": "Failed to decode LLM reflection",
             "improvement_goal": "Improve parsing resilience",
-            "confidence": 0.0
+            "confidence": 0.0,
         }
 
-def extract_message_content(response):
-    try:
-        choice = response.choices[0]
-        message = getattr(choice, "message", None)
-        if isinstance(message, dict):
-            return message.get("content", "")
-        elif hasattr(message, "content"):
-            return message.content
-        elif hasattr(choice, "text"):
-            return choice.text
-        else:
-            return ""
-    except Exception as e:
-        log(f"⚠️ extract_message_content failed: {e}")
-        return ""
 
-def run_reflection():
+def run_reflection() -> None:
+    """
+    - memory_vector.json + world_state(planner/last_actions)를 읽어서
+    - rc25s_chat(하이브리드 LLM)을 통해 자기 평가를 수행하고
+    - reflection.json 및 world_state.reflection에 반영한다.
+    """
     log("🚀 AGI Reflection Engine started.")
-    api_key = os.getenv("OPENAI_API_KEY")
-    project_id = os.getenv("OPENAI_PROJECT_ID")
 
+    # OPENAI_API_KEY 없으면 /etc/openai_api_key.txt에서 한 번 더 시도
+    api_key = os.getenv("OPENAI_API_KEY")
     if not api_key or "$(" in api_key:
         key_path = "/etc/openai_api_key.txt"
         if os.path.exists(key_path):
             api_key = open(key_path).read().strip()
+            os.environ["OPENAI_API_KEY"] = api_key
             log("✅ Loaded API key from /etc/openai_api_key.txt")
         else:
-            log("❌ No valid API key found.")
+            log("❌ No valid API key found for rc25s_chat.")
             return
-
-#    client = OpenAI(api_key=api_key, project=project_id)
 
     if not os.path.exists(MEMORY_PATH):
         log("⚠️ No memory file found.")
@@ -94,41 +93,64 @@ def run_reflection():
         log(f"❌ Memory load failed: {e}")
         return
 
-    prompt = f"""
-You are an AGI Reflection Engine.
-Analyze the following memory and output ONLY valid JSON.
+    # world_state에서 planner / last_actions 가져오기 (프롬프트 강화용)
+    try:
+        ws = load_world_state()
+    except Exception as e:
+        log(f"⚠️ load_world_state failed: {e}")
+        ws = {}
 
-Memory:
+    planner = ws.get("planner") or {}
+    last_actions = ws.get("last_actions") or []
+
+    prompt = f"""
+You are the RC25S AGI Reflection Engine.
+Analyze the following memory and world state, then output ONLY valid JSON.
+
+## Memory (long-term/context)
 {json.dumps(memory, ensure_ascii=False, indent=2)}
 
-Format:
+## Planner state (goals/tasks/signals)
+{json.dumps(planner, ensure_ascii=False, indent=2)}
+
+## Recent actions
+{json.dumps(last_actions, ensure_ascii=False, indent=2)}
+
+Return JSON with the following structure:
 {{
-  "insight": "...",
-  "improvement_goal": "...",
-  "confidence": 0.0~1.0
+  "insight": "short Korean summary of current system situation",
+  "improvement_goal": "1-2 concrete next improvement directions (Korean allowed)",
+  "confidence": 0.0-1.0
 }}
 """
 
     try:
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": prompt}],
-        )
-        text = extract_message_content(response)
+        llm_result = rc25s_chat(prompt)
+        text = (llm_result or {}).get("response", "")
         if not text:
-            log("⚠️ GPT returned empty content. Check API key or quota.")
+            log("⚠️ LLM returned empty content. Check API key or server.")
             return
+
         log(f"🧠 Raw reflection text:\n{text[:1000]}")
         reflection = safe_parse_json(text)
+
+        # 파일로 저장
         with open(REFLECTION_PATH, "w", encoding="utf-8") as f:
             json.dump(reflection, f, indent=2, ensure_ascii=False)
         log("📘 Reflection saved successfully.")
         log(f"🪞 Insight: {reflection.get('insight')}")
         log(f"🎯 Goal: {reflection.get('improvement_goal')}")
         log(f"🔹 Confidence: {reflection.get('confidence')}")
+
+        # world_state에도 반영 (memory와 함께)
+        try:
+            update_reflection_memory(reflection, memory)
+        except Exception as e:
+            log(f"⚠️ update_reflection_memory failed: {e}")
     except Exception as e:
         tb = traceback.format_exc()
         log(f"❌ Reflection failed: {e}\n{tb}")
+
 
 if __name__ == "__main__":
     run_reflection()
