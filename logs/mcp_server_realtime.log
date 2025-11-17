@@ -1564,3 +1564,12 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     127.0.0.1:58092 - "WebSocket /ws/agi" [accepted]
 INFO:     connection open
+INFO:     Started server process [719738]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:38140 - "WebSocket /ws/agi" [accepted]
+INFO:     connection open
+🔌 WebSocket client connected
+📩 Received: {"type":"handshake","message":"대시보드 클라이언트 연결","language":"ko"}
+INFO:     127.0.0.1:59916 - "GET /health HTTP/1.1" 200 OK
