@@ -5285,3 +5285,7 @@
 [2025-11-17 18:55:48] ✅ Memory updated with latest reflection.
 [2025-11-17 19:00:35] ✅ Memory updated with latest reflection.
 [2025-11-17 19:00:48] ✅ Memory updated with latest reflection.
+[2025-11-17 19:05:32] ⚠️ Failed to update memory summary via rc25s_chat: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************oz4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2025-11-17 19:05:32] ✅ Memory updated with latest reflection and episodes.
+[2025-11-17 19:05:47] ✅ Memory updated with latest reflection.
+[2025-11-17 19:05:48] ✅ Memory updated with latest reflection.

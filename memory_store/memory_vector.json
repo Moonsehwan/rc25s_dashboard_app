@@ -5,5 +5,72 @@
     "time": "2025-11-17T18:50:45.482863",
     "reflection": ""
   },
-  "updated_at": "2025-11-17T19:00:48.374469"
+  "updated_at": "2025-11-17T19:05:48.006383",
+  "episodes": [
+    {
+      "time": "2025-11-17T10:05:30.369949Z",
+      "insight": null,
+      "improvement_goal": null,
+      "confidence": null,
+      "signals": {
+        "autoheal_cycles": 1,
+        "autoheal_rebuilds": 0,
+        "autoheal_frontend_issues": 0,
+        "selfcheck_runs": 200,
+        "selfcheck_frontend_issues": 40,
+        "selfcheck_manifest_warnings": 40,
+        "raw_preview": {
+          "autoheal_tail": [
+            "2025-11-16 19:20:51 [AUTOHEAL] 🧠 RC25S AI Autoheal cycle started.",
+            "2025-11-16 19:20:51 [AUTOHEAL] ✅ Frontend build passed.",
+            "2025-11-16 19:20:51 [AUTOHEAL] 🩺 Checking FastAPI health endpoints...",
+            "2025-11-16 19:20:52 [AUTOHEAL] ✅ FastAPI health OK.",
+            "2025-11-16 19:20:52 [AUTOHEAL] ✅ LLM endpoint OK.",
+            "2025-11-16 19:20:52 [AUTOHEAL] ❌ Frontend unreachable (404) → rebuilding & reloading nginx...",
+            "2025-11-16 19:20:59 [AUTOHEAL] ✅ Rebuilt dashboard & reloaded nginx.",
+            "2025-11-16 19:20:59 [AUTOHEAL] 🧩 RC25S AI Autoheal cycle complete."
+          ],
+          "selfcheck_tail": [
+            "2025-11-17 18:12:31 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+            "2025-11-17 18:12:31 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+            "2025-11-17 18:12:32 [SELF-CHECK] ✅ LLM integration healthy.",
+            "2025-11-17 18:12:32 [SELF-CHECK] ✅ LLM integration healthy.",
+            "2025-11-17 18:12:32 [SELF-CHECK] ❌ Frontend static files missing. Reloading Nginx...",
+            "2025-11-17 18:12:32 [SELF-CHECK] ❌ Frontend static files missing. Reloading Nginx...",
+            "2025-11-17 18:12:33 [SELF-CHECK] ⚠️ Manifest not reachable.",
+            "2025-11-17 18:12:33 [SELF-CHECK] ⚠️ Manifest not reachable.",
+            "2025-11-17 18:12:33 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+            "2025-11-17 18:12:33 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
+          ]
+        }
+      },
+      "goals": [
+        {
+          "id": "goal_stability",
+          "priority": 100,
+          "status": "active"
+        },
+        {
+          "id": "goal_frontend_reliability",
+          "priority": 95,
+          "status": "active"
+        },
+        {
+          "id": "goal_self_improvement",
+          "priority": 75,
+          "status": "active"
+        }
+      ],
+      "recent_actions": [
+        {
+          "id": "goal_stability_check_health_endpoints",
+          "goal_id": "goal_stability",
+          "title": "헬스 엔드포인트 정합성 점검",
+          "status": "pending",
+          "result": "failed",
+          "time": "2025-11-16T13:16:54.725060Z"
+        }
+      ]
+    }
+  ]
 }
