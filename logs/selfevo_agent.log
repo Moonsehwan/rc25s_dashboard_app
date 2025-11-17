@@ -3043,3 +3043,4 @@
 [2025-11-18 01:41:01] 💡 LLM 제안: 
 [2025-11-18 01:41:01] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-18 01:41:02] 🔁 서비스 재시작 완료.
+[2025-11-18 01:46:07] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
