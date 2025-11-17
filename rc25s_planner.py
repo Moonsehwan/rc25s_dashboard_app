@@ -21,7 +21,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any
 
-from world_state import update_planner
+from world_state import update_planner, load_world_state
 
 ROOT = Path(__file__).resolve().parent
 AUTOHEAL_AI_LOG = Path("/var/log/rc25s-autoheal-ai.log")
@@ -210,9 +210,45 @@ def generate_tasks(goals: List[Goal], signals: Dict[str, Any]) -> List[Task]:
   return tasks
 
 
+def apply_reflection_to_goals(goals: List[Goal]) -> None:
+  """
+  world_state.reflection 내용을 읽어서 목표 우선순위를 약간 조정한다.
+  - insight / improvement_goal 안의 키워드 기반으로 관련 goal priority를 +5.
+  """
+  try:
+    ws = load_world_state()
+  except Exception:
+    return
+
+  reflection = ws.get("reflection") or {}
+  text = (reflection.get("insight") or "") + " " + (reflection.get("improvement_goal") or "")
+  text_lower = text.lower()
+
+  for g in goals:
+    # 헬스/엔드포인트/health 관련이면 안정성 목표에 가중치
+    if g.id == "goal_stability" and (
+      "헬스" in text or "엔드포인트" in text or "health" in text_lower
+    ):
+      g.priority = min(100, g.priority + 5)
+
+    # 프론트/대시보드/frontend 관련이면 프론트 안정화 목표에 가중치
+    if g.id == "goal_frontend_reliability" and (
+      "프론트" in text or "대시보드" in text or "frontend" in text_lower
+    ):
+      g.priority = min(100, g.priority + 5)
+
+    # self-improvement / 자기분석 같은 키워드는 self_improvement 목표에 가중치
+    if g.id == "goal_self_improvement" and (
+      "self" in text_lower or "자가" in text or "self-improvement" in text_lower
+    ):
+      g.priority = min(100, g.priority + 5)
+
+
 def run_planner() -> PlannerState:
   signals = analyze_signals()
   goals = generate_goals_from_signals(signals)
+  # 최근 리플렉션 결과를 반영해 goal priority를 미세 조정
+  apply_reflection_to_goals(goals)
   tasks = generate_tasks(goals, signals)
   state = PlannerState(
     generated_at=datetime.utcnow().isoformat() + "Z",
@@ -250,5 +286,3 @@ def main(argv: List[str]) -> int:
 
 if __name__ == "__main__":
   raise SystemExit(main(sys.argv[1:]))
-
-
