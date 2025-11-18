@@ -64602,3 +64602,72 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 18:57:57] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류 발생, 매니페스트 도달 불가능 경고 있음.
 [2025-11-18 18:57:57] 🎯 Goal: Nginx 설정 검토 및 SelfCheck와 Autoheal 기준 정렬
 [2025-11-18 18:57:57] 🔹 Confidence: 0.2
+[2025-11-18 19:01:47] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:01:47] ✅ Memory loaded successfully.
+[2025-11-18 19:01:57] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 지속적으로 발생하고 있으며, Manifest에 접근할 수 없는 경고도 존재함.",
+  "improvement_goal": "Nginx 설정 검토 및 SelfCheck와 Autoheal 기준 정렬이 필요함.",
+  "confidence": 0.2
+}
+[2025-11-18 19:01:57] ✅ JSON successfully parsed.
+[2025-11-18 19:01:57] 📘 Reflection saved successfully.
+[2025-11-18 19:01:57] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 지속적으로 발생하고 있으며, Manifest에 접근할 수 없는 경고도 존재함.
+[2025-11-18 19:01:57] 🎯 Goal: Nginx 설정 검토 및 SelfCheck와 Autoheal 기준 정렬이 필요함.
+[2025-11-18 19:01:57] 🔹 Confidence: 0.2
+[2025-11-18 19:02:07] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:02:07] ✅ Memory loaded successfully.
+[2025-11-18 19:02:12] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일 누락으로 인해 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속되고 있습니다.",
+  "improvement_goal": "Nginx 설정 재검토 및 SelfCheck와 Autoheal 기준 정렬 필요.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:02:12] ✅ JSON successfully parsed.
+[2025-11-18 19:02:12] 📘 Reflection saved successfully.
+[2025-11-18 19:02:12] 🪞 Insight: 프론트엔드 정적 파일 누락으로 인해 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속되고 있습니다.
+[2025-11-18 19:02:12] 🎯 Goal: Nginx 설정 재검토 및 SelfCheck와 Autoheal 기준 정렬 필요.
+[2025-11-18 19:02:12] 🔹 Confidence: 0.2
+[2025-11-18 19:02:14] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:02:14] ✅ Memory loaded successfully.
+[2025-11-18 19:02:21] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류 발생, Manifest에 접근할 수 없는 경고가 존재함.",
+  "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬 필요.",
+  "confidence": 0.2
+}
+[2025-11-18 19:02:21] ✅ JSON successfully parsed.
+[2025-11-18 19:02:21] 📘 Reflection saved successfully.
+[2025-11-18 19:02:21] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류 발생, Manifest에 접근할 수 없는 경고가 존재함.
+[2025-11-18 19:02:21] 🎯 Goal: Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬 필요.
+[2025-11-18 19:02:21] 🔹 Confidence: 0.2
+[2025-11-18 19:02:24] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:02:24] ✅ Memory loaded successfully.
+[2025-11-18 19:02:30] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일 누락으로 인해 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속되고 있습니다.",
+  "improvement_goal": "Nginx 설정 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬 필요.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:02:30] ✅ JSON successfully parsed.
+[2025-11-18 19:02:30] 📘 Reflection saved successfully.
+[2025-11-18 19:02:30] 🪞 Insight: 프론트엔드 정적 파일 누락으로 인해 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속되고 있습니다.
+[2025-11-18 19:02:30] 🎯 Goal: Nginx 설정 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬 필요.
+[2025-11-18 19:02:30] 🔹 Confidence: 0.2
+[2025-11-18 19:02:45] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:02:45] ✅ Memory loaded successfully.
+[2025-11-18 19:02:49] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속적으로 발생하고 있습니다.",
+  "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬.",
+  "confidence": 0.2
+}
+[2025-11-18 19:02:49] ✅ JSON successfully parsed.
+[2025-11-18 19:02:49] 📘 Reflection saved successfully.
+[2025-11-18 19:02:49] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속적으로 발생하고 있습니다.
+[2025-11-18 19:02:49] 🎯 Goal: Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬.
+[2025-11-18 19:02:49] 🔹 Confidence: 0.2
