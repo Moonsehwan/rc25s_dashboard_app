@@ -1,20 +1,20 @@
 {
-  "updated_at": "2025-11-18T18:43:06.386997Z",
+  "updated_at": "2025-11-18T18:48:11.102719Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-18T18:43:06.386991Z"
+    "last_decision_time": "2025-11-18T18:48:06.467156Z"
   },
   "reflection": {
-    "insight": "현재 RC25S 시스템은 헬스 체크와 프론트엔드 문제 해결이 지연되고 있어 서비스 안정성이 저하되고 있습니다.",
+    "insight": "현재 RC25S 시스템은 헬스 체크 및 프론트엔드 문제로 인해 안정성이 저하되고 있습니다.",
     "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정 2) 프론트엔드 정적 파일 문제 해결",
     "confidence": 0.2,
-    "self_critique": "최근 헬스 체크와 프론트엔드 파일 문제를 해결하지 못해 서비스 성능이 저하되었습니다. 원인 파악은 되었으나, 실행이 미진했습니다.",
+    "self_critique": "최근 의사결정 및 행동 루프에서 헬스 체크 및 프론트엔드 문제를 해결하지 못해 시스템 성능이 저하되었습니다.",
     "last_decision_score": 0.4,
     "long_term_goals": [
       {
         "id": "ltg_2025_agi",
         "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
-        "description": "시스템의 신뢰성을 높이고 다양한 환경에 적응하기 위해 지속적으로 개선하는 것이 중요합니다.",
+        "description": "시스템의 신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 개선하는 것이 중요합니다.",
         "horizon": "3-6 months",
         "priority": 100,
         "status": "active"
@@ -45,16 +45,16 @@
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "현재 RC25S 시스템은 헬스 체크와 프론트엔드 문제 해결이 지연되고 있으며, 이로 인해 서비스 안정성이 저하되고 있습니다.",
+      "insight": "현재 RC25S 시스템은 헬스 체크 및 프론트엔드 문제로 인해 안정성이 저하되고 있습니다.",
       "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정 2) 프론트엔드 정적 파일 문제 해결",
       "confidence": 0.2,
-      "self_critique": "최근 헬스 체크와 프론트엔드 파일 문제를 해결하지 못해 서비스 성능이 저하되었습니다. 원인 파악은 되었으나, 실행이 미진했습니다.",
+      "self_critique": "최근 의사결정 및 행동 루프에서 헬스 체크 및 프론트엔드 문제를 해결하지 못해 시스템 성능이 저하되었습니다.",
       "last_decision_score": 0.4,
       "long_term_goals": [
         {
           "id": "ltg_2025_agi",
           "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
-          "description": "시스템의 신뢰성을 높이고 다양한 환경에 적응하기 위해 지속적으로 개선하는 것이 중요합니다.",
+          "description": "시스템의 신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 개선하는 것이 중요합니다.",
           "horizon": "3-6 months",
           "priority": 100,
           "status": "active"
@@ -81,7 +81,7 @@
         }
       ]
     },
-    "updated_at": "2025-11-19T03:42:42.750552",
+    "updated_at": "2025-11-19T03:47:46.954270",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",
@@ -252,7 +252,7 @@
     {
       "id": "ltg_2025_agi",
       "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
-      "description": "시스템의 신뢰성을 높이고 다양한 환경에 적응하기 위해 지속적으로 개선하는 것이 중요합니다.",
+      "description": "시스템의 신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 개선하는 것이 중요합니다.",
       "horizon": "3-6 months",
       "priority": 100,
       "status": "active"
@@ -271,24 +271,6 @@
     ]
   },
   "failures_learned": [
-    {
-      "time": "2025-11-16T13:16:54Z",
-      "context": "헬스 체크 엔드포인트 오류 발생",
-      "root_cause": "Nginx 라우팅 설정 오류",
-      "lesson": "정기적으로 헬스 체크와 라우팅 설정을 점검해야 한다는 교훈을 배웠습니다."
-    },
-    {
-      "time": "2025-11-16T13:16:54Z",
-      "context": "헬스 체크 엔드포인트 오류 발생",
-      "root_cause": "Nginx 라우팅 설정 오류",
-      "lesson": "정기적으로 헬스 체크와 라우팅 설정을 점검해야 한다는 교훈을 배웠습니다."
-    },
-    {
-      "time": "2025-11-16T13:16:54Z",
-      "context": "헬스 체크 엔드포인트 오류 발생",
-      "root_cause": "Nginx 라우팅 설정 오류",
-      "lesson": "정기적으로 헬스 체크와 라우팅 설정을 점검해야 한다는 교훈을 배웠습니다."
-    },
     {
       "time": "2025-11-16T13:16:54Z",
       "context": "헬스 체크 엔드포인트 오류 발생",
@@ -558,6 +540,24 @@
       "context": "헬스 체크 엔드포인트에서 오류 발생",
       "root_cause": "Nginx 라우팅 설정 오류",
       "lesson": "헬스 체크 및 라우팅 설정은 정기적으로 점검해야 함을 배웠습니다."
+    },
+    {
+      "time": "2025-11-16T13:16:54Z",
+      "context": "헬스 체크 엔드포인트에서 오류 발생",
+      "root_cause": "Nginx 라우팅 설정 오류",
+      "lesson": "헬스 체크 및 라우팅 설정은 정기적으로 점검해야 한다는 교훈을 얻었습니다."
+    },
+    {
+      "time": "2025-11-16T13:16:54Z",
+      "context": "헬스 체크 엔드포인트에서 오류 발생",
+      "root_cause": "Nginx 라우팅 설정 오류",
+      "lesson": "헬스 체크 및 라우팅 설정은 정기적으로 점검해야 한다는 교훈을 얻었습니다."
+    },
+    {
+      "time": "2025-11-16T13:16:54Z",
+      "context": "헬스 체크 엔드포인트에서 오류 발생",
+      "root_cause": "Nginx 라우팅 설정 오류",
+      "lesson": "헬스 체크 및 라우팅 설정은 정기적으로 점검해야 한다는 교훈을 얻었습니다."
     },
     {
       "time": "2025-11-16T13:16:54Z",
