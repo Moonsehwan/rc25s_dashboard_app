@@ -54,4 +54,5 @@ async def websocket_endpoint(websocket: WebSocket):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("agi_status_dashboard:app", host="0.0.0.0", port=4545)
+    # Nginx에서 /agi/ → 127.0.0.1:8011 으로 프록시하므로 여기서는 8011 포트 사용
+    uvicorn.run("agi_status_dashboard:app", host="0.0.0.0", port=8011)

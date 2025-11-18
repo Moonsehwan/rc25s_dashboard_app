@@ -21,18 +21,16 @@ else
   log "❌ LLM check failed. Will retry after heal cycle."
 fi
 
-# ✅ 3. Frontend JS & Manifest
-if curl -sI https://api.mcpvibe.org/agi/static/js/main.ffd914ce.js | grep -q "200"; then
-  log "✅ Frontend static JS accessible."
-else
-  log "❌ Frontend static files missing. Reloading Nginx..."
-  systemctl reload nginx
-fi
+# ✅ 3. Frontend /agi/ 라우팅 헬스 체크
+# - 기준: https://api.mcpvibe.org/agi/ 에 대한 HTTP 상태코드가 2xx/3xx 이면 OK
+# - 세부 정적 리소스(main.js, manifest.json)는 Autoheal/빌드 단계에서 별도로 검증
 
-if curl -sI https://api.mcpvibe.org/agi/manifest.json | grep -q "200"; then
-  log "✅ Manifest OK."
+FRONT_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://api.mcpvibe.org/agi/)
+if [[ "$FRONT_STATUS" =~ ^2|3 ]]; then
+  log "✅ Frontend /agi/ responding (status=$FRONT_STATUS)."
 else
-  log "⚠️ Manifest not reachable."
+  log "❌ Frontend /agi/ bad status (status=$FRONT_STATUS). Reloading Nginx..."
+  systemctl reload nginx
 fi
 
 log "✅ Self-diagnostic completed successfully."
