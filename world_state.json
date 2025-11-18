@@ -1,23 +1,23 @@
 {
-  "updated_at": "2025-11-18T09:32:46.250712Z",
+  "updated_at": "2025-11-18T09:38:03.991978Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-18T09:18:03.978148Z"
+    "last_decision_time": "2025-11-18T09:38:03.991971Z"
   },
   "reflection": {
-    "insight": "프론트엔드 오류가 빈번하게 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.",
-    "improvement_goal": "Nginx 라우팅을 다시 점검하고 SelfCheck와 Autoheal의 기준을 통일합니다.",
+    "insight": "프론트엔드 정적 파일 누락으로 헬스 체크 실패. SelfCheck에서 40건의 프론트엔드 오류 감지됨.",
+    "improvement_goal": "Nginx 라우팅 재검토 및 프론트엔드 정적 파일 배포 확인. SelfCheck와 Autoheal 기준 정렬.",
     "confidence": 0.1
   },
   "memory": {
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "헬스 엔드포인트 점검에서 실패하여 프론트엔드 오류가 빈번하게 발생하고 있습니다.",
-      "improvement_goal": "Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 통일하여 문제를 해결합니다.",
+      "insight": "프론트엔드 정적 파일이 누락되어 헬스 엔드포인트 점검이 실패했습니다. 여러 번의 SelfCheck에서 프론트엔드 관련 오류가 감지되었습니다.",
+      "improvement_goal": "Nginx 라우팅 및 SelfCheck 기준 재검토. 정적 파일 배포 확인.",
       "confidence": 0.1
     },
-    "updated_at": "2025-11-18T18:32:33.714551",
+    "updated_at": "2025-11-18T18:37:55.173896",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",
