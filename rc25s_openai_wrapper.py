@@ -99,7 +99,7 @@ def rc25s_chat(prompt, history=None, model="gpt-4o-mini"):
         "\n"
         "### 출력 형식 (매우 중요)\n"
         "반드시 아래 JSON 형식 **한 줄**로만 답한다. 자연어 문장을 JSON 바깥에 추가하지 마라.\n"
-        '{\"answer\": \"사용자에게 보여 줄 한국어 답변\", \"actions\": [{\"type\": \"run_planner\"}]} 형태이다.\n"
+        \"{\"answer\": \"사용자에게 보여 줄 한국어 답변\", \"actions\": [{\"type\": \"run_planner\"}]}\ 라는 형태로만 응답한다.\n"
         "\n"
         "허용되는 action.type 값은 다음만 가능하다:\n"
         "- \"run_planner\" : rc25s_planner를 1회 실행하여 goals/tasks를 갱신\n"
