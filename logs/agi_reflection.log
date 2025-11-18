@@ -64906,3 +64906,53 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 19:18:24] 🪞 Insight: 시스템의 프론트엔드 정적 파일이 누락되어 안정성이 저하되고 있으며, 헬스 체크에서 오류가 발생했습니다.
 [2025-11-18 19:18:24] 🎯 Goal: 1) 프론트엔드 정적 파일 복구 2) Nginx 라우팅 점검
 [2025-11-18 19:18:24] 🔹 Confidence: 0.3
+[2025-11-18 19:21:47] 🧠 Raw reflection text:
+{
+  "insight": "현재 프론트엔드와 헬스 체크에서 여러 문제가 발생하여 서비스 안정성이 저하되고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 및 404 오류 수정 2) SelfCheck와 Autoheal 기준 완전 정렬",
+  "confidence": 0.3
+}
+[2025-11-18 19:21:47] ✅ JSON successfully parsed.
+[2025-11-18 19:21:47] 📘 Reflection saved successfully.
+[2025-11-18 19:21:47] 🪞 Insight: 현재 프론트엔드와 헬스 체크에서 여러 문제가 발생하여 서비스 안정성이 저하되고 있습니다.
+[2025-11-18 19:21:47] 🎯 Goal: 1) Nginx 라우팅 재점검 및 404 오류 수정 2) SelfCheck와 Autoheal 기준 완전 정렬
+[2025-11-18 19:21:47] 🔹 Confidence: 0.3
+[2025-11-18 19:21:57] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:21:57] ✅ Memory loaded successfully.
+[2025-11-18 19:22:00] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:22:00] ✅ Memory loaded successfully.
+[2025-11-18 19:22:00] 🧠 Raw reflection text:
+{
+  "insight": "시스템의 프론트엔드에서 다양한 오류가 발생하고 있으며 헬스 체크 결과 또한 부정적입니다.",
+  "improvement_goal": "1) Nginx 라우팅 및 Vite 빌드 점검 2) SelfCheck와 Autoheal 기준 정렬",
+  "confidence": 0.3
+}
+[2025-11-18 19:22:00] ✅ JSON successfully parsed.
+[2025-11-18 19:22:00] 📘 Reflection saved successfully.
+[2025-11-18 19:22:00] 🪞 Insight: 시스템의 프론트엔드에서 다양한 오류가 발생하고 있으며 헬스 체크 결과 또한 부정적입니다.
+[2025-11-18 19:22:00] 🎯 Goal: 1) Nginx 라우팅 및 Vite 빌드 점검 2) SelfCheck와 Autoheal 기준 정렬
+[2025-11-18 19:22:00] 🔹 Confidence: 0.3
+[2025-11-18 19:22:07] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에서 문제가 발생하여 서비스 안정성이 저하되고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) SelfCheck와 Autoheal 기준 정렬",
+  "confidence": 0.3
+}
+[2025-11-18 19:22:07] ✅ JSON successfully parsed.
+[2025-11-18 19:22:07] 📘 Reflection saved successfully.
+[2025-11-18 19:22:07] 🪞 Insight: 프론트엔드와 헬스 체크에서 문제가 발생하여 서비스 안정성이 저하되고 있습니다.
+[2025-11-18 19:22:07] 🎯 Goal: 1) Nginx 라우팅 재점검 2) SelfCheck와 Autoheal 기준 정렬
+[2025-11-18 19:22:07] 🔹 Confidence: 0.3
+[2025-11-18 19:22:22] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:22:22] ✅ Memory loaded successfully.
+[2025-11-18 19:22:27] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에서 많은 문제가 발생하여 서비스 안정성이 크게 저하되고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 및 SelfCheck 기준 재점검 2) 헬스 엔드포인트의 오류 해결",
+  "confidence": 0.2
+}
+[2025-11-18 19:22:27] ✅ JSON successfully parsed.
+[2025-11-18 19:22:27] 📘 Reflection saved successfully.
+[2025-11-18 19:22:27] 🪞 Insight: 프론트엔드와 헬스 체크에서 많은 문제가 발생하여 서비스 안정성이 크게 저하되고 있습니다.
+[2025-11-18 19:22:27] 🎯 Goal: 1) Nginx 라우팅 및 SelfCheck 기준 재점검 2) 헬스 엔드포인트의 오류 해결
+[2025-11-18 19:22:27] 🔹 Confidence: 0.2
