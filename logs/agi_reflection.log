@@ -65010,3 +65010,83 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 19:27:36] 🔹 Confidence: 0.2
 [2025-11-18 19:27:47] 🚀 AGI Reflection Engine started.
 [2025-11-18 19:27:47] ✅ Memory loaded successfully.
+[2025-11-18 19:31:44] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:31:44] ✅ Memory loaded successfully.
+[2025-11-18 19:31:49] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에서 지속적인 문제가 발생하고 있으며, 404 에러가 빈번히 발생하고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅을 재점검하고 2) 프론트엔드 스태틱 파일을 확인합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 19:31:49] ✅ JSON successfully parsed.
+[2025-11-18 19:31:49] 📘 Reflection saved successfully.
+[2025-11-18 19:31:49] 🪞 Insight: 프론트엔드와 헬스 체크에서 지속적인 문제가 발생하고 있으며, 404 에러가 빈번히 발생하고 있습니다.
+[2025-11-18 19:31:49] 🎯 Goal: 1) Nginx 라우팅을 재점검하고 2) 프론트엔드 스태틱 파일을 확인합니다.
+[2025-11-18 19:31:49] 🔹 Confidence: 0.2
+[2025-11-18 19:32:02] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:32:02] ✅ Memory loaded successfully.
+[2025-11-18 19:32:07] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드와 헬스 체크에 지속적인 문제가 발생하고 있으며, 404 에러가 빈번하게 발생하고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅을 다시 점검하고 2) 프론트엔드 스태틱 파일을 복구합니다.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:32:07] ✅ JSON successfully parsed.
+[2025-11-18 19:32:07] 📘 Reflection saved successfully.
+[2025-11-18 19:32:07] 🪞 Insight: 프론트엔드와 헬스 체크에 지속적인 문제가 발생하고 있으며, 404 에러가 빈번하게 발생하고 있습니다.
+[2025-11-18 19:32:07] 🎯 Goal: 1) Nginx 라우팅을 다시 점검하고 2) 프론트엔드 스태틱 파일을 복구합니다.
+[2025-11-18 19:32:07] 🔹 Confidence: 0.2
+[2025-11-18 19:32:20] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:32:20] ✅ Memory loaded successfully.
+[2025-11-18 19:32:26] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:32:26] ✅ Memory loaded successfully.
+[2025-11-18 19:32:26] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에서 지속적인 문제가 있으며, 404 에러와 정적 파일 누락이 발생하고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅을 재검토하고 2) 프론트엔드의 정적 파일을 복구합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 19:32:26] ✅ JSON successfully parsed.
+[2025-11-18 19:32:26] 📘 Reflection saved successfully.
+[2025-11-18 19:32:26] 🪞 Insight: 프론트엔드와 헬스 체크에서 지속적인 문제가 있으며, 404 에러와 정적 파일 누락이 발생하고 있습니다.
+[2025-11-18 19:32:26] 🎯 Goal: 1) Nginx 라우팅을 재검토하고 2) 프론트엔드의 정적 파일을 복구합니다.
+[2025-11-18 19:32:26] 🔹 Confidence: 0.2
+[2025-11-18 19:32:29] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드의 404 에러가 지속적으로 발생하고 있으며, 헬스 체크 지표가 신뢰할 수 없는 상태입니다.",
+  "improvement_goal": "1) Nginx 라우팅을 재점검하고 2) 프론트엔드의 정적 파일을 복구합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 19:32:29] ✅ JSON successfully parsed.
+[2025-11-18 19:32:29] 📘 Reflection saved successfully.
+[2025-11-18 19:32:29] 🪞 Insight: 프론트엔드의 404 에러가 지속적으로 발생하고 있으며, 헬스 체크 지표가 신뢰할 수 없는 상태입니다.
+[2025-11-18 19:32:29] 🎯 Goal: 1) Nginx 라우팅을 재점검하고 2) 프론트엔드의 정적 파일을 복구합니다.
+[2025-11-18 19:32:29] 🔹 Confidence: 0.2
+[2025-11-18 19:32:39] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:32:39] ✅ Memory loaded successfully.
+[2025-11-18 19:32:43] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드의 404 에러가 지속적으로 발생하며, 헬스 체크에서 프론트엔드 정적 파일이 누락되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅을 재점검하고 2) 프론트엔드의 정적 파일을 복구합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 19:32:43] ✅ JSON successfully parsed.
+[2025-11-18 19:32:43] 📘 Reflection saved successfully.
+[2025-11-18 19:32:43] 🪞 Insight: 프론트엔드의 404 에러가 지속적으로 발생하며, 헬스 체크에서 프론트엔드 정적 파일이 누락되었습니다.
+[2025-11-18 19:32:43] 🎯 Goal: 1) Nginx 라우팅을 재점검하고 2) 프론트엔드의 정적 파일을 복구합니다.
+[2025-11-18 19:32:43] 🔹 Confidence: 0.2
+[2025-11-18 19:32:56] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:32:56] ✅ Memory loaded successfully.
+[2025-11-18 19:33:01] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드의 정적 파일이 누락되어 404 에러가 지속적으로 발생하고 있습니다. 헬스 체크 결과도 일부 오류가 발견되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅과 설정을 재점검하고 2) 프론트엔드의 정적 파일 복구 작업을 진행합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 19:33:01] ✅ JSON successfully parsed.
+[2025-11-18 19:33:01] 📘 Reflection saved successfully.
+[2025-11-18 19:33:01] 🪞 Insight: 프론트엔드의 정적 파일이 누락되어 404 에러가 지속적으로 발생하고 있습니다. 헬스 체크 결과도 일부 오류가 발견되었습니다.
+[2025-11-18 19:33:01] 🎯 Goal: 1) Nginx 라우팅과 설정을 재점검하고 2) 프론트엔드의 정적 파일 복구 작업을 진행합니다.
+[2025-11-18 19:33:01] 🔹 Confidence: 0.2
