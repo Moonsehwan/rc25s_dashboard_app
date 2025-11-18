@@ -44,3 +44,4 @@ Job for mcp.service failed.
 See "systemctl status mcp.service" and "journalctl -xeu mcp.service" for details.
 Job for mcp.service failed because the control process exited with error code.
 See "systemctl status mcp.service" and "journalctl -xeu mcp.service" for details.
+[2025-11-18 17:52:26.455205] Decision: INIT

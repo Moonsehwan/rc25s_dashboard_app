@@ -1638,3 +1638,15 @@ INFO:     connection open
 🔌 WebSocket client connected
 📩 Received: {"type":"handshake","message":"대시보드 클라이언트 연결","language":"ko"}
 INFO:     127.0.0.1:49754 - "GET /health HTTP/1.1" 200 OK
+INFO:     Started server process [1235330]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47008 - "WebSocket /ws/agi" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:59566 - "WebSocket /ws/agi" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59568 - "WebSocket /ws/system" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     connection closed
