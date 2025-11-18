@@ -43,6 +43,8 @@ def safe_parse_json(text: str) -> dict:
             "insight": "No reflection generated",
             "improvement_goal": "Investigate API response issue",
             "confidence": 0.0,
+            "self_critique": "",
+            "last_decision_score": 0.0,
             "long_term_goals": [],
             "weekly_summary": {},
             "failures_learned": [],
@@ -56,6 +58,10 @@ def safe_parse_json(text: str) -> dict:
         parsed = json.loads(text)
         log("✅ JSON successfully parsed.")
         # 누락된 필드는 기본값으로 채워서 world_state와의 호환성을 유지
+        if "self_critique" not in parsed:
+            parsed["self_critique"] = ""
+        if "last_decision_score" not in parsed:
+            parsed["last_decision_score"] = 0.0
         if "long_term_goals" not in parsed:
             parsed["long_term_goals"] = []
         if "weekly_summary" not in parsed:
@@ -69,6 +75,8 @@ def safe_parse_json(text: str) -> dict:
             "insight": "Failed to decode LLM reflection",
             "improvement_goal": "Improve parsing resilience",
             "confidence": 0.0,
+            "self_critique": "",
+            "last_decision_score": 0.0,
             "long_term_goals": [],
             "weekly_summary": {},
             "failures_learned": [],
@@ -115,6 +123,7 @@ def run_reflection() -> None:
 
     planner = ws.get("planner") or {}
     last_actions = ws.get("last_actions") or []
+    system = ws.get("system") or {}
 
     prompt = f"""
 You are the RC25S AGI Reflection Engine.
@@ -129,11 +138,16 @@ Analyze the following memory and world state, then output ONLY valid JSON.
 ## Recent actions
 {json.dumps(last_actions, ensure_ascii=False, indent=2)}
 
+## System summary (health/autotest/etc.)
+{json.dumps(system, ensure_ascii=False, indent=2)}
+
 Return JSON with the following structure (Korean is allowed/preferred in text fields):
 {{
   "insight": "short Korean summary of current system situation",
   "improvement_goal": "1-2 concrete next improvement directions (Korean allowed)",
   "confidence": 0.0-1.0,
+  "self_critique": "간단한 자기 평가: 최근 의사결정/행동 루프에서 무엇이 잘/못 되었는지에 대한 한국어 설명",
+  "last_decision_score": 0.0-1.0,
   "long_term_goals": [
     {{
       "id": "ltg_2025_agi",

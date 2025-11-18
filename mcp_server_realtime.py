@@ -8,7 +8,7 @@ import subprocess
 import socket
 
 from world_state import load_world_state
-from rc25s_planner import run_planner
+from rc25s_planner import run_planner, PLANNER_STATE_PATH
 from rc25s_task_executor import main as run_executor
 from rc25s_openai_wrapper import rc25s_chat
 
@@ -288,6 +288,50 @@ async def agi_ws(websocket: WebSocket):
                     except Exception as e:
                         await websocket.send_json(
                             {"type": "error", "message": f"trigger_task 실행 실패: {e}"}
+                        )
+                    continue
+
+                # 2-3-보완) 목표 승인 (approve_goal)
+                if command == "approve_goal":
+                    goal_id = cmd_payload.get("goal_id")
+                    try:
+                        # 로컬 플래너 상태 파일에서 해당 goal_id에 속한 작업을 approved=True로 표시
+                        try:
+                            with open(PLANNER_STATE_PATH, "r", encoding="utf-8") as f:
+                                planner_state = json.load(f)
+                        except FileNotFoundError:
+                            planner_state = {}
+
+                        changed = False
+                        for t in planner_state.get("tasks", []):
+                            if t.get("goal_id") == goal_id:
+                                if not t.get("approved"):
+                                    t["approved"] = True
+                                    changed = True
+
+                        if changed:
+                            with open(PLANNER_STATE_PATH, "w", encoding="utf-8") as f:
+                                json.dump(planner_state, f, ensure_ascii=False, indent=2)
+
+                        await websocket.send_json(
+                            {
+                                "type": "event",
+                                "message": f"✅ Goal 승인 처리 완료 (goal_id={goal_id}, changed={changed})",
+                            }
+                        )
+
+                        # world_state도 최신 상태로 다시 내려준다.
+                        state = load_world_state()
+                        await websocket.send_json(
+                            {
+                                "type": "world_state",
+                                "world_state": state,
+                                "timestamp": state.get("updated_at"),
+                            }
+                        )
+                    except Exception as e:
+                        await websocket.send_json(
+                            {"type": "error", "message": f"approve_goal 처리 실패: {e}"}
                         )
                     continue
 

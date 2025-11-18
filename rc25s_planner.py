@@ -26,6 +26,7 @@ from world_state import update_planner, load_world_state
 ROOT = Path(__file__).resolve().parent
 AUTOHEAL_AI_LOG = Path("/var/log/rc25s-autoheal-ai.log")
 SELF_CHECK_LOG = Path("/var/log/rc25s-autoheal.log")
+NGINX_ERROR_LOG = Path("/var/log/nginx/error.log")
 PLANNER_STATE_PATH = ROOT / "memory_store" / "rc25s_planner_state.json"
 
 
@@ -78,6 +79,7 @@ def analyze_signals() -> Dict[str, Any]:
   """Autoheal / Self-Check 로그를 기반으로 간단한 신호 요약을 만든다."""
   ai_lines = tail_lines(AUTOHEAL_AI_LOG)
   sc_lines = tail_lines(SELF_CHECK_LOG)
+  nginx_lines = tail_lines(NGINX_ERROR_LOG)
 
   # 카운트 및 최근 상태 감지
   def count_contains(lines: List[str], keyword: str) -> int:
@@ -92,9 +94,14 @@ def analyze_signals() -> Dict[str, Any]:
     "selfcheck_frontend_issues": count_contains(sc_lines, "Frontend static files missing")
     + count_contains(sc_lines, "dashboard bad status"),
     "selfcheck_manifest_warnings": count_contains(sc_lines, "Manifest not reachable"),
+    # Nginx 에러 로그 기반 신호 (Step 2: Expanded sensors)
+    "nginx_error_total_lines": len(nginx_lines),
+    "nginx_error_agi_issues": count_contains(nginx_lines, "/agi")
+    + count_contains(nginx_lines, "api.mcpvibe.org"),
     "raw_preview": {
       "autoheal_tail": ai_lines[-10:],
       "selfcheck_tail": sc_lines[-10:],
+      "nginx_error_tail": nginx_lines[-10:],
     },
   }
   return signals
@@ -249,8 +256,29 @@ def apply_reflection_to_goals(goals: List[Goal]) -> None:
     return
 
   reflection = ws.get("reflection") or {}
+  core = ws.get("core") or {}
+  system = ws.get("system") or {}
+  last_actions = ws.get("last_actions") or []
+
   text = (reflection.get("insight") or "") + " " + (reflection.get("improvement_goal") or "")
   text_lower = text.lower()
+
+  # 최근 Reflection의 점수/자기평가를 기반으로 메타 가중치 계산
+  score = core.get("last_decision_score")
+  try:
+    score_val = float(score) if isinstance(score, (int, float)) else None
+  except Exception:
+    score_val = None
+
+  # AutoTest 요약 및 최근 실패 액션 수집
+  autotest = system.get("autotest") or {}
+  all_passed = autotest.get("all_passed")
+  failed_steps = [s for s in (autotest.get("steps") or []) if not s.get("passed")]
+  failed_actions = [
+    a
+    for a in last_actions
+    if (a.get("result") == "failed") or (a.get("status") == "failed")
+  ]
 
   for g in goals:
     # 헬스/엔드포인트/health 관련이면 안정성 목표에 가중치
@@ -270,6 +298,19 @@ def apply_reflection_to_goals(goals: List[Goal]) -> None:
       "self" in text_lower or "자가" in text or "self-improvement" in text_lower
     ):
       g.priority = min(100, g.priority + 5)
+
+    # 메타러닝 ①: Reflection 점수가 낮으면 self_improvement / 안정성 목표의 우선순위를 더 끌어올린다.
+    if score_val is not None and score_val < 0.5:
+      if g.id in ("goal_self_improvement", "goal_stability"):
+        g.priority = min(100, g.priority + 5)
+
+    # 메타러닝 ②: AutoTest 실패가 있으면 안정성 목표를 더 강화
+    if g.id == "goal_stability" and (all_passed is False or len(failed_steps) > 0):
+      g.priority = min(100, g.priority + 10)
+
+    # 메타러닝 ③: 최근 실행한 액션 중 실패가 있으면 self_improvement 목표 우선순위 상향
+    if g.id == "goal_self_improvement" and len(failed_actions) > 0:
+      g.priority = min(100, g.priority + 10)
 
 
 def run_planner() -> PlannerState:
