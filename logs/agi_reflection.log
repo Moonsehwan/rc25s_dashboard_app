@@ -63984,3 +63984,81 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 18:12:40] 🪞 Insight: 프론트엔드 오류가 계속 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다. Nginx 및 관련 설정에 문제가 있습니다.
 [2025-11-18 18:12:40] 🎯 Goal: Nginx 라우팅 재점검 및 SelfCheck 기준 완전 정렬
 [2025-11-18 18:12:40] 🔹 Confidence: 0.2
+[2025-11-18 18:16:44] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에서 여러 오류가 발생하고 있으며, 특히 Nginx에서 404 오류가 지속적으로 감지되고 있습니다.",
+  "improvement_goal": "Nginx 라우팅 점검, SelfCheck와 Autoheal 기준 정렬 수행",
+  "confidence": 0.1
+}
+[2025-11-18 18:16:44] ✅ JSON successfully parsed.
+[2025-11-18 18:16:44] 📘 Reflection saved successfully.
+[2025-11-18 18:16:44] 🪞 Insight: 프론트엔드와 헬스 체크에서 여러 오류가 발생하고 있으며, 특히 Nginx에서 404 오류가 지속적으로 감지되고 있습니다.
+[2025-11-18 18:16:44] 🎯 Goal: Nginx 라우팅 점검, SelfCheck와 Autoheal 기준 정렬 수행
+[2025-11-18 18:16:44] 🔹 Confidence: 0.1
+[2025-11-18 18:16:55] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:16:55] ✅ Memory loaded successfully.
+[2025-11-18 18:17:00] 🧠 Raw reflection text:
+{
+  "insight": "Nginx에서 404 오류가 지속적으로 발생하고 있으며, 프론트엔드 관련 문제가 여전히 존재합니다.",
+  "improvement_goal": "Nginx 라우팅 점검과 SelfCheck 기준 정렬 수행",
+  "confidence": 0.1
+}
+[2025-11-18 18:17:00] ✅ JSON successfully parsed.
+[2025-11-18 18:17:00] 📘 Reflection saved successfully.
+[2025-11-18 18:17:00] 🪞 Insight: Nginx에서 404 오류가 지속적으로 발생하고 있으며, 프론트엔드 관련 문제가 여전히 존재합니다.
+[2025-11-18 18:17:00] 🎯 Goal: Nginx 라우팅 점검과 SelfCheck 기준 정렬 수행
+[2025-11-18 18:17:00] 🔹 Confidence: 0.1
+[2025-11-18 18:17:14] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:17:14] ✅ Memory loaded successfully.
+[2025-11-18 18:17:16] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:17:16] ✅ Memory loaded successfully.
+[2025-11-18 18:17:22] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드에서 여러 차례 404 오류가 발생하고 있으며, 헬스 체크에서 정합성 점검이 실패했습니다.",
+  "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬 수행",
+  "confidence": 0.1
+}
+[2025-11-18 18:17:22] ✅ JSON successfully parsed.
+[2025-11-18 18:17:22] 📘 Reflection saved successfully.
+[2025-11-18 18:17:22] 🪞 Insight: 프론트엔드에서 여러 차례 404 오류가 발생하고 있으며, 헬스 체크에서 정합성 점검이 실패했습니다.
+[2025-11-18 18:17:22] 🎯 Goal: Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬 수행
+[2025-11-18 18:17:22] 🔹 Confidence: 0.1
+[2025-11-18 18:17:24] 🧠 Raw reflection text:
+{
+  "insight": "Nginx에서 404 오류가 지속적으로 발생하고 있으며, 프론트엔드 정합성이 부족합니다.",
+  "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬 수행",
+  "confidence": 0.1
+}
+[2025-11-18 18:17:24] ✅ JSON successfully parsed.
+[2025-11-18 18:17:24] 📘 Reflection saved successfully.
+[2025-11-18 18:17:24] 🪞 Insight: Nginx에서 404 오류가 지속적으로 발생하고 있으며, 프론트엔드 정합성이 부족합니다.
+[2025-11-18 18:17:24] 🎯 Goal: Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬 수행
+[2025-11-18 18:17:24] 🔹 Confidence: 0.1
+[2025-11-18 18:17:38] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:17:38] ✅ Memory loaded successfully.
+[2025-11-18 18:17:44] 🧠 Raw reflection text:
+{
+  "insight": "Nginx에서 404 오류가 발생하고 있으며, 프론트엔드 정합성에 심각한 문제가 존재합니다.",
+  "improvement_goal": "Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 완전히 정렬합니다.",
+  "confidence": 0.1
+}
+[2025-11-18 18:17:44] ✅ JSON successfully parsed.
+[2025-11-18 18:17:44] 📘 Reflection saved successfully.
+[2025-11-18 18:17:44] 🪞 Insight: Nginx에서 404 오류가 발생하고 있으며, 프론트엔드 정합성에 심각한 문제가 존재합니다.
+[2025-11-18 18:17:44] 🎯 Goal: Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 완전히 정렬합니다.
+[2025-11-18 18:17:44] 🔹 Confidence: 0.1
+[2025-11-18 18:17:58] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:17:58] ✅ Memory loaded successfully.
+[2025-11-18 18:18:04] 🧠 Raw reflection text:
+{
+  "insight": "Nginx에서 프론트엔드 정합성 문제가 발생하여 404 오류가 지속되고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.",
+  "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬.",
+  "confidence": 0.1
+}
+[2025-11-18 18:18:05] ✅ JSON successfully parsed.
+[2025-11-18 18:18:05] 📘 Reflection saved successfully.
+[2025-11-18 18:18:05] 🪞 Insight: Nginx에서 프론트엔드 정합성 문제가 발생하여 404 오류가 지속되고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.
+[2025-11-18 18:18:05] 🎯 Goal: Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬.
+[2025-11-18 18:18:05] 🔹 Confidence: 0.1
+[2025-11-18 18:18:17] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:18:17] ✅ Memory loaded successfully.

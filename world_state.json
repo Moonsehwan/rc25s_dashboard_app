@@ -1,23 +1,23 @@
 {
-  "updated_at": "2025-11-18T09:12:40.689907Z",
+  "updated_at": "2025-11-18T09:18:05.008245Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-18T09:08:03.926142Z"
+    "last_decision_time": "2025-11-18T09:18:03.978148Z"
   },
   "reflection": {
-    "insight": "프론트엔드 오류가 계속 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다. Nginx 및 관련 설정에 문제가 있습니다.",
-    "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck 기준 완전 정렬",
-    "confidence": 0.2
+    "insight": "Nginx에서 프론트엔드 정합성 문제가 발생하여 404 오류가 지속되고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.",
+    "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬.",
+    "confidence": 0.1
   },
   "memory": {
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "프론트엔드 오류가 계속 발생하고 헬스 엔드포인트 점검이 실패했습니다. Nginx 및 관련 설정에 문제가 있습니다.",
-      "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck 기준 완전 정렬",
-      "confidence": 0.2
+      "insight": "Nginx에서 404 오류가 발생하고 있으며, 프론트엔드 정합성에 심각한 문제가 존재합니다.",
+      "improvement_goal": "Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 완전히 정렬합니다.",
+      "confidence": 0.1
     },
-    "updated_at": "2025-11-18T18:12:34.958145",
+    "updated_at": "2025-11-18T18:17:44.379619",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",
