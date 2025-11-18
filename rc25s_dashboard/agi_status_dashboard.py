@@ -2,6 +2,8 @@ from fastapi import FastAPI, WebSocket, Request
 from fastapi.middleware.cors import CORSMiddleware
 import psutil, datetime, subprocess, os, json
 
+from rc25s_openai_wrapper import rc25s_chat
+
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
