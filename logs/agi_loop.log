@@ -2629,3 +2629,42 @@ NameError: name 'client' is not defined
 [2025-11-18 19:42:48] 🚀 AGI Self-Evolution Loop started.
 [2025-11-18 19:42:48] ▶ Running Reflection Engine ...
 [2025-11-18 19:42:48] ▶ Running Reflection Engine ...
+[2025-11-18 19:47:17] 🚀 AGI Self-Evolution Loop started.
+[2025-11-18 19:47:17] 🚀 AGI Self-Evolution Loop started.
+[2025-11-18 19:47:17] ▶ Running Reflection Engine ...
+[2025-11-18 19:47:17] ▶ Running Reflection Engine ...
+[2025-11-18 19:47:21] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:47:21] ✅ Memory loaded successfully.
+[2025-11-18 19:47:26] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드의 정적 파일이 누락되어 Nginx 라우팅에 문제가 발생하고 있으며, 헬스 체크가 실패했습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 누락된 정적 파일 복구",
+  "confidence": 0.2
+}
+[2025-11-18 19:47:26] ✅ JSON successfully parsed.
+[2025-11-18 19:47:26] 📘 Reflection saved successfully.
+[2025-11-18 19:47:26] 🪞 Insight: 프론트엔드의 정적 파일이 누락되어 Nginx 라우팅에 문제가 발생하고 있으며, 헬스 체크가 실패했습니다.
+[2025-11-18 19:47:26] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 누락된 정적 파일 복구
+[2025-11-18 19:47:26] 🔹 Confidence: 0.2
+[2025-11-18 19:47:29] ✅ Reflection Engine finished successfully.
+[2025-11-18 19:47:29] ✅ Reflection Engine finished successfully.
+[2025-11-18 19:47:29] ▶ Running Memory Integration ...
+[2025-11-18 19:47:29] ▶ Running Memory Integration ...
+[2025-11-18 19:47:34] ✅ Memory updated with latest reflection.
+[2025-11-18 19:47:36] ✅ Memory Integration finished successfully.
+[2025-11-18 19:47:36] ✅ Memory Integration finished successfully.
+[2025-11-18 19:47:36] ▶ Running AutoFix Engine ...
+[2025-11-18 19:47:36] ▶ Running AutoFix Engine ...
+[2025-11-18 19:47:42] 🚀 AutoFix Loop started.
+[2025-11-18 19:47:42] 🧩 Improvement goal: 1) Nginx 라우팅 재점검 2) 정적 파일 복구 및 통합 점검 진행
+[2025-11-18 19:47:42] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-18 19:47:44] ✅ AutoFix Engine finished successfully.
+[2025-11-18 19:47:44] ✅ AutoFix Engine finished successfully.
+[2025-11-18 19:47:44] 🧠 AGI Self-Evolution Cycle Complete.
+[2025-11-18 19:47:44] 🧠 AGI Self-Evolution Cycle Complete.
