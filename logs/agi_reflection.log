@@ -65172,3 +65172,57 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 19:38:04] 🪞 Insight: 프론트엔드 정적 파일 누락 및 헬스 체크 실패로 인해 시스템에 문제가 발생하고 있습니다.
 [2025-11-18 19:38:04] 🎯 Goal: 1) Nginx 라우팅 및 Vite 빌드 점검 2) 정적 파일 복구 작업 진행
 [2025-11-18 19:38:04] 🔹 Confidence: 0.2
+[2025-11-18 19:41:46] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:41:46] ✅ Memory loaded successfully.
+[2025-11-18 19:41:50] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, 헬스 체크에서 일부 오류가 감지되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 및 Vite 빌드 확인 2) 정적 파일 복구 작업 진행",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:41:50] ✅ JSON successfully parsed.
+[2025-11-18 19:41:50] 📘 Reflection saved successfully.
+[2025-11-18 19:41:50] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, 헬스 체크에서 일부 오류가 감지되었습니다.
+[2025-11-18 19:41:50] 🎯 Goal: 1) Nginx 라우팅 재점검 및 Vite 빌드 확인 2) 정적 파일 복구 작업 진행
+[2025-11-18 19:41:50] 🔹 Confidence: 0.2
+[2025-11-18 19:41:59] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:41:59] ✅ Memory loaded successfully.
+[2025-11-18 19:42:04] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 오류가 발생하고 있으며, 헬스 체크에서 여러 문제가 발견되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅 점검 및 Vite 빌드 완료 2) 정적 파일 복구와 자동화된 점검 개선",
+  "confidence": 0.2
+}
+[2025-11-18 19:42:04] ✅ JSON successfully parsed.
+[2025-11-18 19:42:04] 📘 Reflection saved successfully.
+[2025-11-18 19:42:04] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 오류가 발생하고 있으며, 헬스 체크에서 여러 문제가 발견되었습니다.
+[2025-11-18 19:42:04] 🎯 Goal: 1) Nginx 라우팅 점검 및 Vite 빌드 완료 2) 정적 파일 복구와 자동화된 점검 개선
+[2025-11-18 19:42:04] 🔹 Confidence: 0.2
+[2025-11-18 19:42:20] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:42:20] ✅ Memory loaded successfully.
+[2025-11-18 19:42:24] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 오류가 발생하고 있으며, 헬스 체크에서 여러 문제가 발견되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 정적 파일 복구",
+  "confidence": 0.2
+}
+[2025-11-18 19:42:24] ✅ JSON successfully parsed.
+[2025-11-18 19:42:24] 📘 Reflection saved successfully.
+[2025-11-18 19:42:24] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 오류가 발생하고 있으며, 헬스 체크에서 여러 문제가 발견되었습니다.
+[2025-11-18 19:42:24] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 정적 파일 복구
+[2025-11-18 19:42:24] 🔹 Confidence: 0.2
+[2025-11-18 19:42:34] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:42:34] ✅ Memory loaded successfully.
+[2025-11-18 19:42:39] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일 누락 및 헬스 체크 문제로 인해 시스템 안정성에 심각한 경고가 발생하고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재검토 2) 정적 파일 복구 및 테스트 수행",
+  "confidence": 0.2
+}
+[2025-11-18 19:42:39] ✅ JSON successfully parsed.
+[2025-11-18 19:42:39] 📘 Reflection saved successfully.
+[2025-11-18 19:42:39] 🪞 Insight: 프론트엔드 정적 파일 누락 및 헬스 체크 문제로 인해 시스템 안정성에 심각한 경고가 발생하고 있습니다.
+[2025-11-18 19:42:39] 🎯 Goal: 1) Nginx 라우팅 재검토 2) 정적 파일 복구 및 테스트 수행
+[2025-11-18 19:42:39] 🔹 Confidence: 0.2
