@@ -258,6 +258,39 @@ async def agi_ws(websocket: WebSocket):
                         )
                     continue
 
+                # 2-3-확장) 특정 task_id를 지정한 실행 요청 (trigger_task)
+                if command == "trigger_task":
+                    task_id = cmd_payload.get("task_id")
+                    try:
+                        await websocket.send_json(
+                            {
+                                "type": "event",
+                                "message": f"🧩 trigger_task 실행 요청 수신 (task_id={task_id})",
+                            }
+                        )
+                        # 현재 rc25s_task_executor는 개별 task_id 실행을 직접 지원하지 않으므로,
+                        # 우선순위가 가장 높은 pending task 1개를 실행하는 기존 로직을 재사용한다.
+                        exit_code = await _run_executor_once()
+                        await websocket.send_json(
+                            {
+                                "type": "event",
+                                "message": f"🧩 trigger_task 실행 종료 (exit_code={exit_code}, task_id={task_id})",
+                            }
+                        )
+                        state = load_world_state()
+                        await websocket.send_json(
+                            {
+                                "type": "world_state",
+                                "world_state": state,
+                                "timestamp": state.get("updated_at"),
+                            }
+                        )
+                    except Exception as e:
+                        await websocket.send_json(
+                            {"type": "error", "message": f"trigger_task 실행 실패: {e}"}
+                        )
+                    continue
+
                 # 2-4) Self-Check 실행
                 if command == "command_selfcheck":
                     script = "/srv/repo/vibecoding/rc25s-selfcheck.sh"
