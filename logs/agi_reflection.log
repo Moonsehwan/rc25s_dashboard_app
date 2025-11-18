@@ -64671,3 +64671,89 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 19:02:49] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속적으로 발생하고 있습니다.
 [2025-11-18 19:02:49] 🎯 Goal: Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬.
 [2025-11-18 19:02:49] 🔹 Confidence: 0.2
+[2025-11-18 19:06:47] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:06:47] ✅ Memory loaded successfully.
+[2025-11-18 19:06:50] 🧠 Raw reflection text:
+```json
+{
+  "insight": "시스템의 헬스 체크와 프론트엔드 정합성 문제가 발생하여 안정성이 저하되고 있습니다.",
+  "improvement_goal": "Nginx 라우팅을 재점검하고 헬스 엔드포인트의 정합성을 확인할 필요가 있습니다.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:06:50] ✅ JSON successfully parsed.
+[2025-11-18 19:06:50] 📘 Reflection saved successfully.
+[2025-11-18 19:06:50] 🪞 Insight: 시스템의 헬스 체크와 프론트엔드 정합성 문제가 발생하여 안정성이 저하되고 있습니다.
+[2025-11-18 19:06:50] 🎯 Goal: Nginx 라우팅을 재점검하고 헬스 엔드포인트의 정합성을 확인할 필요가 있습니다.
+[2025-11-18 19:06:50] 🔹 Confidence: 0.2
+[2025-11-18 19:06:51] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 지속적으로 발생하고 있으며, Manifest 접근 경고도 빈번하게 발생하고 있습니다.",
+  "improvement_goal": "Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 정렬해야 합니다.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:06:51] ✅ JSON successfully parsed.
+[2025-11-18 19:06:51] 📘 Reflection saved successfully.
+[2025-11-18 19:06:51] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 지속적으로 발생하고 있으며, Manifest 접근 경고도 빈번하게 발생하고 있습니다.
+[2025-11-18 19:06:51] 🎯 Goal: Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 정렬해야 합니다.
+[2025-11-18 19:06:51] 🔹 Confidence: 0.2
+[2025-11-18 19:07:02] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:07:02] ✅ Memory loaded successfully.
+[2025-11-18 19:07:08] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 여러 404 오류와 Manifest 접근 경고가 발생하고 있습니다.",
+  "improvement_goal": "Nginx 라우팅을 점검하고 SelfCheck와 Autoheal 기준을 정렬하여 오류를 줄입니다.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:07:08] ✅ JSON successfully parsed.
+[2025-11-18 19:07:08] 📘 Reflection saved successfully.
+[2025-11-18 19:07:08] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 여러 404 오류와 Manifest 접근 경고가 발생하고 있습니다.
+[2025-11-18 19:07:08] 🎯 Goal: Nginx 라우팅을 점검하고 SelfCheck와 Autoheal 기준을 정렬하여 오류를 줄입니다.
+[2025-11-18 19:07:08] 🔹 Confidence: 0.2
+[2025-11-18 19:07:21] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:07:21] ✅ Memory loaded successfully.
+[2025-11-18 19:07:26] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일 누락으로 여러 오류 발생 중. 헬스 체크 상태 실패.",
+  "improvement_goal": "Nginx 라우팅 점검 및 SelfCheck 기준 조정, 정적 파일 확인의 우선적 해결 필요.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:07:26] ✅ JSON successfully parsed.
+[2025-11-18 19:07:26] 📘 Reflection saved successfully.
+[2025-11-18 19:07:26] 🪞 Insight: 프론트엔드 정적 파일 누락으로 여러 오류 발생 중. 헬스 체크 상태 실패.
+[2025-11-18 19:07:26] 🎯 Goal: Nginx 라우팅 점검 및 SelfCheck 기준 조정, 정적 파일 확인의 우선적 해결 필요.
+[2025-11-18 19:07:26] 🔹 Confidence: 0.2
+[2025-11-18 19:07:36] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:07:36] ✅ Memory loaded successfully.
+[2025-11-18 19:07:40] 🧠 Raw reflection text:
+{
+  "insight": "현재 프론트엔드 정적 파일의 누락으로 인해 오류 및 헬스 체크 실패가 발생하고 있습니다.",
+  "improvement_goal": "Nginx 라우팅 및 정적 파일 확인을 즉시 수행하고, SelfCheck 기준을 조정하여 신뢰성을 높여야 합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 19:07:40] ✅ JSON successfully parsed.
+[2025-11-18 19:07:40] 📘 Reflection saved successfully.
+[2025-11-18 19:07:40] 🪞 Insight: 현재 프론트엔드 정적 파일의 누락으로 인해 오류 및 헬스 체크 실패가 발생하고 있습니다.
+[2025-11-18 19:07:40] 🎯 Goal: Nginx 라우팅 및 정적 파일 확인을 즉시 수행하고, SelfCheck 기준을 조정하여 신뢰성을 높여야 합니다.
+[2025-11-18 19:07:40] 🔹 Confidence: 0.2
+[2025-11-18 19:07:49] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:07:49] ✅ Memory loaded successfully.
+[2025-11-18 19:07:56] 🧠 Raw reflection text:
+```json
+{
+  "insight": "현재 프론트엔드 정적 파일이 누락되어 오류가 발생하고 있으며, 헬스 체크에 실패하고 있습니다.",
+  "improvement_goal": "Nginx 라우팅을 점검하고, 프론트엔드 정적 파일을 확인하여 재구축을 진행해야 합니다.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:07:56] ✅ JSON successfully parsed.
+[2025-11-18 19:07:56] 📘 Reflection saved successfully.
+[2025-11-18 19:07:56] 🪞 Insight: 현재 프론트엔드 정적 파일이 누락되어 오류가 발생하고 있으며, 헬스 체크에 실패하고 있습니다.
+[2025-11-18 19:07:56] 🎯 Goal: Nginx 라우팅을 점검하고, 프론트엔드 정적 파일을 확인하여 재구축을 진행해야 합니다.
+[2025-11-18 19:07:56] 🔹 Confidence: 0.2

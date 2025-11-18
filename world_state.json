@@ -1,23 +1,23 @@
 {
-  "updated_at": "2025-11-18T10:02:49.589961Z",
+  "updated_at": "2025-11-18T10:08:04.067886Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-18T09:58:04.062974Z"
+    "last_decision_time": "2025-11-18T10:08:04.067880Z"
   },
   "reflection": {
-    "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속적으로 발생하고 있습니다.",
-    "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 정렬.",
+    "insight": "현재 프론트엔드 정적 파일이 누락되어 오류가 발생하고 있으며, 헬스 체크에 실패하고 있습니다.",
+    "improvement_goal": "Nginx 라우팅을 점검하고, 프론트엔드 정적 파일을 확인하여 재구축을 진행해야 합니다.",
     "confidence": 0.2
   },
   "memory": {
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "프론트엔드 정적 파일 누락으로 인해 404 오류가 발생하고 있으며, Manifest 접근 경고가 지속되고 있습니다.",
-      "improvement_goal": "Nginx 설정 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬 필요.",
+      "insight": "현재 프론트엔드 정적 파일의 누락으로 인해 오류 및 헬스 체크 실패가 발생하고 있습니다.",
+      "improvement_goal": "Nginx 라우팅 및 정적 파일 확인을 즉시 수행하고, SelfCheck 기준을 조정하여 신뢰성을 높여야 합니다.",
       "confidence": 0.2
     },
-    "updated_at": "2025-11-18T19:02:41.917822",
+    "updated_at": "2025-11-18T19:07:44.684292",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",

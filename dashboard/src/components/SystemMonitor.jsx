@@ -4,7 +4,8 @@ export default function SystemMonitor() {
   const [stats, setStats] = useState({ cpu: 0, mem: 0, disk: 0 });
 
   useEffect(() => {
-    const ws = new WebSocket("wss://api.mcpvibe.org/ws/system");
+    const proto = window.location.protocol === "https:" ? "wss://" : "ws://";
+    const ws = new WebSocket(`${proto}${window.location.host}/ws/system2`);
     ws.onmessage = (event) => setStats(JSON.parse(event.data));
     return () => ws.close();
   }, []);

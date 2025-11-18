@@ -96,7 +96,8 @@ export default function App() {
     let sysWS;
     try {
       const proto = window.location.protocol === "https:" ? "wss://" : "ws://";
-      sysWS = new WebSocket(`${proto}${window.location.host}/ws/system`);
+      // 새로운 시스템 모니터링 채널 (/ws/system2)
+      sysWS = new WebSocket(`${proto}${window.location.host}/ws/system2`);
       sysWS.onmessage = (event) => {
         try {
           const data = JSON.parse(event.data);
