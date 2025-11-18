@@ -15,12 +15,12 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, asdict
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List
 
-from rc25s_openai_wrapper import rc25s_chat
+from openai import OpenAI
 from world_state import load_world_state, save_world_state
 
 
@@ -33,6 +33,30 @@ LOG_FILES = {
     "reflection": ROOT / "logs" / "agi_reflection.log",
     "executor": ROOT / "logs" / "rc25s_executor.log",
 }
+
+
+def _get_openai_client() -> OpenAI:
+    """
+    rc25s_openai_wrapper와 동일한 방식으로 API 키를 읽어 OpenAI 클라이언트를 생성한다.
+    - 1) /etc/openai_api_key.txt 우선
+    - 2) 없으면 환경변수 OPENAI_API_KEY 사용
+    """
+    api_key = None
+    key_path = "/etc/openai_api_key.txt"
+    if key_path and Path(key_path).exists():
+        try:
+            api_key = Path(key_path).read_text(encoding="utf-8").strip()
+        except Exception:
+            api_key = None
+
+    if not api_key:
+        api_key = os.getenv("OPENAI_API_KEY")
+
+    if not api_key or "$(" in str(api_key):
+        raise RuntimeError("No valid OPENAI_API_KEY or /etc/openai_api_key.txt found")
+
+    os.environ["OPENAI_API_KEY"] = api_key
+    return OpenAI(api_key=api_key)
 
 
 def _tail_lines(path: Path, n: int = 200) -> List[str]:
@@ -144,8 +168,19 @@ def run_log_rca_agent() -> Dict[str, Any]:
     snapshot = _collect_log_snapshot()
     prompt = _build_prompt(snapshot)
 
-    llm_result = rc25s_chat(prompt)
-    raw = (llm_result or {}).get("response", "")
+    # 직접 OpenAI 클라이언트를 사용해 LLM 호출
+    client = _get_openai_client()
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "너는 RC25S 시스템의 LogRCA 에이전트이다. 로그에서 규칙과 원인을 찾아 JSON으로만 답한다.",
+            },
+            {"role": "user", "content": prompt},
+        ],
+    )
+    raw = response.choices[0].message.content
     parsed = _safe_parse_response(raw)
 
     rules = parsed.get("rules") or []
