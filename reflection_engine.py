@@ -43,6 +43,9 @@ def safe_parse_json(text: str) -> dict:
             "insight": "No reflection generated",
             "improvement_goal": "Investigate API response issue",
             "confidence": 0.0,
+            "long_term_goals": [],
+            "weekly_summary": {},
+            "failures_learned": [],
         }
     text = re.sub(r"[\u200B-\u200D\uFEFF]", "", text)
     text = re.sub(r"```[a-zA-Z]*", "", text).replace("```", "").strip()
@@ -52,6 +55,13 @@ def safe_parse_json(text: str) -> dict:
     try:
         parsed = json.loads(text)
         log("✅ JSON successfully parsed.")
+        # 누락된 필드는 기본값으로 채워서 world_state와의 호환성을 유지
+        if "long_term_goals" not in parsed:
+            parsed["long_term_goals"] = []
+        if "weekly_summary" not in parsed:
+            parsed["weekly_summary"] = {}
+        if "failures_learned" not in parsed:
+            parsed["failures_learned"] = []
         return parsed
     except json.JSONDecodeError as e:
         log(f"⚠️ JSONDecodeError: {e} | text snippet: {text[:200]}")
@@ -59,6 +69,9 @@ def safe_parse_json(text: str) -> dict:
             "insight": "Failed to decode LLM reflection",
             "improvement_goal": "Improve parsing resilience",
             "confidence": 0.0,
+            "long_term_goals": [],
+            "weekly_summary": {},
+            "failures_learned": [],
         }
 
 
@@ -116,11 +129,35 @@ Analyze the following memory and world state, then output ONLY valid JSON.
 ## Recent actions
 {json.dumps(last_actions, ensure_ascii=False, indent=2)}
 
-Return JSON with the following structure:
+Return JSON with the following structure (Korean is allowed/preferred in text fields):
 {{
   "insight": "short Korean summary of current system situation",
   "improvement_goal": "1-2 concrete next improvement directions (Korean allowed)",
-  "confidence": 0.0-1.0
+  "confidence": 0.0-1.0,
+  "long_term_goals": [
+    {{
+      "id": "ltg_2025_agi",
+      "title": "장기적인 시스템 개선 목표 (예: RC25S AGI 상용 수준 안정화)",
+      "description": "이 목표가 왜 중요한지, 어떤 방향으로 개선해야 하는지에 대한 짧은 설명 (한국어 가능)",
+      "horizon": "3-6 months",
+      "priority": 0-100,
+      "status": "active|paused|completed"
+    }}
+  ],
+  "weekly_summary": {{
+    "week_of": "YYYY-MM-DD (이번 주 시작 날짜)",
+    "summary": "이번 주에 RC25S 시스템이 어떤 변화/개선을 했는지 한 줄 요약 (한국어)",
+    "key_wins": ["주요 성공 1", "주요 성공 2"],
+    "key_issues": ["문제/장애 1", "문제/장애 2"]
+  }},
+  "failures_learned": [
+    {{
+      "time": "ISO8601 datetime (예: 2025-11-18T12:34:56Z)",
+      "context": "어떤 상황/기능에서 실패가 발생했는지",
+      "root_cause": "추정되는 근본 원인 (간단히)",
+      "lesson": "다음에 같은 문제가 안 나도록 배우게 된 교훈 (한국어)"
+    }}
+  ]
 }}
 """
 

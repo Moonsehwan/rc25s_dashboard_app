@@ -104,6 +104,34 @@ def generate_goals_from_signals(signals: Dict[str, Any]) -> List[Goal]:
   """규칙 기반으로 목표를 생성 (나중에 LLM 통합 여지 남김)."""
   goals: List[Goal] = []
 
+  # 1) world_state.long_term_goals를 우선 Goal 리스트로 주입 (Step 1: Long-term goals)
+  try:
+    ws = load_world_state()
+    lt_goals = ws.get("long_term_goals") or []
+  except Exception:
+    lt_goals = []
+
+  for idx, g in enumerate(lt_goals):
+    if not isinstance(g, dict):
+      continue
+    gid = str(g.get("id") or f"ltg_{idx}")
+    title = g.get("title") or f"장기 목표 {idx + 1}"
+    desc = g.get("description") or ""
+    try:
+      priority = int(g.get("priority") or 60)
+    except Exception:
+      priority = 60
+    status = g.get("status") or "active"
+    goals.append(
+      Goal(
+        id=gid,
+        title=title,
+        description=desc,
+        priority=priority,
+        status=status,
+      )
+    )
+
   frontend_issues = signals.get("autoheal_frontend_issues", 0) + signals.get("selfcheck_frontend_issues", 0)
 
   # 기본 목표: 서비스 안정성 유지

@@ -39,6 +39,15 @@ def _default_state() -> Dict[str, Any]:
         },
         "reflection": {},
         "memory": [],
+        # 장기 목표 / 주간 요약 / 실패에서 배운 점 (Step 1: Long-term memory)
+        "long_term_goals": [],  # [{id, title, description, horizon, priority, status}]
+        "weekly_summary": {
+            "week_of": None,  # "YYYY-MM-DD" (한 주 시작일)
+            "summary": "",
+            "key_wins": [],
+            "key_issues": [],
+        },
+        "failures_learned": [],  # [{time, context, root_cause, lesson}]
         "planner": {
             "generated_at": None,
             "signals": {},
@@ -70,8 +79,25 @@ def save_world_state(state: Dict[str, Any]) -> None:
 def update_reflection_memory(reflection: Any, memory: Any) -> None:
     """reflection.json / memory_vector.json 내용을 world_state에 반영."""
     state = load_world_state()
-    state["reflection"] = reflection or {}
+    reflection = reflection or {}
+    state["reflection"] = reflection
     state["memory"] = memory or []
+
+    # Reflection 결과에 장기 목표 / 주간 요약 / 실패 학습이 포함되어 있으면 world_state에 반영
+    lt_goals = reflection.get("long_term_goals")
+    if isinstance(lt_goals, list):
+        state["long_term_goals"] = lt_goals
+
+    weekly = reflection.get("weekly_summary")
+    if isinstance(weekly, dict):
+        state["weekly_summary"] = weekly
+
+    failures = reflection.get("failures_learned")
+    if isinstance(failures, list):
+        existing = state.get("failures_learned") or []
+        # 너무 길어지지 않도록 최근 50개만 유지
+        state["failures_learned"] = (existing + failures)[-50:]
+
     save_world_state(state)
 
 
