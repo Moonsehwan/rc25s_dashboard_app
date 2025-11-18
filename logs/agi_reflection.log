@@ -58118,3 +58118,37 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 12:06:41] ✅ Memory loaded successfully.
 [2025-11-18 12:06:44] 🚀 AGI Reflection Engine started.
 [2025-11-18 12:06:44] ✅ Memory loaded successfully.
+[2025-11-18 12:11:24] 🧠 Raw reflection text:
+{
+  "insight": "시스템이 헬스 엔드포인트 점검에서 실패했으며 프론트엔드 관련 오류가 지속되고 있습니다.",
+  "improvement_goal": "Nginx 라우팅과 SelfCheck 기준을 재점검하고, 헬스 엔드포인트 점검을 다시 시도합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 12:11:24] ✅ JSON successfully parsed.
+[2025-11-18 12:11:24] 📘 Reflection saved successfully.
+[2025-11-18 12:11:24] 🪞 Insight: 시스템이 헬스 엔드포인트 점검에서 실패했으며 프론트엔드 관련 오류가 지속되고 있습니다.
+[2025-11-18 12:11:24] 🎯 Goal: Nginx 라우팅과 SelfCheck 기준을 재점검하고, 헬스 엔드포인트 점검을 다시 시도합니다.
+[2025-11-18 12:11:24] 🔹 Confidence: 0.2
+[2025-11-18 12:11:34] 🚀 AGI Reflection Engine started.
+[2025-11-18 12:11:34] ✅ Memory loaded successfully.
+[2025-11-18 12:11:35] ❌ Reflection failed: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************oz4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}}
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/reflection_engine.py", line 128, in run_reflection
+    llm_result = rc25s_chat(prompt)
+                 ^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/vibecoding/rc25s_openai_wrapper.py", line 17, in rc25s_chat
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/repo/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************oz4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}}
+

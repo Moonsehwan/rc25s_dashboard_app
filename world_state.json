@@ -1,22 +1,90 @@
 {
-  "updated_at": "2025-11-17T09:15:41.477362Z",
+  "updated_at": "2025-11-18T03:11:24.918672Z",
   "core": {
     "last_decision": null,
     "last_decision_time": null
   },
   "reflection": {
-    "insight": "현재 시스템에서 프론트엔드 관련 오류가 지속적으로 발생하고 있으며, 헬스 엔드포인트의 정합성 점검이 실패하였습니다.",
-    "improvement_goal": "Nginx 라우팅 및 Self-Check 기준을 재점검하여 프론트엔드 오류를 줄인다; 헬스 엔드포인트와 로그를 추가하여 문제 발생 원인을 진단할 수 있도록 한다.",
-    "confidence": 0.7
+    "insight": "시스템이 헬스 엔드포인트 점검에서 실패했으며 프론트엔드 관련 오류가 지속되고 있습니다.",
+    "improvement_goal": "Nginx 라우팅과 SelfCheck 기준을 재점검하고, 헬스 엔드포인트 점검을 다시 시도합니다.",
+    "confidence": 0.2
   },
   "memory": {
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "time": "2025-11-17T18:10:54.674345",
-      "reflection": ""
+      "insight": "시스템은 여러 프론트엔드 오류 및 라우팅 문제를 경험하고 있으며, 헬스 엔드포인트 점검도 실패했습니다.",
+      "improvement_goal": "Nginx 라우팅과 SelfCheck 기준을 재점검하고, 헬스 엔드포인트 점검을 다시 시도합니다.",
+      "confidence": 0.2
     },
-    "updated_at": "2025-11-17T18:15:27.679722"
+    "updated_at": "2025-11-18T12:11:16.871063",
+    "episodes": [
+      {
+        "time": "2025-11-17T10:05:30.369949Z",
+        "insight": null,
+        "improvement_goal": null,
+        "confidence": null,
+        "signals": {
+          "autoheal_cycles": 1,
+          "autoheal_rebuilds": 0,
+          "autoheal_frontend_issues": 0,
+          "selfcheck_runs": 200,
+          "selfcheck_frontend_issues": 40,
+          "selfcheck_manifest_warnings": 40,
+          "raw_preview": {
+            "autoheal_tail": [
+              "2025-11-16 19:20:51 [AUTOHEAL] 🧠 RC25S AI Autoheal cycle started.",
+              "2025-11-16 19:20:51 [AUTOHEAL] ✅ Frontend build passed.",
+              "2025-11-16 19:20:51 [AUTOHEAL] 🩺 Checking FastAPI health endpoints...",
+              "2025-11-16 19:20:52 [AUTOHEAL] ✅ FastAPI health OK.",
+              "2025-11-16 19:20:52 [AUTOHEAL] ✅ LLM endpoint OK.",
+              "2025-11-16 19:20:52 [AUTOHEAL] ❌ Frontend unreachable (404) → rebuilding & reloading nginx...",
+              "2025-11-16 19:20:59 [AUTOHEAL] ✅ Rebuilt dashboard & reloaded nginx.",
+              "2025-11-16 19:20:59 [AUTOHEAL] 🧩 RC25S AI Autoheal cycle complete."
+            ],
+            "selfcheck_tail": [
+              "2025-11-17 18:12:31 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+              "2025-11-17 18:12:31 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+              "2025-11-17 18:12:32 [SELF-CHECK] ✅ LLM integration healthy.",
+              "2025-11-17 18:12:32 [SELF-CHECK] ✅ LLM integration healthy.",
+              "2025-11-17 18:12:32 [SELF-CHECK] ❌ Frontend static files missing. Reloading Nginx...",
+              "2025-11-17 18:12:32 [SELF-CHECK] ❌ Frontend static files missing. Reloading Nginx...",
+              "2025-11-17 18:12:33 [SELF-CHECK] ⚠️ Manifest not reachable.",
+              "2025-11-17 18:12:33 [SELF-CHECK] ⚠️ Manifest not reachable.",
+              "2025-11-17 18:12:33 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+              "2025-11-17 18:12:33 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
+            ]
+          }
+        },
+        "goals": [
+          {
+            "id": "goal_stability",
+            "priority": 100,
+            "status": "active"
+          },
+          {
+            "id": "goal_frontend_reliability",
+            "priority": 95,
+            "status": "active"
+          },
+          {
+            "id": "goal_self_improvement",
+            "priority": 75,
+            "status": "active"
+          }
+        ],
+        "recent_actions": [
+          {
+            "id": "goal_stability_check_health_endpoints",
+            "goal_id": "goal_stability",
+            "title": "헬스 엔드포인트 정합성 점검",
+            "status": "pending",
+            "result": "failed",
+            "time": "2025-11-16T13:16:54.725060Z"
+          }
+        ]
+      }
+    ]
   },
   "planner": {
     "generated_at": "2025-11-17T09:15:41.477086Z",
