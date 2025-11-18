@@ -1,23 +1,23 @@
 {
-  "updated_at": "2025-11-18T11:12:00.455338Z",
+  "updated_at": "2025-11-18T11:26:49.293595Z",
   "core": {
     "last_decision": "INIT",
     "last_decision_time": "2025-11-18T11:08:04.218974Z"
   },
   "reflection": {
-    "insight": "현재 Nginx 설정 오류로 인해 프론트엔드 정적 파일이 누락되어 헬스 체크에 실패하고 있으며, 서비스 안정성 유지 및 프론트엔드 안정화가 필요한 상황입니다.",
-    "improvement_goal": "1) Nginx 설정을 재점검하여 정적 파일 경로를 올바르게 지정하기. 2) SelfCheck 및 Autoheal 기준을 정렬하여 오류 발생 빈도 줄이기.",
+    "insight": "현재 Nginx 설정 오류로 인해 프론트엔드 정적 파일이 누락되고 있으며, 헬스 체크에 실패한 상태입니다.",
+    "improvement_goal": "1) Nginx 설정을 재점검하여 정적 파일 경로 수정하기. 2) 헬스 체크를 위한 엔드포인트 검증 작업 진행하기.",
     "confidence": 0.2
   },
   "memory": {
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "현재 Nginx 설정 오류로 인해 프론트엔드 정적 파일이 누락되어 헬스 체크에 실패하고 있습니다.",
-      "improvement_goal": "1) Nginx 설정을 수정하여 정적 파일 경로를 올바르게 지정하기. 2) 누락된 정적 파일을 복구하기.",
+      "insight": "현재 Nginx 설정 오류로 인해 프론트엔드 정적 파일이 누락되고 헬스 체크가 실패한 상태입니다.",
+      "improvement_goal": "1) Nginx 설정을 재점검하여 정적 파일 경로 수정하기. 2) 헬스 체크를 위한 엔드포인트 검증 작업 진행하기.",
       "confidence": 0.2
     },
-    "updated_at": "2025-11-18T20:11:50.579000",
+    "updated_at": "2025-11-18T20:26:42.786502",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",
