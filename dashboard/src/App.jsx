@@ -176,11 +176,11 @@ export default function App() {
       timestamp,
     });
 
-    // 3) /agi/llm HTTP API를 통해 LLM 호출
+    // 3) /rc25s/llm HTTP API를 통해 LLM 호출 (mcp 백엔드 → rc25s_openai_wrapper)
     try {
       const proto =
         window.location.protocol === "https:" ? "https://" : "http://";
-      const res = await fetch(`${proto}${window.location.host}/agi/llm`, {
+      const res = await fetch(`${proto}${window.location.host}/rc25s/llm`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: msg, provider: "openai" }),
