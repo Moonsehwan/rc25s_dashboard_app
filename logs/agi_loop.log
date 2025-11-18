@@ -2983,3 +2983,42 @@ NameError: name 'client' is not defined
 [2025-11-18 21:02:59] 🚀 AGI Self-Evolution Loop started.
 [2025-11-18 21:02:59] ▶ Running Reflection Engine ...
 [2025-11-18 21:02:59] ▶ Running Reflection Engine ...
+[2025-11-18 21:07:33] 🚀 AGI Self-Evolution Loop started.
+[2025-11-18 21:07:33] 🚀 AGI Self-Evolution Loop started.
+[2025-11-18 21:07:33] ▶ Running Reflection Engine ...
+[2025-11-18 21:07:33] ▶ Running Reflection Engine ...
+[2025-11-18 21:07:39] 🚀 AGI Reflection Engine started.
+[2025-11-18 21:07:39] ✅ Memory loaded successfully.
+[2025-11-18 21:07:45] 🧠 Raw reflection text:
+{
+  "insight": "현재 Nginx 설정 오류로 인해 프론트엔드 파일이 누락되어 헬스 체크가 실패하고 있으며, 프론트엔드 관련 404 오류가 발생하고 있습니다.",
+  "improvement_goal": "1) Nginx 설정을 점검하여 404 오류를 해결합니다. 2) 헬스 체크 엔드포인트를 검증하고 수정합니다.",
+  "confidence": 0.2
+}
+[2025-11-18 21:07:45] ✅ JSON successfully parsed.
+[2025-11-18 21:07:45] 📘 Reflection saved successfully.
+[2025-11-18 21:07:45] 🪞 Insight: 현재 Nginx 설정 오류로 인해 프론트엔드 파일이 누락되어 헬스 체크가 실패하고 있으며, 프론트엔드 관련 404 오류가 발생하고 있습니다.
+[2025-11-18 21:07:45] 🎯 Goal: 1) Nginx 설정을 점검하여 404 오류를 해결합니다. 2) 헬스 체크 엔드포인트를 검증하고 수정합니다.
+[2025-11-18 21:07:45] 🔹 Confidence: 0.2
+[2025-11-18 21:07:47] ✅ Reflection Engine finished successfully.
+[2025-11-18 21:07:47] ✅ Reflection Engine finished successfully.
+[2025-11-18 21:07:47] ▶ Running Memory Integration ...
+[2025-11-18 21:07:47] ▶ Running Memory Integration ...
+[2025-11-18 21:07:51] ✅ Memory updated with latest reflection.
+[2025-11-18 21:07:53] ✅ Memory Integration finished successfully.
+[2025-11-18 21:07:53] ✅ Memory Integration finished successfully.
+[2025-11-18 21:07:53] ▶ Running AutoFix Engine ...
+[2025-11-18 21:07:53] ▶ Running AutoFix Engine ...
+[2025-11-18 21:07:59] 🚀 AutoFix Loop started.
+[2025-11-18 21:07:59] 🧩 Improvement goal: 1) Nginx 설정을 점검하여 404 오류를 해결합니다. 2) 헬스 체크 엔드포인트를 검증하고 수정합니다.
+[2025-11-18 21:07:59] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-18 21:08:00] ✅ AutoFix Engine finished successfully.
+[2025-11-18 21:08:00] ✅ AutoFix Engine finished successfully.
+[2025-11-18 21:08:00] 🧠 AGI Self-Evolution Cycle Complete.
+[2025-11-18 21:08:00] 🧠 AGI Self-Evolution Cycle Complete.
