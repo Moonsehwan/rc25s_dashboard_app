@@ -6,7 +6,7 @@
     "improvement_goal": "Nginx 라우팅과 SelfCheck 기준을 재점검하고, 헬스 엔드포인트 점검을 다시 시도합니다.",
     "confidence": 0.2
   },
-  "updated_at": "2025-11-18T13:26:59.377603",
+  "updated_at": "2025-11-18T13:32:10.476931",
   "episodes": [
     {
       "time": "2025-11-17T10:05:30.369949Z",
