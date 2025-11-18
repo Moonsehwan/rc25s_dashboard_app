@@ -1,4 +1,7 @@
 import os, time, json
+from pathlib import Path
+
+import psutil
 from openai import OpenAI
 from rc25_kernel_RC25S import RC25SKernel
 
@@ -31,20 +34,86 @@ def _get_openai_client() -> OpenAI:
     return OpenAI(api_key=api_key)
 
 
+def _load_world_state_snapshot() -> str:
+    """
+    world_state.json에서 LLM이 이해하기 쉬운 요약만 뽑아서 JSON 문자열로 반환한다.
+    파일이 없거나 파싱에 실패해도 에러를 내지 않고 빈 객체를 돌려준다.
+    """
+    try:
+        ws_path = Path("/srv/repo/vibecoding/world_state.json")
+        if not ws_path.exists():
+            return "{}"
+        data = json.loads(ws_path.read_text(encoding="utf-8"))
+        # 너무 장황하지 않게 핵심만 요약
+        summary = {
+            "updated_at": data.get("updated_at"),
+            "core": data.get("core"),
+            "last_reflection": data.get("reflection"),
+            "planner": {
+                "generated_at": (data.get("planner") or {}).get("generated_at"),
+                "goals_count": len((data.get("planner") or {}).get("goals") or []),
+                "tasks_count": len((data.get("planner") or {}).get("tasks") or []),
+            },
+        }
+        return json.dumps(summary, ensure_ascii=False)
+    except Exception:
+        return "{}"
+
+
+def _get_system_stats_summary() -> str:
+    """
+    현재 서버의 간단한 상태 요약을 문자열로 반환한다.
+    psutil 사용이 실패해도 안전하게 빈 문자열을 돌려준다.
+    """
+    try:
+        cpu = psutil.cpu_percent(interval=None)
+        mem = psutil.virtual_memory().percent
+        disk = psutil.disk_usage("/").percent
+        return f"CPU={cpu}%, MEM={mem}%, DISK={disk}%"
+    except Exception:
+        return ""
+
+
 def rc25s_chat(prompt, history=None, model="gpt-4o-mini"):
     """
-    Wrapper that runs prompt through RC25S meta control before OpenAI call.
+    RC25S용 LLM 래퍼:
+    - RC25S Kernel 메타컨트롤(mode, self_reflect)을 먼저 적용
+    - world_state 스냅샷과 서버 상태 요약을 system 프롬프트에 포함
+    - 항상 한국어로 답변하고, 자신을 'RC25S Self-Improvement 시스템의 LLM 모듈'로 인식하도록 안내
     """
     start = time.time()
     mode = kernel.detect_mode(prompt)
     reflection = kernel.self_reflect(prompt)
-    meta_prompt = f"[MODE:{mode}] [REFLECT:{reflection}]\\n{prompt}"
+    meta_prompt = f"[MODE:{mode}] [REFLECT:{reflection}]\n{prompt}"
+
+    world_state_json = _load_world_state_snapshot()
+    system_stats = _get_system_stats_summary()
+
+    system_message = (
+        "너는 'RC25S Self-Improvement System'의 일부인 LLM 모듈이다. "
+        "사용자는 이 서버의 소유자이며, 너는 RC25S의 현재 상태와 기능을 이해하고 설명하는 역할을 한다.\n"
+        "\n"
+        "### 현재 서버/세계 상태 스냅샷\n"
+        f"- world_state 요약(JSON): {world_state_json}\n"
+        f"- 서버 리소스 상태: {system_stats}\n"
+        "\n"
+        "### 답변 규칙\n"
+        "- 항상 한국어로 답변한다.\n"
+        "- 자신을 '일반적인 ChatGPT'가 아니라 'RC25S 시스템 내부의 LLM 컴포넌트'로 소개한다.\n"
+        "- '너 AGI야?' 같은 질문에는, 완전한 자율 AGI는 아니지만 "
+        "'Reflection ↔ Planner ↔ Executor 루프를 가진 자기개선 시스템의 두뇌 모듈'이라는 식으로 설명한다.\n"
+        "- 서버 상태를 묻는 질문에는 world_state와 위의 서버 리소스 요약을 참고해서, "
+        "현재 파악 가능한 범위 내에서 솔직하게 설명한다 (모르는 값은 모른다고 말한다).\n"
+        "- RC25S가 가진 기능(리플렉션, 목표/작업 관리, 실행 프리뷰, Self-Check, 로그 확인 등)을 잘 알고 있는 엔지니어처럼 답한다.\n"
+        "- 사용자의 프리텍스트 안에 'Planner 실행', 'Executor 1회 실행', 'Self-Check' 등 대시보드 버튼과 연결된 표현이 있으면, "
+        "해당 버튼을 눌러보도록 명시적으로 안내한다 (지금 이 채널에서는 직접 실행하지 않는다).\n"
+    )
 
     client = _get_openai_client()
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {"role": "system", "content": "RC25S Meta-Control Active"},
+            {"role": "system", "content": system_message},
             {"role": "user", "content": meta_prompt},
         ],
     )
