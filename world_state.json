@@ -1,23 +1,23 @@
 {
-  "updated_at": "2025-11-18T09:22:26.996764Z",
+  "updated_at": "2025-11-18T09:27:46.050502Z",
   "core": {
     "last_decision": "INIT",
     "last_decision_time": "2025-11-18T09:18:03.978148Z"
   },
   "reflection": {
-    "insight": "프론트엔드와 Nginx 라우팅에서 오류가 발생하고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.",
-    "improvement_goal": "Nginx 라우팅과 SelfCheck/Autoheal 기준 재검토 및 정렬 수행",
+    "insight": "Nginx 라우팅과 SelfCheck 기준 간 불일치로 인해 프론트엔드에서 오류가 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.",
+    "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시",
     "confidence": 0.1
   },
   "memory": {
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "현재 프론트엔드에서 오류가 빈발하고 Nginx 라우팅 및 SelfCheck와 Autoheal 기준이 불일치하는 상황입니다.",
-      "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 정렬 수행",
+      "insight": "Nginx 라우팅과 SelfCheck 기준 간 불일치로 인해 프론트엔드에서 오류가 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.",
+      "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시",
       "confidence": 0.1
     },
-    "updated_at": "2025-11-18T18:22:18.603239",
+    "updated_at": "2025-11-18T18:27:34.610875",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",
