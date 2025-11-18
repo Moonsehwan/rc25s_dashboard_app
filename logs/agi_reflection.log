@@ -64062,3 +64062,57 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 18:18:05] 🔹 Confidence: 0.1
 [2025-11-18 18:18:17] 🚀 AGI Reflection Engine started.
 [2025-11-18 18:18:17] ✅ Memory loaded successfully.
+[2025-11-18 18:21:46] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:21:46] ✅ Memory loaded successfully.
+[2025-11-18 18:21:50] 🧠 Raw reflection text:
+{
+  "insight": "Nginx에서 프론트엔드와 관련된 오류가 계속 발생하고 있으며, SelfCheck와 Autoheal 기준이 불일치합니다.",
+  "improvement_goal": "Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal 기준을 완전히 정렬합니다.",
+  "confidence": 0.1
+}
+[2025-11-18 18:21:50] ✅ JSON successfully parsed.
+[2025-11-18 18:21:50] 📘 Reflection saved successfully.
+[2025-11-18 18:21:50] 🪞 Insight: Nginx에서 프론트엔드와 관련된 오류가 계속 발생하고 있으며, SelfCheck와 Autoheal 기준이 불일치합니다.
+[2025-11-18 18:21:50] 🎯 Goal: Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal 기준을 완전히 정렬합니다.
+[2025-11-18 18:21:50] 🔹 Confidence: 0.1
+[2025-11-18 18:22:01] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:22:01] ✅ Memory loaded successfully.
+[2025-11-18 18:22:03] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:22:03] ✅ Memory loaded successfully.
+[2025-11-18 18:22:07] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드와 관련된 오류가 계속 발생하고 있으며, SelfCheck와 Autoheal 기준이 불일치합니다.",
+  "improvement_goal": "Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal 기준을 정렬해야 합니다.",
+  "confidence": 0.1
+}
+```
+[2025-11-18 18:22:07] ✅ JSON successfully parsed.
+[2025-11-18 18:22:07] 📘 Reflection saved successfully.
+[2025-11-18 18:22:07] 🪞 Insight: 프론트엔드와 관련된 오류가 계속 발생하고 있으며, SelfCheck와 Autoheal 기준이 불일치합니다.
+[2025-11-18 18:22:07] 🎯 Goal: Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal 기준을 정렬해야 합니다.
+[2025-11-18 18:22:07] 🔹 Confidence: 0.1
+[2025-11-18 18:22:08] 🧠 Raw reflection text:
+{
+  "insight": "현재 프론트엔드에서 오류가 빈발하고 Nginx 라우팅 및 SelfCheck와 Autoheal 기준이 불일치하는 상황입니다.",
+  "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 정렬 수행",
+  "confidence": 0.1
+}
+[2025-11-18 18:22:08] ✅ JSON successfully parsed.
+[2025-11-18 18:22:08] 📘 Reflection saved successfully.
+[2025-11-18 18:22:08] 🪞 Insight: 현재 프론트엔드에서 오류가 빈발하고 Nginx 라우팅 및 SelfCheck와 Autoheal 기준이 불일치하는 상황입니다.
+[2025-11-18 18:22:08] 🎯 Goal: Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 정렬 수행
+[2025-11-18 18:22:08] 🔹 Confidence: 0.1
+[2025-11-18 18:22:20] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:22:20] ✅ Memory loaded successfully.
+[2025-11-18 18:22:26] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 Nginx 라우팅에서 오류가 발생하고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.",
+  "improvement_goal": "Nginx 라우팅과 SelfCheck/Autoheal 기준 재검토 및 정렬 수행",
+  "confidence": 0.1
+}
+[2025-11-18 18:22:26] ✅ JSON successfully parsed.
+[2025-11-18 18:22:26] 📘 Reflection saved successfully.
+[2025-11-18 18:22:26] 🪞 Insight: 프론트엔드와 Nginx 라우팅에서 오류가 발생하고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.
+[2025-11-18 18:22:26] 🎯 Goal: Nginx 라우팅과 SelfCheck/Autoheal 기준 재검토 및 정렬 수행
+[2025-11-18 18:22:26] 🔹 Confidence: 0.1

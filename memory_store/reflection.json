@@ -1,5 +1,5 @@
 {
-  "insight": "Nginx에서 프론트엔드 정합성 문제가 발생하여 404 오류가 지속되고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.",
-  "improvement_goal": "Nginx 라우팅 재점검 및 SelfCheck와 Autoheal 기준 완전 정렬.",
+  "insight": "프론트엔드와 Nginx 라우팅에서 오류가 발생하고 있으며, SelfCheck와 Autoheal 기준이 일치하지 않습니다.",
+  "improvement_goal": "Nginx 라우팅과 SelfCheck/Autoheal 기준 재검토 및 정렬 수행",
   "confidence": 0.1
 }
