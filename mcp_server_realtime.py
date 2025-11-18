@@ -6,6 +6,8 @@ import asyncio
 import psutil
 import subprocess
 import socket
+import os
+from pathlib import Path
 
 from world_state import load_world_state
 from rc25s_planner import run_planner, PLANNER_STATE_PATH
@@ -33,6 +35,33 @@ def health():
             "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         }
     )
+
+
+@app.get("/rc25s/logs")
+def get_rc25s_logs():
+    """
+    RC25S 관련 주요 로그들을 tail 해서 JSON으로 반환한다.
+    - Autoheal, Self-Check, Reflection, Executor 로그 등을 모아서
+      대시보드에서 한 번에 볼 수 있도록 한다.
+    """
+    log_files = {
+        "autoheal": "/var/log/rc25s-autoheal.log",
+        "autoheal_ai": "/var/log/rc25s-autoheal-ai.log",
+        "centralcore": "/srv/repo/vibecoding/logs/centralcore.log",
+        "reflection": "/srv/repo/vibecoding/logs/agi_reflection.log",
+        "executor": "/srv/repo/vibecoding/logs/rc25s_executor.log",
+    }
+    logs = {}
+    for name, path in log_files.items():
+        try:
+            if os.path.exists(path):
+                # tail -n 40 정도만 보여준다.
+                logs[name] = subprocess.getoutput(f"tail -n 40 {path}")
+            else:
+                logs[name] = f"Log file not found: {path}"
+        except Exception as e:
+            logs[name] = f"Failed to read log {path}: {e}"
+    return JSONResponse(logs)
 
 
 @app.post("/llm")

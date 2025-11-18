@@ -38,6 +38,7 @@ export default function App() {
   const [input, setInput] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const [rc25sLogs, setRc25sLogs] = useState(null);
 
   const appendLog = useCallback((entry) => {
     setLogs((prev) => [
@@ -143,6 +144,27 @@ export default function App() {
     () => (worldState?.reflection?.web_links ?? []).slice().reverse(),
     [worldState?.reflection?.web_links]
   );
+  const longTermGoals = useMemo(
+    () =>
+      (worldState?.long_term_goals ??
+        worldState?.reflection?.long_term_goals ??
+        []).slice(),
+    [worldState]
+  );
+  const weeklySummary = useMemo(
+    () =>
+      worldState?.weekly_summary ??
+      worldState?.reflection?.weekly_summary ??
+      null,
+    [worldState]
+  );
+  const failuresLearned = useMemo(
+    () =>
+      (worldState?.failures_learned ??
+        worldState?.reflection?.failures_learned ??
+        []).slice(),
+    [worldState]
+  );
 
   const sendCommand = useCallback(
     (command, payload = {}, successMsg) => {
@@ -219,6 +241,34 @@ export default function App() {
       });
     }
   };
+
+  const fetchRc25sLogs = useCallback(async () => {
+    try {
+      const proto =
+        window.location.protocol === "https:" ? "https://" : "http://";
+      const res = await fetch(`${proto}${window.location.host}/rc25s/logs`, {
+        cache: "no-store",
+      });
+      if (!res.ok) {
+        appendLog({
+          type: "error",
+          message: `로그 조회 실패 (status=${res.status})`,
+        });
+        return;
+      }
+      const data = await res.json();
+      setRc25sLogs(data);
+      appendLog({
+        type: "event",
+        message: "RC25S 로그를 새로 가져왔습니다.",
+      });
+    } catch (err) {
+      appendLog({
+        type: "error",
+        message: `로그 조회 중 예외 발생: ${String(err)}`,
+      });
+    }
+  }, [appendLog]);
 
   const handleApproveGoal = (goal) => {
     sendCommand("approve_goal", { goal_id: goal?.id }, `${goal?.title} 승인`);
@@ -306,6 +356,178 @@ export default function App() {
               </>
             ) : (
               <p>⏳ 월드 상태 수신 대기</p>
+            )}
+          </section>
+
+          <section style={baseCard}>
+            <h2 style={{ color: "#ffbfb0", fontSize: "18px", marginBottom: 8 }}>
+              📜 RC25S 로그 뷰어
+            </h2>
+            <button
+              onClick={fetchRc25sLogs}
+              style={{
+                border: "none",
+                borderRadius: "8px",
+                padding: "6px 10px",
+                background: "#ffbfb0",
+                color: "#1a0b0b",
+                fontWeight: 600,
+                cursor: "pointer",
+                marginBottom: "10px",
+              }}
+            >
+              로그 새로고침
+            </button>
+            {!rc25sLogs ? (
+              <p style={{ opacity: 0.8 }}>아직 불러온 로그가 없습니다.</p>
+            ) : (
+              <div
+                style={{
+                  maxHeight: "260px",
+                  overflowY: "auto",
+                  fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco",
+                  fontSize: "12px",
+                  background: "#050509",
+                  borderRadius: "10px",
+                  padding: "10px 12px",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              >
+                {Object.entries(rc25sLogs).map(([name, content]) => (
+                  <div key={name} style={{ marginBottom: "12px" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginBottom: "4px",
+                        color: "#ffd3a0",
+                      }}
+                    >
+                      [{name}]
+                    </div>
+                    <pre
+                      style={{
+                        whiteSpace: "pre-wrap",
+                        margin: 0,
+                        opacity: 0.9,
+                      }}
+                    >
+                      {content || "(내용 없음)"}
+                    </pre>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+
+          <section style={baseCard}>
+            <h2 style={{ color: "#e0ff86", fontSize: "18px", marginBottom: 8 }}>
+              📆 장기 목표 & 주간 요약
+            </h2>
+            {!worldState ? (
+              <p>⏳ 월드 상태 수신 대기</p>
+            ) : (
+              <>
+                <div style={{ marginBottom: "10px" }}>
+                  <strong style={{ display: "block", marginBottom: 4 }}>
+                    장기 목표 (Long-term Goals)
+                  </strong>
+                  {longTermGoals.length === 0 ? (
+                    <p style={{ opacity: 0.8 }}>등록된 장기 목표가 없습니다.</p>
+                  ) : (
+                    <ul
+                      style={{
+                        listStyle: "none",
+                        padding: 0,
+                        margin: 0,
+                        maxHeight: "140px",
+                        overflowY: "auto",
+                      }}
+                    >
+                      {longTermGoals.slice(0, 3).map((g, idx) => (
+                        <li
+                          key={`${g.id || "ltg"}-${idx}`}
+                          style={{
+                            marginBottom: "8px",
+                            paddingBottom: "6px",
+                            borderBottom:
+                              "1px solid rgba(255,255,255,0.08)",
+                          }}
+                        >
+                          <div style={{ fontWeight: 600 }}>
+                            [{g.status || "active"}] {g.title || "제목 없음"}
+                          </div>
+                          <small style={{ opacity: 0.7 }}>
+                            horizon: {g.horizon || "—"} · priority{" "}
+                            {g.priority ?? "?"}
+                          </small>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                <div style={{ marginBottom: "10px" }}>
+                  <strong style={{ display: "block", marginBottom: 4 }}>
+                    이번 주 요약 (Weekly Summary)
+                  </strong>
+                  {!weeklySummary ? (
+                    <p style={{ opacity: 0.8 }}>주간 요약 정보가 없습니다.</p>
+                  ) : (
+                    <>
+                      <small style={{ opacity: 0.7 }}>
+                        주 시작일: {weeklySummary.week_of || "—"}
+                      </small>
+                      <p style={{ marginTop: 4, opacity: 0.9 }}>
+                        {weeklySummary.summary || "요약 없음"}
+                      </p>
+                      {(weeklySummary.key_wins || []).length > 0 && (
+                        <p style={{ fontSize: "13px", opacity: 0.85 }}>
+                          ✅ 핵심 성과:{" "}
+                          {(weeklySummary.key_wins || []).join(" · ")}
+                        </p>
+                      )}
+                      {(weeklySummary.key_issues || []).length > 0 && (
+                        <p style={{ fontSize: "13px", opacity: 0.85 }}>
+                          ⚠️ 주요 이슈:{" "}
+                          {(weeklySummary.key_issues || []).join(" · ")}
+                        </p>
+                      )}
+                    </>
+                  )}
+                </div>
+
+                <div>
+                  <strong style={{ display: "block", marginBottom: 4 }}>
+                    실패에서 배운 점 (Failures Learned)
+                  </strong>
+                  {failuresLearned.length === 0 ? (
+                    <p style={{ opacity: 0.8 }}>
+                      아직 기록된 실패 학습이 없습니다.
+                    </p>
+                  ) : (
+                    <ul
+                      style={{
+                        listStyle: "none",
+                        padding: 0,
+                        margin: 0,
+                        maxHeight: "80px",
+                        overflowY: "auto",
+                      }}
+                    >
+                      {failuresLearned.slice(-2).map((f, idx) => (
+                        <li key={`${f.time || "fail"}-${idx}`}>
+                          <small style={{ opacity: 0.7 }}>
+                            {f.time || "시간 미상"} · {f.context || ""}
+                          </small>
+                          <p style={{ marginTop: 2, fontSize: "13px" }}>
+                            교훈: {f.lesson || "-"}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </>
             )}
           </section>
 
