@@ -2,10 +2,10 @@
   "timestamp": "2025-11-15 21:09:28.238837",
   "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
   "last_reflection": {
-    "insight": "시스템의 신뢰성이 낮고 헬스 체크 및 프론트엔드 문제로 인해 성능 저하가 발생하고 있습니다.",
+    "insight": "현재 시스템은 헬스 체크 및 프론트엔드 문제로 성능 저하가 발생하고 있으며 신뢰성이 낮습니다.",
     "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정, 2) 프론트엔드 정적 파일 누락 문제 해결",
     "confidence": 0.2,
-    "self_critique": "최근 의사결정 및 행동 루프에서 헬스 체크와 프론트엔드 문제로 목표 달성에 실패했습니다.",
+    "self_critique": "헬스 체크와 프론트엔드 문제로 인해 최근 의사결정 및 행동 루프에서 목표 달성에 실패했습니다.",
     "last_decision_score": 0.4,
     "long_term_goals": [
       {
@@ -38,7 +38,7 @@
       }
     ]
   },
-  "updated_at": "2025-11-19T05:03:03.105245",
+  "updated_at": "2025-11-19T05:08:22.006866",
   "episodes": [
     {
       "time": "2025-11-17T10:05:30.369949Z",
