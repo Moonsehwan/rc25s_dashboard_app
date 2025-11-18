@@ -1,14 +1,14 @@
 {
-  "updated_at": "2025-11-18T15:13:09.609927Z",
+  "updated_at": "2025-11-18T15:18:05.114220Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-18T15:13:05.104571Z"
+    "last_decision_time": "2025-11-18T15:18:05.114211Z"
   },
   "reflection": {
     "insight": "현재 RC25S 시스템은 헬스 체크 엔드포인트 오류와 프론트엔드 정적 파일 누락으로 인해 불안정합니다.",
     "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정 2) 프론트엔드 정적 파일 누락 문제 해결",
     "confidence": 0.2,
-    "self_critique": "헬스 체크 실패를 인식했지만 문제를 해결하기 위한 적절한 조치를 취하지 못했습니다.",
+    "self_critique": "헬스 체크 실패를 인식했지만 추가 조치를 취하지 못하여 시스템 안정성을 저해하고 있습니다.",
     "last_decision_score": 0.4,
     "long_term_goals": [
       {
@@ -45,10 +45,10 @@
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "현재 RC25S 시스템은 헬스 체크 엔드포인트 오류와 프론트엔드 정적 파일 누락으로 불안정합니다.",
-      "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정, 2) 프론트엔드 정적 파일 누락 문제 해결",
+      "insight": "현재 RC25S 시스템은 헬스 체크 엔드포인트 오류와 프론트엔드 정적 파일 누락으로 인해 불안정합니다.",
+      "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정 2) 프론트엔드 정적 파일 누락 문제 해결",
       "confidence": 0.2,
-      "self_critique": "헬스 체크 실패를 인식했지만, 문제를 해결할 적절한 조치를 취하지 못했습니다.",
+      "self_critique": "헬스 체크 실패를 인식했지만 문제를 해결하기 위한 적절한 조치를 취하지 못했습니다.",
       "last_decision_score": 0.4,
       "long_term_goals": [
         {
@@ -62,7 +62,7 @@
       ],
       "weekly_summary": {
         "week_of": "2025-11-17",
-        "summary": "이번 주에 Nginx 재빌드를 완료했지만 헬스 체크 및 정적 파일 문제는 여전히 해결되지 않았습니다.",
+        "summary": "이번 주에 Nginx 재빌드를 완료했으나 헬스 체크 및 정적 파일 문제는 여전히 해결되지 않았습니다.",
         "key_wins": [
           "Nginx 재빌드 성공",
           "Self-Check 프로세스 안정성 확보"
@@ -81,7 +81,7 @@
         }
       ]
     },
-    "updated_at": "2025-11-19T00:12:51.691758",
+    "updated_at": "2025-11-19T00:17:21.664205",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",
@@ -271,12 +271,6 @@
     ]
   },
   "failures_learned": [
-    {
-      "time": "2025-11-16T13:16:54Z",
-      "context": "헬스 체크 과정에서 엔드포인트가 응답하지 않아 서비스가 중단되었습니다.",
-      "root_cause": "Nginx 라우팅 설정이 잘못되어 있었음",
-      "lesson": "헬스 체크 및 Nginx 라우팅 설정을 정기적으로 검토하고 모니터링해야 함."
-    },
     {
       "time": "2025-11-16T13:16:54Z",
       "context": "헬스 체크 과정에서 엔드포인트가 응답하지 않아 서비스가 중단되었습니다.",
@@ -514,6 +508,12 @@
     {
       "time": "2025-11-16T13:16:54Z",
       "context": "헬스 체크에서 엔드포인트 오류로 서비스가 중단되었습니다.",
+      "root_cause": "Nginx 라우팅 설정 오류",
+      "lesson": "정기적으로 헬스 체크 및 라우팅 설정을 점검하고 모니터링해야 한다는 교훈을 얻었습니다."
+    },
+    {
+      "time": "2025-11-16T13:16:54Z",
+      "context": "헬스 체크에서 엔드포인트 오류로 인해 서비스가 중단되었습니다.",
       "root_cause": "Nginx 라우팅 설정 오류",
       "lesson": "정기적으로 헬스 체크 및 라우팅 설정을 점검하고 모니터링해야 한다는 교훈을 얻었습니다."
     },
