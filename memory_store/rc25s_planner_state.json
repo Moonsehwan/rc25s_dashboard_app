@@ -1,12 +1,14 @@
 {
-  "generated_at": "2025-11-17T09:15:41.477086Z",
+  "generated_at": "2025-11-18T14:17:50.590766Z",
   "signals": {
     "autoheal_cycles": 1,
     "autoheal_rebuilds": 0,
     "autoheal_frontend_issues": 0,
     "selfcheck_runs": 200,
-    "selfcheck_frontend_issues": 40,
-    "selfcheck_manifest_warnings": 40,
+    "selfcheck_frontend_issues": 0,
+    "selfcheck_manifest_warnings": 0,
+    "nginx_error_total_lines": 0,
+    "nginx_error_agi_issues": 0,
     "raw_preview": {
       "autoheal_tail": [
         "2025-11-16 19:20:51 [AUTOHEAL] 🧠 RC25S AI Autoheal cycle started.",
@@ -19,20 +21,28 @@
         "2025-11-16 19:20:59 [AUTOHEAL] 🧩 RC25S AI Autoheal cycle complete."
       ],
       "selfcheck_tail": [
-        "2025-11-17 18:12:31 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
-        "2025-11-17 18:12:31 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
-        "2025-11-17 18:12:32 [SELF-CHECK] ✅ LLM integration healthy.",
-        "2025-11-17 18:12:32 [SELF-CHECK] ✅ LLM integration healthy.",
-        "2025-11-17 18:12:32 [SELF-CHECK] ❌ Frontend static files missing. Reloading Nginx...",
-        "2025-11-17 18:12:32 [SELF-CHECK] ❌ Frontend static files missing. Reloading Nginx...",
-        "2025-11-17 18:12:33 [SELF-CHECK] ⚠️ Manifest not reachable.",
-        "2025-11-17 18:12:33 [SELF-CHECK] ⚠️ Manifest not reachable.",
-        "2025-11-17 18:12:33 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
-        "2025-11-17 18:12:33 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
-      ]
+        "2025-11-18 23:10:09 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-18 23:10:09 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+        "2025-11-18 23:13:19 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+        "2025-11-18 23:13:19 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+        "2025-11-18 23:13:19 [SELF-CHECK] ✅ LLM integration healthy.",
+        "2025-11-18 23:13:19 [SELF-CHECK] ✅ LLM integration healthy.",
+        "2025-11-18 23:13:20 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-18 23:13:20 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-18 23:13:21 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+        "2025-11-18 23:13:21 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
+      ],
+      "nginx_error_tail": []
     }
   },
   "goals": [
+    {
+      "id": "ltg_2025_agi",
+      "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
+      "description": "시스템의 신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 개선하는 것이 중요합니다.",
+      "priority": 100,
+      "status": "active"
+    },
     {
       "id": "goal_stability",
       "title": "RC25S 서비스 안정성 유지",
@@ -41,17 +51,10 @@
       "status": "active"
     },
     {
-      "id": "goal_frontend_reliability",
-      "title": "프론트엔드 /agi 대시보드 안정화",
-      "description": "최근 로그에서 프론트엔드 관련 오류 40건 감지됨. Nginx 라우팅, Vite 빌드, SelfCheck 기준을 점검해 404/재빌드 빈도를 줄인다.",
-      "priority": 95,
-      "status": "active"
-    },
-    {
       "id": "goal_self_improvement",
       "title": "RC25S Self-Improvement 루프 고도화",
       "description": "Self-Check/Autoheal/대시보드 로그를 바탕으로 RC25S가 스스로 개선 포인트를 제안하고 실행하는 루프를 확장한다.",
-      "priority": 75,
+      "priority": 80,
       "status": "active"
     }
   ],
@@ -62,22 +65,6 @@
       "title": "헬스 엔드포인트 정합성 점검",
       "description": "rc25s-selfcheck.sh와 RC25S_AI_Autoheal.sh에서 사용하는 /health, /llm, /agi URL들이 실제 서비스와 일치하는지 검증한다.",
       "priority": 90,
-      "status": "pending"
-    },
-    {
-      "id": "goal_frontend_reliability_review_nginx",
-      "goal_id": "goal_frontend_reliability",
-      "title": "Nginx /agi 라우팅 재점검",
-      "description": "rc25s_dashboard.conf에서 /agi location이 /srv/repo/vibecoding/dashboard/dist 를 정확히 가리키는지, try_files 설정이 Vite SPA에 적절한지 다시 확인한다.",
-      "priority": 85,
-      "status": "pending"
-    },
-    {
-      "id": "goal_frontend_reliability_align_selfcheck_autoheal",
-      "goal_id": "goal_frontend_reliability",
-      "title": "SelfCheck와 Autoheal 기준 완전 정렬",
-      "description": "rc25s-selfcheck.sh와 RC25S_AI_Autoheal.sh가 동일한 URL(/agi/)과 성공 기준(2xx/3xx)을 사용하도록 유지한다.",
-      "priority": 80,
       "status": "pending"
     },
     {
