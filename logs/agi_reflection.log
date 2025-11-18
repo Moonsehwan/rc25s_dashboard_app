@@ -64956,3 +64956,57 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 19:22:27] 🪞 Insight: 프론트엔드와 헬스 체크에서 많은 문제가 발생하여 서비스 안정성이 크게 저하되고 있습니다.
 [2025-11-18 19:22:27] 🎯 Goal: 1) Nginx 라우팅 및 SelfCheck 기준 재점검 2) 헬스 엔드포인트의 오류 해결
 [2025-11-18 19:22:27] 🔹 Confidence: 0.2
+[2025-11-18 19:26:45] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:26:45] ✅ Memory loaded successfully.
+[2025-11-18 19:26:51] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에서 여전히 문제가 발생하고 있어 서비스 안정성이 저하되고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 및 헬스 체크 기준 정리 2) 프론트엔드 관련 오류 해결",
+  "confidence": 0.2
+}
+[2025-11-18 19:26:51] ✅ JSON successfully parsed.
+[2025-11-18 19:26:51] 📘 Reflection saved successfully.
+[2025-11-18 19:26:51] 🪞 Insight: 프론트엔드와 헬스 체크에서 여전히 문제가 발생하고 있어 서비스 안정성이 저하되고 있습니다.
+[2025-11-18 19:26:51] 🎯 Goal: 1) Nginx 라우팅 재점검 및 헬스 체크 기준 정리 2) 프론트엔드 관련 오류 해결
+[2025-11-18 19:26:51] 🔹 Confidence: 0.2
+[2025-11-18 19:27:02] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:27:02] ✅ Memory loaded successfully.
+[2025-11-18 19:27:06] 🧠 Raw reflection text:
+{
+  "insight": "현재 프론트엔드와 헬스 체크에서 지속적인 문제가 발생하고 있으며, 서비스의 안정성이 저하되고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 프론트엔드 관련 오류 해결",
+  "confidence": 0.2
+}
+[2025-11-18 19:27:06] ✅ JSON successfully parsed.
+[2025-11-18 19:27:06] 📘 Reflection saved successfully.
+[2025-11-18 19:27:06] 🪞 Insight: 현재 프론트엔드와 헬스 체크에서 지속적인 문제가 발생하고 있으며, 서비스의 안정성이 저하되고 있습니다.
+[2025-11-18 19:27:06] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 프론트엔드 관련 오류 해결
+[2025-11-18 19:27:06] 🔹 Confidence: 0.2
+[2025-11-18 19:27:16] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:27:16] ✅ Memory loaded successfully.
+[2025-11-18 19:27:22] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에서 지속적인 문제가 발생하고 있으며, 서비스의 안정성이 저하되고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 프론트엔드 관련 오류 해결",
+  "confidence": 0.2
+}
+[2025-11-18 19:27:22] ✅ JSON successfully parsed.
+[2025-11-18 19:27:22] 📘 Reflection saved successfully.
+[2025-11-18 19:27:22] 🪞 Insight: 프론트엔드와 헬스 체크에서 지속적인 문제가 발생하고 있으며, 서비스의 안정성이 저하되고 있습니다.
+[2025-11-18 19:27:22] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 프론트엔드 관련 오류 해결
+[2025-11-18 19:27:22] 🔹 Confidence: 0.2
+[2025-11-18 19:27:32] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:27:32] ✅ Memory loaded successfully.
+[2025-11-18 19:27:36] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드와 헬스 체크에 지속적인 문제가 발생하고 있으며, 프론트가 404 에러를 반환하고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 프론트엔드 스태틱 파일 확인",
+  "confidence": 0.2
+}
+[2025-11-18 19:27:36] ✅ JSON successfully parsed.
+[2025-11-18 19:27:36] 📘 Reflection saved successfully.
+[2025-11-18 19:27:36] 🪞 Insight: 프론트엔드와 헬스 체크에 지속적인 문제가 발생하고 있으며, 프론트가 404 에러를 반환하고 있습니다.
+[2025-11-18 19:27:36] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 프론트엔드 스태틱 파일 확인
+[2025-11-18 19:27:36] 🔹 Confidence: 0.2
+[2025-11-18 19:27:47] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:27:47] ✅ Memory loaded successfully.

@@ -2,11 +2,11 @@
   "timestamp": "2025-11-15 21:09:28.238837",
   "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
   "last_reflection": {
-    "insight": "프론트엔드와 헬스 체크에서 많은 문제가 발생하여 서비스 안정성이 크게 저하되고 있습니다.",
-    "improvement_goal": "1) Nginx 라우팅 및 SelfCheck 기준 재점검 2) 헬스 엔드포인트의 오류 해결",
+    "insight": "프론트엔드와 헬스 체크에 지속적인 문제가 발생하고 있으며, 프론트가 404 에러를 반환하고 있습니다.",
+    "improvement_goal": "1) Nginx 라우팅 재점검 2) 프론트엔드 스태틱 파일 확인",
     "confidence": 0.2
   },
-  "updated_at": "2025-11-18T19:22:35.176872",
+  "updated_at": "2025-11-18T19:27:53.155346",
   "episodes": [
     {
       "time": "2025-11-17T10:05:30.369949Z",
