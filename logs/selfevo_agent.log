@@ -3657,3 +3657,8 @@
 [2025-11-18 21:52:27] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-18 21:52:27] 🔁 서비스 재시작 완료.
 [2025-11-18 21:57:33] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-18 22:02:40] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-18 22:02:40] ⚠️ 비활성 서비스 감지: ['agi-memory.service']
+[2025-11-18 22:02:40] 💡 LLM 제안: 
+[2025-11-18 22:02:40] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-18 22:02:40] 🔁 서비스 재시작 완료.
