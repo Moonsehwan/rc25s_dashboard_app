@@ -1,5 +1,5 @@
 {
-  "insight": "시스템은 프론트엔드 정적 파일 누락 및 헬스 체크 오류로 인해 안정성이 저하되고 있으며, 최근 헬스 엔드포인트 점검이 실패했습니다.",
-  "improvement_goal": "Nginx 라우팅과 Static 파일 배포 점검, SelfCheck와 Autoheal 기준 정렬 진행",
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류 발생, 매니페스트 도달 불가능 경고 있음.",
+  "improvement_goal": "Nginx 설정 검토 및 SelfCheck와 Autoheal 기준 정렬",
   "confidence": 0.2
 }
