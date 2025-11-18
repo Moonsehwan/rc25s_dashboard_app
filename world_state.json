@@ -1,23 +1,23 @@
 {
-  "updated_at": "2025-11-18T10:33:04.180955Z",
+  "updated_at": "2025-11-18T10:38:04.791347Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-18T10:33:04.180947Z"
+    "last_decision_time": "2025-11-18T10:38:04.183972Z"
   },
   "reflection": {
-    "insight": "프론트엔드의 정적 파일이 누락되어 404 에러가 지속적으로 발생하고 있습니다. 헬스 체크 결과도 일부 오류가 발견되었습니다.",
-    "improvement_goal": "1) Nginx 라우팅과 설정을 재점검하고 2) 프론트엔드의 정적 파일 복구 작업을 진행합니다.",
+    "insight": "프론트엔드 정적 파일 누락 및 헬스 체크 실패로 인해 시스템에 문제가 발생하고 있습니다.",
+    "improvement_goal": "1) Nginx 라우팅 및 Vite 빌드 점검 2) 정적 파일 복구 작업 진행",
     "confidence": 0.2
   },
   "memory": {
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "프론트엔드의 404 에러가 지속적으로 발생하며, 헬스 체크에서 프론트엔드 정적 파일이 누락되었습니다.",
-      "improvement_goal": "1) Nginx 라우팅을 재점검하고 2) 프론트엔드의 정적 파일을 복구합니다.",
+      "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, 헬스 체크에서 일부 오류가 감지되었습니다.",
+      "improvement_goal": "1) Nginx 라우팅 재점검 및 Vite 빌드 확인 2) 정적 파일 복구 작업 진행",
       "confidence": 0.2
     },
-    "updated_at": "2025-11-18T19:32:44.916149",
+    "updated_at": "2025-11-18T19:37:59.703195",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",

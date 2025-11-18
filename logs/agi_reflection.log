@@ -65090,3 +65090,85 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 19:33:01] 🪞 Insight: 프론트엔드의 정적 파일이 누락되어 404 에러가 지속적으로 발생하고 있습니다. 헬스 체크 결과도 일부 오류가 발견되었습니다.
 [2025-11-18 19:33:01] 🎯 Goal: 1) Nginx 라우팅과 설정을 재점검하고 2) 프론트엔드의 정적 파일 복구 작업을 진행합니다.
 [2025-11-18 19:33:01] 🔹 Confidence: 0.2
+[2025-11-18 19:36:51] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:36:51] ✅ Memory loaded successfully.
+[2025-11-18 19:36:55] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드의 정적 파일이 누락되어 404 오류가 지속 발생하며, 헬스 체크에서 일부 오류가 확인되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 정적 파일 복구 작업 진행",
+  "confidence": 0.2
+}
+[2025-11-18 19:36:55] ✅ JSON successfully parsed.
+[2025-11-18 19:36:55] 📘 Reflection saved successfully.
+[2025-11-18 19:36:55] 🪞 Insight: 프론트엔드의 정적 파일이 누락되어 404 오류가 지속 발생하며, 헬스 체크에서 일부 오류가 확인되었습니다.
+[2025-11-18 19:36:55] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 정적 파일 복구 작업 진행
+[2025-11-18 19:36:55] 🔹 Confidence: 0.2
+[2025-11-18 19:36:57] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:36:57] ✅ Memory loaded successfully.
+[2025-11-18 19:37:03] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일 누락으로 404 오류 발생 중이며, 헬스 체크에서 일부 오류가 감지되었습니다.",
+  "improvement_goal": "1) 프론트엔드 정적 파일 복구 작업을 진행하고 2) Nginx 설정을 재검토합니다.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:37:03] ✅ JSON successfully parsed.
+[2025-11-18 19:37:03] 📘 Reflection saved successfully.
+[2025-11-18 19:37:03] 🪞 Insight: 프론트엔드 정적 파일 누락으로 404 오류 발생 중이며, 헬스 체크에서 일부 오류가 감지되었습니다.
+[2025-11-18 19:37:03] 🎯 Goal: 1) 프론트엔드 정적 파일 복구 작업을 진행하고 2) Nginx 설정을 재검토합니다.
+[2025-11-18 19:37:03] 🔹 Confidence: 0.2
+[2025-11-18 19:37:08] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:37:08] ✅ Memory loaded successfully.
+[2025-11-18 19:37:14] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 지속 발생하고 있으며, 헬스 체크에서 일부 오류가 확인되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 정적 파일 복구 작업 진행",
+  "confidence": 0.2
+}
+[2025-11-18 19:37:14] ✅ JSON successfully parsed.
+[2025-11-18 19:37:14] 📘 Reflection saved successfully.
+[2025-11-18 19:37:14] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 지속 발생하고 있으며, 헬스 체크에서 일부 오류가 확인되었습니다.
+[2025-11-18 19:37:14] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 정적 파일 복구 작업 진행
+[2025-11-18 19:37:14] 🔹 Confidence: 0.2
+[2025-11-18 19:37:28] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:37:28] ✅ Memory loaded successfully.
+[2025-11-18 19:37:32] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, 헬스 체크에서 일부 오류가 감지되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 2) 정적 파일 복구 작업 진행",
+  "confidence": 0.2
+}
+[2025-11-18 19:37:32] ✅ JSON successfully parsed.
+[2025-11-18 19:37:32] 📘 Reflection saved successfully.
+[2025-11-18 19:37:32] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, 헬스 체크에서 일부 오류가 감지되었습니다.
+[2025-11-18 19:37:32] 🎯 Goal: 1) Nginx 라우팅 재점검 2) 정적 파일 복구 작업 진행
+[2025-11-18 19:37:32] 🔹 Confidence: 0.2
+[2025-11-18 19:37:43] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:37:43] ✅ Memory loaded successfully.
+[2025-11-18 19:37:47] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, 헬스 체크에서 일부 오류가 감지되었습니다.",
+  "improvement_goal": "1) Nginx 라우팅 재점검 및 Vite 빌드 확인 2) 정적 파일 복구 작업 진행",
+  "confidence": 0.2
+}
+[2025-11-18 19:37:47] ✅ JSON successfully parsed.
+[2025-11-18 19:37:47] 📘 Reflection saved successfully.
+[2025-11-18 19:37:47] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 404 오류가 발생하고 있으며, 헬스 체크에서 일부 오류가 감지되었습니다.
+[2025-11-18 19:37:47] 🎯 Goal: 1) Nginx 라우팅 재점검 및 Vite 빌드 확인 2) 정적 파일 복구 작업 진행
+[2025-11-18 19:37:47] 🔹 Confidence: 0.2
+[2025-11-18 19:37:59] 🚀 AGI Reflection Engine started.
+[2025-11-18 19:37:59] ✅ Memory loaded successfully.
+[2025-11-18 19:38:04] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일 누락 및 헬스 체크 실패로 인해 시스템에 문제가 발생하고 있습니다.",
+  "improvement_goal": "1) Nginx 라우팅 및 Vite 빌드 점검 2) 정적 파일 복구 작업 진행",
+  "confidence": 0.2
+}
+```
+[2025-11-18 19:38:04] ✅ JSON successfully parsed.
+[2025-11-18 19:38:04] 📘 Reflection saved successfully.
+[2025-11-18 19:38:04] 🪞 Insight: 프론트엔드 정적 파일 누락 및 헬스 체크 실패로 인해 시스템에 문제가 발생하고 있습니다.
+[2025-11-18 19:38:04] 🎯 Goal: 1) Nginx 라우팅 및 Vite 빌드 점검 2) 정적 파일 복구 작업 진행
+[2025-11-18 19:38:04] 🔹 Confidence: 0.2
