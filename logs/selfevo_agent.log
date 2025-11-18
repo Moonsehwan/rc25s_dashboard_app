@@ -3592,3 +3592,4 @@
 [2025-11-18 20:46:59] 🔁 서비스 재시작 완료.
 [2025-11-18 20:52:05] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-18 20:53:06] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-18 20:57:12] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
