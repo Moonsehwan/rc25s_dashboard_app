@@ -64317,3 +64317,83 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 18:37:59] 🪞 Insight: 프론트엔드 정적 파일 누락으로 헬스 체크 실패. SelfCheck에서 40건의 프론트엔드 오류 감지됨.
 [2025-11-18 18:37:59] 🎯 Goal: Nginx 라우팅 재검토 및 프론트엔드 정적 파일 배포 확인. SelfCheck와 Autoheal 기준 정렬.
 [2025-11-18 18:37:59] 🔹 Confidence: 0.1
+[2025-11-18 18:41:46] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:41:46] ✅ Memory loaded successfully.
+[2025-11-18 18:41:51] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일 누락으로 헬스 체크 실패; 여러 번의 SelfCheck에서 프론트엔드 관련 오류가 확인됨.",
+  "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck 기준 정렬, 정적 파일 배포 확인.",
+  "confidence": 0.1
+}
+[2025-11-18 18:41:51] ✅ JSON successfully parsed.
+[2025-11-18 18:41:51] 📘 Reflection saved successfully.
+[2025-11-18 18:41:51] 🪞 Insight: 프론트엔드 정적 파일 누락으로 헬스 체크 실패; 여러 번의 SelfCheck에서 프론트엔드 관련 오류가 확인됨.
+[2025-11-18 18:41:51] 🎯 Goal: Nginx 라우팅 재검토 및 SelfCheck 기준 정렬, 정적 파일 배포 확인.
+[2025-11-18 18:41:51] 🔹 Confidence: 0.1
+[2025-11-18 18:42:02] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:42:02] ✅ Memory loaded successfully.
+[2025-11-18 18:42:07] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일 누락으로 헬스 체크 실패; 최근 SelfCheck에서 프론트엔드 관련 오류 40건 보고됨.",
+  "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck 기준 정렬 필요. 프론트엔드 정적 파일 배포 검증.",
+  "confidence": 0.1
+}
+[2025-11-18 18:42:07] ✅ JSON successfully parsed.
+[2025-11-18 18:42:07] 📘 Reflection saved successfully.
+[2025-11-18 18:42:07] 🪞 Insight: 프론트엔드 정적 파일 누락으로 헬스 체크 실패; 최근 SelfCheck에서 프론트엔드 관련 오류 40건 보고됨.
+[2025-11-18 18:42:07] 🎯 Goal: Nginx 라우팅 재검토 및 SelfCheck 기준 정렬 필요. 프론트엔드 정적 파일 배포 검증.
+[2025-11-18 18:42:07] 🔹 Confidence: 0.1
+[2025-11-18 18:42:17] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:42:17] ✅ Memory loaded successfully.
+[2025-11-18 18:42:22] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일 누락으로 인해 헬스 체크가 실패하였고, 최근 SelfCheck에서 40건의 프론트엔드 관련 오류가 발생했습니다.",
+  "improvement_goal": "Nginx 라우팅과 SelfCheck 기준을 재검토하고, 프론트엔드 정적 파일 배포 검증 필요.",
+  "confidence": 0.1
+}
+[2025-11-18 18:42:22] ✅ JSON successfully parsed.
+[2025-11-18 18:42:22] 📘 Reflection saved successfully.
+[2025-11-18 18:42:22] 🪞 Insight: 프론트엔드 정적 파일 누락으로 인해 헬스 체크가 실패하였고, 최근 SelfCheck에서 40건의 프론트엔드 관련 오류가 발생했습니다.
+[2025-11-18 18:42:22] 🎯 Goal: Nginx 라우팅과 SelfCheck 기준을 재검토하고, 프론트엔드 정적 파일 배포 검증 필요.
+[2025-11-18 18:42:22] 🔹 Confidence: 0.1
+[2025-11-18 18:42:32] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:42:32] ✅ Memory loaded successfully.
+[2025-11-18 18:42:36] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:42:36] ✅ Memory loaded successfully.
+[2025-11-18 18:42:37] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일 누락으로 인해 헬스 체크가 실패하였고, 최근 40건의 프론트엔드 관련 오류가 발생했습니다.",
+  "improvement_goal": "Nginx 라우팅과 SelfCheck 기준을 재검토하고, 프론트엔드 정적 파일 배포 검증 필요.",
+  "confidence": 0.1
+}
+[2025-11-18 18:42:37] ✅ JSON successfully parsed.
+[2025-11-18 18:42:37] 📘 Reflection saved successfully.
+[2025-11-18 18:42:37] 🪞 Insight: 프론트엔드 정적 파일 누락으로 인해 헬스 체크가 실패하였고, 최근 40건의 프론트엔드 관련 오류가 발생했습니다.
+[2025-11-18 18:42:37] 🎯 Goal: Nginx 라우팅과 SelfCheck 기준을 재검토하고, 프론트엔드 정적 파일 배포 검증 필요.
+[2025-11-18 18:42:37] 🔹 Confidence: 0.1
+[2025-11-18 18:42:42] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 정적 파일 누락으로 헬스 체크가 실패하였고, 자가 진단에서 다수의 오류가 발견되었습니다.",
+  "improvement_goal": "Nginx 라우팅 재점검 및 프론트엔드 정적 파일 배포 검증 필요.",
+  "confidence": 0.2
+}
+[2025-11-18 18:42:42] ✅ JSON successfully parsed.
+[2025-11-18 18:42:42] 📘 Reflection saved successfully.
+[2025-11-18 18:42:42] 🪞 Insight: 프론트엔드 정적 파일 누락으로 헬스 체크가 실패하였고, 자가 진단에서 다수의 오류가 발견되었습니다.
+[2025-11-18 18:42:42] 🎯 Goal: Nginx 라우팅 재점검 및 프론트엔드 정적 파일 배포 검증 필요.
+[2025-11-18 18:42:42] 🔹 Confidence: 0.2
+[2025-11-18 18:42:51] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:42:51] ✅ Memory loaded successfully.
+[2025-11-18 18:42:58] 🧠 Raw reflection text:
+```json
+{
+  "insight": "프론트엔드 정적 파일이 누락되어 헬스 체크가 실패하였으며, 다수의 오류가 발견되었습니다.",
+  "improvement_goal": "Nginx 라우팅 재점검 및 정적 파일 배포 검증 필요.",
+  "confidence": 0.2
+}
+```
+[2025-11-18 18:42:58] ✅ JSON successfully parsed.
+[2025-11-18 18:42:58] 📘 Reflection saved successfully.
+[2025-11-18 18:42:58] 🪞 Insight: 프론트엔드 정적 파일이 누락되어 헬스 체크가 실패하였으며, 다수의 오류가 발견되었습니다.
+[2025-11-18 18:42:58] 🎯 Goal: Nginx 라우팅 재점검 및 정적 파일 배포 검증 필요.
+[2025-11-18 18:42:58] 🔹 Confidence: 0.2
