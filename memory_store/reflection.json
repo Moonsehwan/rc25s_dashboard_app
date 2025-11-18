@@ -1,5 +1,5 @@
 {
-  "insight": "시스템이 헬스 엔드포인트 점검에서 실패했으며 프론트엔드 관련 오류가 지속되고 있습니다.",
-  "improvement_goal": "Nginx 라우팅과 SelfCheck 기준을 재점검하고, 헬스 엔드포인트 점검을 다시 시도합니다.",
+  "insight": "프론트엔드 오류가 계속 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.",
+  "improvement_goal": "Nginx 라우팅 점검 및 SelfCheck 기준 정렬, 헬스 엔드포인트 결과 수집 후 분석.",
   "confidence": 0.2
 }

@@ -7,19 +7,27 @@ kernel = RC25SKernel()
 
 def _get_openai_client() -> OpenAI:
     """
-    항상 최신 OPENAI_API_KEY를 사용하도록 클라이언트를 생성한다.
-    - 우선 순위:
-      1) 환경변수 OPENAI_API_KEY
-      2) /etc/openai_api_key.txt 파일 (존재 시)
+    항상 /etc/openai_api_key.txt 를 우선 사용해 OpenAI 클라이언트를 생성한다.
+    - 순서:
+      1) /etc/openai_api_key.txt가 있으면 그 값을 사용
+      2) 없을 때만 환경변수 OPENAI_API_KEY 사용
     """
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key or "$(" in str(api_key):
-        key_path = "/etc/openai_api_key.txt"
-        if os.path.exists(key_path):
+    api_key = None
+    key_path = "/etc/openai_api_key.txt"
+    if os.path.exists(key_path):
+        try:
             api_key = open(key_path).read().strip()
-            os.environ["OPENAI_API_KEY"] = api_key
-        else:
-            raise RuntimeError("No valid OPENAI_API_KEY or /etc/openai_api_key.txt found")
+        except Exception:
+            api_key = None
+
+    if not api_key:
+        api_key = os.getenv("OPENAI_API_KEY")
+
+    if not api_key or "$(" in str(api_key):
+        raise RuntimeError("No valid OPENAI_API_KEY or /etc/openai_api_key.txt found")
+
+    # 환경변수도 최신 값으로 맞춰 둔다 (다른 코드 호환용)
+    os.environ["OPENAI_API_KEY"] = api_key
     return OpenAI(api_key=api_key)
 
 
