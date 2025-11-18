@@ -1,9 +1,12 @@
-import os, time, json
+import os
+import time
+import json
 from pathlib import Path
 
 import psutil
 from openai import OpenAI
 from rc25_kernel_RC25S import RC25SKernel
+
 
 kernel = RC25SKernel()
 
@@ -74,12 +77,13 @@ def _get_system_stats_summary() -> str:
         return ""
 
 
-def rc25s_chat(prompt, history=None, model="gpt-4o-mini"):
+def rc25s_chat(prompt: str, history=None, model: str = "gpt-4o-mini") -> dict:
     """
-    RC25S용 LLM 래퍼:
+    RC25S용 LLM 래퍼 (안정성 우선 버전):
     - RC25S Kernel 메타컨트롤(mode, self_reflect)을 먼저 적용
     - world_state 스냅샷과 서버 상태 요약을 system 프롬프트에 포함
     - 항상 한국어로 답변하고, 자신을 'RC25S Self-Improvement 시스템의 LLM 모듈'로 인식하도록 안내
+    - 아직은 안전을 위해 actions 기반 자동 실행은 사용하지 않고, 답변만 돌려준다.
     """
     start = time.time()
     mode = kernel.detect_mode(prompt)
@@ -97,26 +101,16 @@ def rc25s_chat(prompt, history=None, model="gpt-4o-mini"):
         f"- world_state 요약(JSON): {world_state_json}\n"
         f"- 서버 리소스 상태: {system_stats}\n"
         "\n"
-        "### 출력 형식 (매우 중요)\n"
-        "반드시 아래 JSON 형식 **한 줄**로만 답한다. 자연어 문장을 JSON 바깥에 추가하지 마라.\n"
-        \"{\"answer\": \"사용자에게 보여 줄 한국어 답변\", \"actions\": [{\"type\": \"run_planner\"}]}\ 라는 형태로만 응답한다.\n"
-        "\n"
-        "허용되는 action.type 값은 다음만 가능하다:\n"
-        "- \"run_planner\" : rc25s_planner를 1회 실행하여 goals/tasks를 갱신\n"
-        "- \"run_executor\" : Executor 1회 실행 (가장 우선순위 높은 pending task)\n"
-        "- \"run_selfcheck\" : rc25s-selfcheck.sh 실행 (헬스체크/Autoheal 점검)\n"
-        "- 다른 값을 넣지 말 것. 아무 것도 실행하지 않을 때는 actions를 빈 배열([])로 둔다.\n"
-        "\n"
         "### 답변 규칙\n"
-        "- 항상 한국어로 답변한다 (answer 필드).\n"
+        "- 항상 한국어로 답변한다.\n"
         "- 자신을 '일반적인 ChatGPT'가 아니라 'RC25S 시스템 내부의 LLM 컴포넌트'로 소개한다.\n"
         "- '너 AGI야?' 같은 질문에는, 완전한 자율 AGI는 아니지만 "
         "'Reflection ↔ Planner ↔ Executor 루프를 가진 자기개선 시스템의 두뇌 모듈'이라는 식으로 설명한다.\n"
         "- 서버 상태를 묻는 질문에는 world_state와 위의 서버 리소스 요약을 참고해서, "
         "현재 파악 가능한 범위 내에서 솔직하게 설명한다 (모르는 값은 모른다고 말한다).\n"
         "- RC25S가 가진 기능(리플렉션, 목표/작업 관리, 실행 프리뷰, Self-Check, 로그 확인 등)을 잘 알고 있는 엔지니어처럼 답한다.\n"
-        "- 사용자의 프리텍스트 안에 'Planner 실행', 'Executor 1회 실행', 'Self-Check' 등과 같이 "
-        "실제 AGI 루프 동작을 요구하는 표현이 있으면, 적절한 action들을 actions 배열에 추가한다.\n"
+        "- Planner/Executor/Self-Check를 실제로 실행해야 한다고 판단되면, "
+        "사용자에게 어떤 버튼(Planner 실행 / Executor 1회 실행 / Self-Check)을 눌러야 하는지 구체적으로 안내한다.\n"
     )
 
     client = _get_openai_client()
@@ -128,25 +122,12 @@ def rc25s_chat(prompt, history=None, model="gpt-4o-mini"):
         ],
     )
 
-    raw = response.choices[0].message.content
-
-    # LLM이 JSON으로 잘 응답했는지 파싱 시도
-    answer = raw
-    actions = []
-    try:
-        data = json.loads(raw)
-        if isinstance(data, dict):
-            if isinstance(data.get("answer"), str):
-                answer = data["answer"]
-            if isinstance(data.get("actions"), list):
-                # action 객체는 그대로 전달 (type 키만 사용)
-                actions = data["actions"]
-    except Exception:
-        # 파싱 실패 시 raw 전체를 사용자에게 보여주고, actions는 빈 배열로 둔다.
-        answer = raw
-        actions = []
-
+    text = response.choices[0].message.content
     elapsed = round(time.time() - start, 3)
     metrics = kernel.report_kpi()
     metrics["response_time"] = elapsed
-    return {"response": answer, "actions": actions, "raw": raw, "metrics": metrics}
+
+    # actions는 현재 비워둔다 (향후 안전한 설계 후 확장 예정)
+    return {"response": text, "actions": [], "metrics": metrics}
+
+
