@@ -64170,3 +64170,70 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 [2025-11-18 18:27:46] 🪞 Insight: Nginx 라우팅과 SelfCheck 기준 간 불일치로 인해 프론트엔드에서 오류가 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.
 [2025-11-18 18:27:46] 🎯 Goal: Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시
 [2025-11-18 18:27:46] 🔹 Confidence: 0.1
+[2025-11-18 18:31:45] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:31:45] ✅ Memory loaded successfully.
+[2025-11-18 18:31:51] 🧠 Raw reflection text:
+{
+  "insight": "Nginx 라우팅과 SelfCheck 기준 간 불일치로 인해 프론트엔드에서 오류 빈도가 높아지고 있습니다. 헬스 엔드포인트 점검이 실패했습니다.",
+  "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시",
+  "confidence": 0.1
+}
+[2025-11-18 18:31:51] ✅ JSON successfully parsed.
+[2025-11-18 18:31:51] 📘 Reflection saved successfully.
+[2025-11-18 18:31:51] 🪞 Insight: Nginx 라우팅과 SelfCheck 기준 간 불일치로 인해 프론트엔드에서 오류 빈도가 높아지고 있습니다. 헬스 엔드포인트 점검이 실패했습니다.
+[2025-11-18 18:31:51] 🎯 Goal: Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시
+[2025-11-18 18:31:51] 🔹 Confidence: 0.1
+[2025-11-18 18:32:04] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:32:04] ✅ Memory loaded successfully.
+[2025-11-18 18:32:09] 🧠 Raw reflection text:
+{
+  "insight": "현재 시스템은 헬스 엔드포인트 점검에서 실패하여, 프론트엔드 오류 빈도가 높아지고 있습니다.",
+  "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시",
+  "confidence": 0.1
+}
+[2025-11-18 18:32:09] ✅ JSON successfully parsed.
+[2025-11-18 18:32:09] 📘 Reflection saved successfully.
+[2025-11-18 18:32:09] 🪞 Insight: 현재 시스템은 헬스 엔드포인트 점검에서 실패하여, 프론트엔드 오류 빈도가 높아지고 있습니다.
+[2025-11-18 18:32:09] 🎯 Goal: Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시
+[2025-11-18 18:32:09] 🔹 Confidence: 0.1
+[2025-11-18 18:32:21] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:32:21] ✅ Memory loaded successfully.
+[2025-11-18 18:32:21] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:32:21] ✅ Memory loaded successfully.
+[2025-11-18 18:32:27] 🧠 Raw reflection text:
+{
+  "insight": "시스템의 헬스 엔드포인트 점검이 실패하여 프론트엔드 오류가 증가하고 있습니다.",
+  "improvement_goal": "Nginx 라우팅 재검토와 SelfCheck, Autoheal 기준을 통일하여 문제를 해결합니다.",
+  "confidence": 0.1
+}
+[2025-11-18 18:32:27] ✅ JSON successfully parsed.
+[2025-11-18 18:32:27] 📘 Reflection saved successfully.
+[2025-11-18 18:32:27] 🪞 Insight: 시스템의 헬스 엔드포인트 점검이 실패하여 프론트엔드 오류가 증가하고 있습니다.
+[2025-11-18 18:32:27] 🎯 Goal: Nginx 라우팅 재검토와 SelfCheck, Autoheal 기준을 통일하여 문제를 해결합니다.
+[2025-11-18 18:32:27] 🔹 Confidence: 0.1
+[2025-11-18 18:32:27] 🧠 Raw reflection text:
+```json
+{
+  "insight": "헬스 엔드포인트 점검에서 실패하여 프론트엔드 오류가 빈번하게 발생하고 있습니다.",
+  "improvement_goal": "Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 통일하여 문제를 해결합니다.",
+  "confidence": 0.1
+}
+```
+[2025-11-18 18:32:27] ✅ JSON successfully parsed.
+[2025-11-18 18:32:27] 📘 Reflection saved successfully.
+[2025-11-18 18:32:27] 🪞 Insight: 헬스 엔드포인트 점검에서 실패하여 프론트엔드 오류가 빈번하게 발생하고 있습니다.
+[2025-11-18 18:32:27] 🎯 Goal: Nginx 라우팅을 재점검하고 SelfCheck와 Autoheal의 기준을 통일하여 문제를 해결합니다.
+[2025-11-18 18:32:27] 🔹 Confidence: 0.1
+[2025-11-18 18:32:41] 🚀 AGI Reflection Engine started.
+[2025-11-18 18:32:41] ✅ Memory loaded successfully.
+[2025-11-18 18:32:46] 🧠 Raw reflection text:
+{
+  "insight": "프론트엔드 오류가 빈번하게 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.",
+  "improvement_goal": "Nginx 라우팅을 다시 점검하고 SelfCheck와 Autoheal의 기준을 통일합니다.",
+  "confidence": 0.1
+}
+[2025-11-18 18:32:46] ✅ JSON successfully parsed.
+[2025-11-18 18:32:46] 📘 Reflection saved successfully.
+[2025-11-18 18:32:46] 🪞 Insight: 프론트엔드 오류가 빈번하게 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.
+[2025-11-18 18:32:46] 🎯 Goal: Nginx 라우팅을 다시 점검하고 SelfCheck와 Autoheal의 기준을 통일합니다.
+[2025-11-18 18:32:46] 🔹 Confidence: 0.1

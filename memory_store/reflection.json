@@ -1,5 +1,5 @@
 {
-  "insight": "Nginx 라우팅과 SelfCheck 기준 간 불일치로 인해 프론트엔드에서 오류가 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.",
-  "improvement_goal": "Nginx 라우팅 재검토 및 SelfCheck와 Autoheal 기준 통일, 헬스 엔드포인트 점검 재실시",
+  "insight": "프론트엔드 오류가 빈번하게 발생하고 있으며, 헬스 엔드포인트 점검이 실패했습니다.",
+  "improvement_goal": "Nginx 라우팅을 다시 점검하고 SelfCheck와 Autoheal의 기준을 통일합니다.",
   "confidence": 0.1
 }
