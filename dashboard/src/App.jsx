@@ -93,25 +93,30 @@ export default function App() {
       onStatus: (state) => setStatus(state),
     });
 
-    let sysWS;
-    try {
-      const proto = window.location.protocol === "https:" ? "wss://" : "ws://";
-      // 새로운 시스템 모니터링 채널 (/ws/system2)
-      sysWS = new WebSocket(`${proto}${window.location.host}/ws/system2`);
-      sysWS.onmessage = (event) => {
-        try {
-          const data = JSON.parse(event.data);
-          if (data?.type === "system_stats") {
-            setSystemStats(data);
-          }
-        } catch (err) {
-          console.warn("system WS parse 실패", err);
-        }
-      };
-    } catch (err) {
-      console.warn("system WS 미구현 또는 연결 불가", err);
-    }
-    return () => sysWS && sysWS.close();
+    // 시스템 상태는 WebSocket 대신 /agi/health 폴링으로 가져온다.
+    let timer;
+    const fetchStats = async () => {
+      try {
+        const proto = window.location.protocol === "https:" ? "https://" : "http://";
+        const res = await fetch(`${proto}${window.location.host}/agi/health`, {
+          cache: "no-store",
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        setSystemStats({
+          type: "system_stats",
+          cpu: data.cpu,
+          memory: data.memory,
+          disk: data.disk ?? null,
+          time: data.time,
+        });
+      } catch (err) {
+        console.warn("system stats fetch 실패", err);
+      }
+    };
+    fetchStats();
+    timer = setInterval(fetchStats, 5000);
+    return () => timer && clearInterval(timer);
   }, [appendLog]);
 
   const goals = useMemo(
@@ -153,21 +158,65 @@ export default function App() {
     [appendLog]
   );
 
-  const handleFreeText = () => {
+  const handleFreeText = async () => {
     if (!input.trim()) return;
     const msg = input.trim();
+    const timestamp = nowLabel();
+
+    // 1) 사용자 메시지를 즉시 대화 히스토리에 추가
     setChatHistory((prev) => [
       ...prev.slice(-49),
-      { role: "user", text: msg, timestamp: nowLabel() },
+      { role: "user", text: msg, timestamp },
     ]);
-    if (
-      sendCommand(
-        "free_text",
-        { message: msg },
-        `프리텍스트 전송: ${msg.slice(0, 42)}`
-      )
-    ) {
+
+    // 2) 로그에 프리텍스트 전송 기록 남기기
+    appendLog({
+      type: "command",
+      message: `프리텍스트 전송: ${msg.slice(0, 42)}`,
+      timestamp,
+    });
+
+    // 3) /agi/llm HTTP API를 통해 LLM 호출
+    try {
+      const proto =
+        window.location.protocol === "https:" ? "https://" : "http://";
+      const res = await fetch(`${proto}${window.location.host}/agi/llm`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: msg, provider: "openai" }),
+      });
+
+      if (!res.ok) {
+        appendLog({
+          type: "error",
+          message: `LLM 호출 실패 (status=${res.status})`,
+        });
+        return;
+      }
+
+      const data = await res.json();
+      const answer =
+        data.output || data.response || "(LLM 응답이 비어 있습니다)";
+
+      // 4) LLM 응답을 대화 히스토리와 로그에 반영
+      const ts2 = nowLabel();
+      setChatHistory((prev) => [
+        ...prev.slice(-49),
+        { role: "assistant", text: answer, timestamp: ts2 },
+      ]);
+      appendLog({
+        type: "llm_response",
+        message: answer,
+        timestamp: ts2,
+      });
+
       setInput("");
+    } catch (err) {
+      console.warn("LLM 호출 실패", err);
+      appendLog({
+        type: "error",
+        message: `LLM 호출 중 예외 발생: ${String(err)}`,
+      });
     }
   };
 
