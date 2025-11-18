@@ -1,8 +1,8 @@
 {
-  "updated_at": "2025-11-18T08:57:26.460002Z",
+  "updated_at": "2025-11-18T09:02:26.478985Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-18T08:57:26.459993Z"
+    "last_decision_time": "2025-11-18T09:02:26.478977Z"
   },
   "reflection": {
     "insight": "시스템이 헬스 엔드포인트 점검에서 실패했으며 프론트엔드 관련 오류가 지속되고 있습니다.",
