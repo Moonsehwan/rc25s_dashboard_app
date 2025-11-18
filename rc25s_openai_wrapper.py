@@ -5,7 +5,7 @@ from pathlib import Path
 
 import psutil
 from openai import OpenAI
-from rc25_kernel_RC25S import RC25SKernel
+from vibecoding.rc25_kernel_RC25S import RC25SKernel
 
 
 kernel = RC25SKernel()
