@@ -4120,3 +4120,93 @@ Traceback (most recent call last):
   File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
     from rc25_kernel_RC25S import RC25SKernel as ProKernel
 ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/repo/vibecoding/free_llm_server.py", line 3, in <module>
+    from rc25_kernel_RC25S import RC25SKernel as ProKernel
+ModuleNotFoundError: No module named 'rc25_kernel_RC25S'
