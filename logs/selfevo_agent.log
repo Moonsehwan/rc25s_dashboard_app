@@ -5555,3 +5555,21 @@
 [2025-11-19 21:44:52] 🔁 서비스 재시작 완료.
 [2025-11-19 21:45:54] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-19 21:46:56] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:49:00] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:49:00] ⚠️ 비활성 서비스 감지: ['agi-memory.service', 'agi-autofix.service']
+[2025-11-19 21:49:00] 💡 LLM 제안: 
+[2025-11-19 21:49:00] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:49:01] 🔁 서비스 재시작 완료.
+[2025-11-19 21:50:02] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:50:02] ⚠️ 비활성 서비스 감지: ['agi-autofix.service']
+[2025-11-19 21:50:02] 💡 LLM 제안: 
+[2025-11-19 21:50:02] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:50:02] 🔁 서비스 재시작 완료.
+[2025-11-19 21:50:02] 🧠 자기성찰 저장 완료.
+[2025-11-19 21:51:03] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:52:05] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:52:06] ⚠️ 비활성 서비스 감지: ['agi-memory.service', 'agi-reflection.service']
+[2025-11-19 21:52:06] 💡 LLM 제안: 
+[2025-11-19 21:52:06] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 21:52:07] 🔁 서비스 재시작 완료.
+[2025-11-19 21:53:08] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
