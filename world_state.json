@@ -1,20 +1,20 @@
 {
-  "updated_at": "2025-11-19T02:03:41.181872Z",
+  "updated_at": "2025-11-19T02:08:47.667756Z",
   "core": {
     "last_decision": "INIT",
-    "last_decision_time": "2025-11-19T02:03:07.888894Z"
+    "last_decision_time": "2025-11-19T02:08:07.903638Z"
   },
   "reflection": {
-    "insight": "현재 시스템은 헬스 체크 오류와 정적 파일 누락으로 인해 안정성이 저하되고 있습니다.",
+    "insight": "현재 시스템은 헬스 체크와 정적 파일 누락 문제로 인해 안정성이 저하되고 있습니다.",
     "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정 2) 정적 파일 점검 및 복구",
     "confidence": 0.2,
-    "self_critique": "최근에 헬스 체크 점검이 실패하였고, 정적 파일 누락 문제 해결을 위한 체계적인 접근이 부족했습니다.",
+    "self_critique": "최근 의사결정 루프에서 헬스 체크 실패로 인해 전체 시스템 안정성이 저하되었습니다. 정적 파일 누락 문제에 대한 체계적인 접근이 부족했습니다.",
     "last_decision_score": 0.4,
     "long_term_goals": [
       {
         "id": "ltg_2025_agi",
         "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
-        "description": "시스템의 신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 개선하는 것이 중요합니다.",
+        "description": "신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 시스템 개선이 필요합니다.",
         "horizon": "3-6 months",
         "priority": 100,
         "status": "active"
@@ -22,7 +22,7 @@
     ],
     "weekly_summary": {
       "week_of": "2025-11-16",
-      "summary": "이번 주에 Nginx 재빌드를 완료했으나 헬스 체크와 정적 파일 누락 문제는 여전히 해결되지 않았습니다.",
+      "summary": "이번 주 Nginx 재빌드를 완료했으나 헬스 체크와 정적 파일 문제는 여전히 해결되지 않았습니다.",
       "key_wins": [
         "Nginx 재빌드 성공",
         "Self-Check 프로세스 안정성 확보"
@@ -45,16 +45,16 @@
     "timestamp": "2025-11-15 21:09:28.238837",
     "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
     "last_reflection": {
-      "insight": "현재 시스템은 헬스 체크 오류와 정적 파일 누락으로 인해 전체 안정성이 저하되고 있습니다.",
+      "insight": "현재 시스템은 헬스 체크와 정적 파일 문제로 인해 안정성이 저하되고 있으며, 서비스 연속성에 위협이 발생하고 있습니다.",
       "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정 2) 정적 파일 점검 및 복구",
       "confidence": 0.2,
-      "self_critique": "최근 헬스 체크 점검이 실패하였고, 정적 파일 누락 문제 해결을 위한 체계적인 접근이 부족했습니다.",
+      "self_critique": "최근 결정 루프에서 헬스 체크 실패로 인해 전체 시스템 안정성이 저하되었고, 정적 파일 누락 문제에 대한 체계적인 접근이 부족했습니다.",
       "last_decision_score": 0.4,
       "long_term_goals": [
         {
           "id": "ltg_2025_agi",
           "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
-          "description": "시스템의 신뢰성을 향상시키고 변화하는 환경에 적응할 수 있도록 지속적인 개선이 필요합니다.",
+          "description": "신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 시스템 개선이 필요합니다.",
           "horizon": "3-6 months",
           "priority": 100,
           "status": "active"
@@ -81,7 +81,7 @@
         }
       ]
     },
-    "updated_at": "2025-11-19T11:03:26.555514",
+    "updated_at": "2025-11-19T11:08:36.976108",
     "episodes": [
       {
         "time": "2025-11-17T10:05:30.369949Z",
@@ -252,7 +252,7 @@
     {
       "id": "ltg_2025_agi",
       "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
-      "description": "시스템의 신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 개선하는 것이 중요합니다.",
+      "description": "신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 시스템 개선이 필요합니다.",
       "horizon": "3-6 months",
       "priority": 100,
       "status": "active"
@@ -260,7 +260,7 @@
   ],
   "weekly_summary": {
     "week_of": "2025-11-16",
-    "summary": "이번 주에 Nginx 재빌드를 완료했으나 헬스 체크와 정적 파일 누락 문제는 여전히 해결되지 않았습니다.",
+    "summary": "이번 주 Nginx 재빌드를 완료했으나 헬스 체크와 정적 파일 문제는 여전히 해결되지 않았습니다.",
     "key_wins": [
       "Nginx 재빌드 성공",
       "Self-Check 프로세스 안정성 확보"
@@ -273,30 +273,6 @@
   "failures_learned": [
     {
       "time": "2025-11-18T12:34:56Z",
-      "context": "프론트엔드 '/agi/'에서 404 오류가 발생함",
-      "root_cause": "정적 파일 누락",
-      "lesson": "정적 파일 점검을 정기적으로 실시해야 함"
-    },
-    {
-      "time": "2025-11-18T12:34:56Z",
-      "context": "프론트엔드 '/agi/'에서 404 오류 발생",
-      "root_cause": "정적 파일 누락",
-      "lesson": "정적 파일 점검을 정기적으로 실시해야 함"
-    },
-    {
-      "time": "2025-11-18T12:34:56Z",
-      "context": "프론트엔드 '/agi/'에서 404 오류 발생",
-      "root_cause": "정적 파일 누락",
-      "lesson": "정적 파일 점검을 정기적으로 실시해야 함"
-    },
-    {
-      "time": "2025-11-18T12:34:56Z",
-      "context": "프론트엔드 '/agi/'에서 404 오류 발생",
-      "root_cause": "정적 파일 누락",
-      "lesson": "정적 파일 점검을 정기적으로 실시해야 함"
-    },
-    {
-      "time": "2025-11-18T12:34:56Z",
       "context": "프론트엔드 '/agi/'에서 404 오류 발생",
       "root_cause": "정적 파일 누락",
       "lesson": "정적 파일 점검을 정기적으로 실시해야 함"
@@ -462,6 +438,30 @@
       "context": "프론트엔드 '/agi/'에서 발생한 404 오류",
       "root_cause": "정적 파일 누락",
       "lesson": "정적 파일 점검을 정기적으로 실시해야 합니다."
+    },
+    {
+      "time": "2025-11-18T12:34:56Z",
+      "context": "프론트엔드 '/agi/'에서 발생한 404 오류",
+      "root_cause": "정적 파일 누락",
+      "lesson": "정적 파일 점검을 정기적으로 실시해야 한다."
+    },
+    {
+      "time": "2025-11-18T12:34:56Z",
+      "context": "프론트엔드 '/agi/'에서 발생한 404 오류",
+      "root_cause": "정적 파일 누락",
+      "lesson": "정적 파일 점검을 정기적으로 실시해야 한다."
+    },
+    {
+      "time": "2025-11-18T12:34:56Z",
+      "context": "프론트엔드 '/agi/'에서 발생한 404 오류",
+      "root_cause": "정적 파일 누락",
+      "lesson": "정적 파일 점검을 정기적으로 실시해야 한다."
+    },
+    {
+      "time": "2025-11-18T12:34:56Z",
+      "context": "프론트엔드 '/agi/'에서 발생한 404 오류",
+      "root_cause": "정적 파일 누락",
+      "lesson": "정적 파일 점검을 정기적으로 실시해야 한다."
     },
     {
       "time": "2025-11-18T12:34:56Z",
