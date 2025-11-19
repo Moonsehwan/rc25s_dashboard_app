@@ -4667,3 +4667,35 @@
 [2025-11-19 15:12:34] 🔁 서비스 재시작 완료.
 [2025-11-19 15:13:35] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-19 15:14:37] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:16:42] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:16:43] ⚠️ 비활성 서비스 감지: ['agi-autofix.service']
+[2025-11-19 15:16:43] 💡 LLM 제안: 
+[2025-11-19 15:16:43] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:16:44] 🔁 서비스 재시작 완료.
+[2025-11-19 15:17:45] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:17:46] ⚠️ 비활성 서비스 감지: ['agi-autofix.service']
+[2025-11-19 15:17:46] 💡 LLM 제안: 
+[2025-11-19 15:17:46] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:17:47] 🔁 서비스 재시작 완료.
+[2025-11-19 15:18:48] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:18:49] ⚠️ 비활성 서비스 감지: ['agi-memory.service']
+[2025-11-19 15:18:49] 💡 LLM 제안: 
+[2025-11-19 15:18:49] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:18:50] 🔁 서비스 재시작 완료.
+[2025-11-19 15:19:51] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:19:51] ⚠️ 비활성 서비스 감지: ['agi-memory.service', 'agi-autofix.service']
+[2025-11-19 15:19:51] 💡 LLM 제안: 
+[2025-11-19 15:19:51] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:19:52] 🔁 서비스 재시작 완료.
+[2025-11-19 15:20:53] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:20:54] ⚠️ 비활성 서비스 감지: ['agi-memory.service']
+[2025-11-19 15:20:54] 💡 LLM 제안: 
+[2025-11-19 15:20:54] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:20:54] 🔁 서비스 재시작 완료.
+[2025-11-19 15:20:54] 🧠 자기성찰 저장 완료.
+[2025-11-19 15:21:55] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:22:58] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:22:59] ⚠️ 비활성 서비스 감지: ['agi-autofix.service']
+[2025-11-19 15:22:59] 💡 LLM 제안: 
+[2025-11-19 15:22:59] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-19 15:23:00] 🔁 서비스 재시작 완료.
