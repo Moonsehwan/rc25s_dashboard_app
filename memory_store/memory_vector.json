@@ -2,10 +2,10 @@
   "timestamp": "2025-11-15 21:09:28.238837",
   "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
   "last_reflection": {
-    "insight": "시스템의 헬스 체크 및 정적 파일 문제로 인해 안정성이 저하되고 있습니다.",
-    "improvement_goal": "헬스 체크 엔드포인트 오류 수정, 정적 파일 점검 강화",
+    "insight": "현재 시스템은 헬스 체크와 정적 파일 문제로 인해 서비스의 안정성이 저하되고 있습니다.",
+    "improvement_goal": "헬스 체크 엔드포인트 오류 수정 및 정적 파일 점검 강화",
     "confidence": 0.2,
-    "self_critique": "헬스 체크 문제를 조기에 인식하지 못해 의사결정과 행동이 지연되었고, 이는 시스템의 신뢰성을 더욱 저하시켰습니다.",
+    "self_critique": "헬스 체크 문제를 조기에 인식하지 못해 의사결정과 행동이 지연되었습니다. 이로 인해 시스템의 신뢰성이 더욱 저하되었습니다.",
     "last_decision_score": 0.4,
     "long_term_goals": [
       {
@@ -19,7 +19,7 @@
     ],
     "weekly_summary": {
       "week_of": "2025-11-15",
-      "summary": "헬스 체크와 정적 파일 문제 해결을 위한 여러 조치가 진행되었습니다.",
+      "summary": "헬스 체크 및 정적 파일 문제 해결을 위한 조치가 진행되었습니다.",
       "key_wins": [
         "Nginx 재빌드 성공",
         "Self-Check 프로세스 안정성 확보"
@@ -38,7 +38,7 @@
       }
     ]
   },
-  "updated_at": "2025-11-19T21:21:54.866899",
+  "updated_at": "2025-11-19T21:26:44.957093",
   "episodes": [
     {
       "time": "2025-11-17T10:05:30.369949Z",

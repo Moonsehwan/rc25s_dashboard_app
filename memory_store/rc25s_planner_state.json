@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-18T14:17:50.590766Z",
+  "generated_at": "2025-11-19T12:26:54.951687+00:00",
   "signals": {
     "autoheal_cycles": 1,
     "autoheal_rebuilds": 0,
@@ -7,8 +7,6 @@
     "selfcheck_runs": 200,
     "selfcheck_frontend_issues": 0,
     "selfcheck_manifest_warnings": 0,
-    "nginx_error_total_lines": 0,
-    "nginx_error_agi_issues": 0,
     "raw_preview": {
       "autoheal_tail": [
         "2025-11-16 19:20:51 [AUTOHEAL] 🧠 RC25S AI Autoheal cycle started.",
@@ -21,28 +19,20 @@
         "2025-11-16 19:20:59 [AUTOHEAL] 🧩 RC25S AI Autoheal cycle complete."
       ],
       "selfcheck_tail": [
-        "2025-11-18 23:10:09 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
-        "2025-11-18 23:10:09 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
-        "2025-11-18 23:13:19 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
-        "2025-11-18 23:13:19 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
-        "2025-11-18 23:13:19 [SELF-CHECK] ✅ LLM integration healthy.",
-        "2025-11-18 23:13:19 [SELF-CHECK] ✅ LLM integration healthy.",
-        "2025-11-18 23:13:20 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
-        "2025-11-18 23:13:20 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
-        "2025-11-18 23:13:21 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
-        "2025-11-18 23:13:21 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
-      ],
-      "nginx_error_tail": []
+        "2025-11-19 21:23:55 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-19 21:23:57 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+        "2025-11-19 21:24:10 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+        "2025-11-19 21:24:10 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+        "2025-11-19 21:24:11 [SELF-CHECK] ✅ LLM integration healthy.",
+        "2025-11-19 21:24:11 [SELF-CHECK] ✅ LLM integration healthy.",
+        "2025-11-19 21:24:12 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-19 21:24:12 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-19 21:24:13 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+        "2025-11-19 21:24:13 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
+      ]
     }
   },
   "goals": [
-    {
-      "id": "ltg_2025_agi",
-      "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
-      "description": "시스템의 신뢰성을 높이고 변화하는 환경에 적응할 수 있도록 개선하는 것이 중요합니다.",
-      "priority": 100,
-      "status": "active"
-    },
     {
       "id": "goal_stability",
       "title": "RC25S 서비스 안정성 유지",
@@ -54,7 +44,7 @@
       "id": "goal_self_improvement",
       "title": "RC25S Self-Improvement 루프 고도화",
       "description": "Self-Check/Autoheal/대시보드 로그를 바탕으로 RC25S가 스스로 개선 포인트를 제안하고 실행하는 루프를 확장한다.",
-      "priority": 80,
+      "priority": 70,
       "status": "active"
     }
   ],
@@ -65,7 +55,9 @@
       "title": "헬스 엔드포인트 정합성 점검",
       "description": "rc25s-selfcheck.sh와 RC25S_AI_Autoheal.sh에서 사용하는 /health, /llm, /agi URL들이 실제 서비스와 일치하는지 검증한다.",
       "priority": 90,
-      "status": "pending"
+      "status": "done",
+      "last_executed_at": "2025-11-19T12:26:54.951667+00:00",
+      "last_result": "success"
     },
     {
       "id": "goal_self_improvement_expose_logs_in_dashboard",
