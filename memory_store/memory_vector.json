@@ -2,10 +2,10 @@
   "timestamp": "2025-11-15 21:09:28.238837",
   "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
   "last_reflection": {
-    "insight": "현재 시스템은 헬스 체크 문제와 정적 파일 누락으로 인해 불안정한 상태입니다.",
+    "insight": "현재 시스템은 헬스 체크 및 정적 파일 문제로 인해 불안정한 상태입니다.",
     "improvement_goal": "1) 헬스 체크 엔드포인트 오류 수정 2) 정적 파일 누락 문제 해결",
     "confidence": 0.2,
-    "self_critique": "최근 헬스 체크 과정에서 오류가 발생하여 의사결정과 행동이 실패하였고, 그로 인해 시스템의 안정성이 저하되었습니다.",
+    "self_critique": "최근 헬스 체크에서 오류가 발생하여 시스템의 안정성이 저하되었습니다. 이는 프론트엔드 정적 파일 누락과 관련이 있습니다.",
     "last_decision_score": 0.4,
     "long_term_goals": [
       {
@@ -38,7 +38,7 @@
       }
     ]
   },
-  "updated_at": "2025-11-19T17:47:15.062802",
+  "updated_at": "2025-11-19T17:53:07.265883",
   "episodes": [
     {
       "time": "2025-11-17T10:05:30.369949Z",
