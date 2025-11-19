@@ -2,10 +2,43 @@
   "timestamp": "2025-11-15 21:09:28.238837",
   "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
   "last_reflection": {
-    "time": "2025-11-19T23:50:32.576544",
-    "reflection": ""
+    "insight": "현재 헬스 체크 엔드포인트에서 404 오류가 발생하고 있으며, 정적 파일이 누락되어 시스템의 신뢰성이 저하되고 있습니다.",
+    "improvement_goal": "헬스 체크 엔드포인트 정상화, 정적 파일 복구",
+    "confidence": 0.2,
+    "self_critique": "헬스 체크 엔드포인트 오류와 정적 파일 누락 문제를 해결하기 위한 시도가 부족하였습니다.",
+    "last_decision_score": 0.4,
+    "long_term_goals": [
+      {
+        "id": "ltg_2025_agi",
+        "title": "장기적인 시스템 개선 목표 (RC25S AGI 상용 수준 안정화)",
+        "description": "시스템의 안정성을 높여 사용자가 신뢰할 수 있는 서비스를 제공해야 합니다.",
+        "horizon": "3-6 months",
+        "priority": 100,
+        "status": "active"
+      }
+    ],
+    "weekly_summary": {
+      "week_of": "2025-11-15",
+      "summary": "헬스 체크 엔드포인트 문제를 해결하기 위한 노력이 있었으나 여전히 오류가 발생하고 있습니다.",
+      "key_wins": [
+        "Nginx 재빌드 성공",
+        "Self-Check 프로세스 안정성 확보"
+      ],
+      "key_issues": [
+        "헬스 체크 엔드포인트 404 오류",
+        "정적 파일 누락 문제"
+      ]
+    },
+    "failures_learned": [
+      {
+        "time": "2025-11-19T21:23:55Z",
+        "context": "/agi/ 엔드포인트에서 발생한 404 오류",
+        "root_cause": "정적 파일 누락",
+        "lesson": "정적 파일은 주기적으로 점검하고 누락 발생 시 즉시 대응해야 합니다."
+      }
+    ]
   },
-  "updated_at": "2025-11-19T23:50:59.278387",
+  "updated_at": "2025-11-19T23:57:26.468902",
   "episodes": [
     {
       "time": "2025-11-17T10:05:30.369949Z",
