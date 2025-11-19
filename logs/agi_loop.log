@@ -15995,3 +15995,73 @@ ModuleNotFoundError: No module named 'vibecoding'
 [2025-11-20 05:33:41] ❌ AutoFix Engine failed: Command '['/srv/repo/venv/bin/python3', 'agi_autofix_loop.py']' returned non-zero exit status 1.
 [2025-11-20 05:33:41] 🧠 AGI Self-Evolution Cycle Complete.
 [2025-11-20 05:33:41] 🧠 AGI Self-Evolution Cycle Complete.
+[2025-11-20 05:36:36] ❌ AutoFix Engine failed: Command '['/srv/repo/venv/bin/python3', 'agi_autofix_loop.py']' returned non-zero exit status 1.
+[2025-11-20 05:36:36] 🧠 AGI Self-Evolution Cycle Complete.
+[2025-11-20 05:38:22] 🚀 AGI Self-Evolution Loop started.
+[2025-11-20 05:38:22] 🚀 AGI Self-Evolution Loop started.
+[2025-11-20 05:38:22] ▶ Running Reflection Engine ...
+[2025-11-20 05:38:22] ▶ Running Reflection Engine ...
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/reflection_engine.py", line 1, in <module>
+    from rc25s_openai_wrapper import rc25s_chat
+  File "/srv/repo/vibecoding/rc25s_openai_wrapper.py", line 8, in <module>
+    from vibecoding.rc25_kernel_RC25S import RC25SKernel
+ModuleNotFoundError: No module named 'vibecoding'
+[2025-11-20 05:38:43] ❌ Reflection Engine failed: Command '['/srv/repo/venv/bin/python3', 'reflection_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:38:43] ❌ Reflection Engine failed: Command '['/srv/repo/venv/bin/python3', 'reflection_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:38:43] ▶ Running Memory Integration ...
+[2025-11-20 05:38:43] ▶ Running Memory Integration ...
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/memory_engine.py", line 1, in <module>
+    from rc25s_openai_wrapper import rc25s_chat
+  File "/srv/repo/vibecoding/rc25s_openai_wrapper.py", line 8, in <module>
+    from vibecoding.rc25_kernel_RC25S import RC25SKernel
+ModuleNotFoundError: No module named 'vibecoding'
+[2025-11-20 05:39:08] ❌ Memory Integration failed: Command '['/srv/repo/venv/bin/python3', 'memory_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:39:08] ❌ Memory Integration failed: Command '['/srv/repo/venv/bin/python3', 'memory_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:39:08] ▶ Running AutoFix Engine ...
+[2025-11-20 05:39:08] ▶ Running AutoFix Engine ...
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 1, in <module>
+    from rc25s_openai_wrapper import rc25s_chat
+  File "/srv/repo/vibecoding/rc25s_openai_wrapper.py", line 8, in <module>
+    from vibecoding.rc25_kernel_RC25S import RC25SKernel
+ModuleNotFoundError: No module named 'vibecoding'
+[2025-11-20 05:39:30] ❌ AutoFix Engine failed: Command '['/srv/repo/venv/bin/python3', 'agi_autofix_loop.py']' returned non-zero exit status 1.
+[2025-11-20 05:39:30] ❌ AutoFix Engine failed: Command '['/srv/repo/venv/bin/python3', 'agi_autofix_loop.py']' returned non-zero exit status 1.
+[2025-11-20 05:39:30] 🧠 AGI Self-Evolution Cycle Complete.
+[2025-11-20 05:39:30] 🧠 AGI Self-Evolution Cycle Complete.
+[2025-11-20 05:41:08] 🚀 AGI Self-Evolution Loop started.
+[2025-11-20 05:41:08] 🚀 AGI Self-Evolution Loop started.
+[2025-11-20 05:41:08] ▶ Running Reflection Engine ...
+[2025-11-20 05:41:08] ▶ Running Reflection Engine ...
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/reflection_engine.py", line 1, in <module>
+    from rc25s_openai_wrapper import rc25s_chat
+  File "/srv/repo/vibecoding/rc25s_openai_wrapper.py", line 8, in <module>
+    from vibecoding.rc25_kernel_RC25S import RC25SKernel
+ModuleNotFoundError: No module named 'vibecoding'
+[2025-11-20 05:41:26] ❌ Reflection Engine failed: Command '['/srv/repo/venv/bin/python3', 'reflection_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:41:26] ❌ Reflection Engine failed: Command '['/srv/repo/venv/bin/python3', 'reflection_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:41:26] ▶ Running Memory Integration ...
+[2025-11-20 05:41:26] ▶ Running Memory Integration ...
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/memory_engine.py", line 1, in <module>
+    from rc25s_openai_wrapper import rc25s_chat
+  File "/srv/repo/vibecoding/rc25s_openai_wrapper.py", line 8, in <module>
+    from vibecoding.rc25_kernel_RC25S import RC25SKernel
+ModuleNotFoundError: No module named 'vibecoding'
+[2025-11-20 05:41:46] ❌ Memory Integration failed: Command '['/srv/repo/venv/bin/python3', 'memory_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:41:46] ❌ Memory Integration failed: Command '['/srv/repo/venv/bin/python3', 'memory_engine.py']' returned non-zero exit status 1.
+[2025-11-20 05:41:46] ▶ Running AutoFix Engine ...
+[2025-11-20 05:41:46] ▶ Running AutoFix Engine ...
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 1, in <module>
+    from rc25s_openai_wrapper import rc25s_chat
+  File "/srv/repo/vibecoding/rc25s_openai_wrapper.py", line 8, in <module>
+    from vibecoding.rc25_kernel_RC25S import RC25SKernel
+ModuleNotFoundError: No module named 'vibecoding'
+[2025-11-20 05:42:08] ❌ AutoFix Engine failed: Command '['/srv/repo/venv/bin/python3', 'agi_autofix_loop.py']' returned non-zero exit status 1.
+[2025-11-20 05:42:08] ❌ AutoFix Engine failed: Command '['/srv/repo/venv/bin/python3', 'agi_autofix_loop.py']' returned non-zero exit status 1.
+[2025-11-20 05:42:08] 🧠 AGI Self-Evolution Cycle Complete.
+[2025-11-20 05:42:08] 🧠 AGI Self-Evolution Cycle Complete.

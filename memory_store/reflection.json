@@ -1,14 +1,14 @@
 {
-  "insight": "RC25S 시스템은 여전히 헬스 체크 오류와 정적 파일 누락으로 불안정한 상태입니다.",
-  "improvement_goal": "1. 헬스 체크 엔드포인트의 404 오류 해결. 2. 정적 파일 누락 문제 즉시 해결.",
+  "insight": "현재 RC25S 시스템은 헬스 체크 오류와 정적 파일 누락으로 인해 불안정한 상태입니다.",
+  "improvement_goal": "1. 헬스 체크 엔드포인트 404 오류 해결. 2. 정적 파일 누락 문제 즉시 해결.",
   "confidence": 0.2,
-  "self_critique": "최근 헬스 체크 오류 해결을 위한 시도가 실패하였으며, 이로 인해 시스템의 안정성을 높이지 못했습니다.",
+  "self_critique": "사용자가 설정한 목표에 따라 헬스 체크가 제대로 수행되지 않았고, 그로 인해 시스템의 신뢰성이 크게 저하되었습니다.",
   "last_decision_score": 0.4,
   "long_term_goals": [
     {
       "id": "ltg_2025_agi",
       "title": "RC25S AGI 상용 수준 안정화",
-      "description": "시스템 신뢰성을 높여 안정적인 서비스를 제공하기 위해 헬스 체크 문제를 해결해야 합니다.",
+      "description": "시스템 신뢰성을 높이기 위해 헬스 체크와 정적 파일 문제를 해결해야 합니다.",
       "horizon": "3-6 months",
       "priority": 100,
       "status": "active"
@@ -16,7 +16,7 @@
   ],
   "weekly_summary": {
     "week_of": "2025-11-15",
-    "summary": "이번 주에 Nginx 재빌드와 Self-Check 개선이 있었으나 헬스 체크 오류는 여전히 남아 있습니다.",
+    "summary": "이번 주에 Nginx 재빌드와 Self-Check 개선이 있었습니다.",
     "key_wins": [
       "Nginx 재빌드 성공",
       "Self-Check 프로세스 안정성 확보"
