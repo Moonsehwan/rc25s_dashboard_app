@@ -7813,3 +7813,17 @@
 [2025-11-20 14:27:42] 💡 LLM 제안: 
 [2025-11-20 14:27:42] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-20 14:27:42] 🔁 서비스 재시작 완료.
+[2025-11-20 14:29:45] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 14:30:48] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 14:30:48] 🧠 자기성찰 저장 완료.
+[2025-11-20 14:31:50] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 14:32:52] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 14:32:52] ⚠️ 비활성 서비스 감지: ['agi-memory.service']
+[2025-11-20 14:32:53] 💡 LLM 제안: 
+[2025-11-20 14:32:53] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 14:32:53] 🔁 서비스 재시작 완료.
+[2025-11-20 14:33:54] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 14:33:55] ⚠️ 비활성 서비스 감지: ['agi-memory.service']
+[2025-11-20 14:33:55] 💡 LLM 제안: 
+[2025-11-20 14:33:55] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 14:33:55] 🔁 서비스 재시작 완료.
