@@ -8616,3 +8616,23 @@
 [2025-11-20 20:11:30] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-20 20:12:32] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-20 20:13:35] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:15:39] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:16:41] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:16:42] ⚠️ 비활성 서비스 감지: ['agi-memory.service', 'agi-reflection.service', 'agi-autofix.service']
+[2025-11-20 20:16:42] 💡 LLM 제안: 
+[2025-11-20 20:16:42] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:16:44] 🔁 서비스 재시작 완료.
+[2025-11-20 20:17:45] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:18:48] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:18:49] ⚠️ 비활성 서비스 감지: ['agi-memory.service']
+[2025-11-20 20:18:49] 💡 LLM 제안: 
+[2025-11-20 20:18:49] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:18:49] 🔁 서비스 재시작 완료.
+[2025-11-20 20:19:50] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:20:55] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:20:56] ⚠️ 비활성 서비스 감지: ['agi-memory.service', 'agi-autofix.service']
+[2025-11-20 20:20:56] 💡 LLM 제안: 
+[2025-11-20 20:20:56] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 20:20:57] 🔁 서비스 재시작 완료.
+[2025-11-20 20:20:57] 🧠 자기성찰 저장 완료.
+[2025-11-20 20:21:58] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
