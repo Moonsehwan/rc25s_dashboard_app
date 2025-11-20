@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-19T12:26:54.951687+00:00",
+  "generated_at": "2025-11-20T10:51:29.262039+00:00",
   "signals": {
     "autoheal_cycles": 1,
     "autoheal_rebuilds": 0,
@@ -19,16 +19,16 @@
         "2025-11-16 19:20:59 [AUTOHEAL] 🧩 RC25S AI Autoheal cycle complete."
       ],
       "selfcheck_tail": [
-        "2025-11-19 21:23:55 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
-        "2025-11-19 21:23:57 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
-        "2025-11-19 21:24:10 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
-        "2025-11-19 21:24:10 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
-        "2025-11-19 21:24:11 [SELF-CHECK] ✅ LLM integration healthy.",
-        "2025-11-19 21:24:11 [SELF-CHECK] ✅ LLM integration healthy.",
-        "2025-11-19 21:24:12 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
-        "2025-11-19 21:24:12 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
-        "2025-11-19 21:24:13 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
-        "2025-11-19 21:24:13 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
+        "2025-11-20 19:35:09 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+        "2025-11-20 19:35:09 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+        "2025-11-20 19:45:03 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+        "2025-11-20 19:45:03 [SELF-CHECK] ✅ FastAPI backend responding correctly.",
+        "2025-11-20 19:45:05 [SELF-CHECK] ❌ LLM check failed. Will retry after heal cycle.",
+        "2025-11-20 19:45:05 [SELF-CHECK] ❌ LLM check failed. Will retry after heal cycle.",
+        "2025-11-20 19:45:06 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-20 19:45:06 [SELF-CHECK] ❌ Frontend /agi/ bad status (status=404). Reloading Nginx...",
+        "2025-11-20 19:45:07 [SELF-CHECK] ✅ Self-diagnostic completed successfully.",
+        "2025-11-20 19:45:07 [SELF-CHECK] ✅ Self-diagnostic completed successfully."
       ]
     }
   },
@@ -56,7 +56,7 @@
       "description": "rc25s-selfcheck.sh와 RC25S_AI_Autoheal.sh에서 사용하는 /health, /llm, /agi URL들이 실제 서비스와 일치하는지 검증한다.",
       "priority": 90,
       "status": "done",
-      "last_executed_at": "2025-11-19T12:26:54.951667+00:00",
+      "last_executed_at": "2025-11-20T10:51:29.262025+00:00",
       "last_result": "success"
     },
     {
