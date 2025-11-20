@@ -8376,3 +8376,6 @@
 [2025-11-20 18:19:10] 🔁 서비스 재시작 완료.
 [2025-11-20 18:20:11] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
 [2025-11-20 18:20:13] 🧠 자기성찰 저장 완료.
+[2025-11-20 18:22:17] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 18:23:19] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
+[2025-11-20 18:24:21] ❌ Memory 저장 실패: 'dict' object has no attribute 'append'
