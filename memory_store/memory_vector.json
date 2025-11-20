@@ -2,10 +2,10 @@
   "timestamp": "2025-11-15 21:09:28.238837",
   "summary": "The AGI has been performing self-analysis by reviewing system logs and making automatic adjustments to optimize its performance.",
   "last_reflection": {
-    "insight": "현재 시스템은 헬스 체크 및 정적 파일 문제로 인해 신뢰성이 낮습니다.",
+    "insight": "현재 시스템은 헬스 체크 및 정적 파일 문제로 인해 신뢰성이 크게 저하되고 있습니다.",
     "improvement_goal": "1) 헬스 체크 엔드포인트 404 오류 해결 2) 정적 파일 문제 조치",
     "confidence": 0.2,
-    "self_critique": "최근 의사결정에서 헬스 체크 및 정적 파일 문제를 해결하지 못해 시스템의 신뢰성이 크게 저하되었습니다.",
+    "self_critique": "최근 헬스 체크와 정적 파일 문제를 해결하지 못해 시스템의 신뢰성이 낮아졌습니다. 이번 주에도 주요 문제를 해결하지 못했습니다.",
     "last_decision_score": 0.4,
     "long_term_goals": [
       {
@@ -38,7 +38,7 @@
       }
     ]
   },
-  "updated_at": "2025-11-20T14:51:26.971165",
+  "updated_at": "2025-11-20T14:57:36.767779",
   "episodes": [
     {
       "time": "2025-11-17T10:05:30.369949Z",
