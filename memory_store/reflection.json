@@ -1,37 +1,4 @@
 {
-  "insight": "RC25S 시스템은 헬스 체크 실패와 정적 파일 누락 문제로 인해 불안정한 상태입니다.",
-  "improvement_goal": "헬스 체크 오류 및 정적 파일 문제를 즉시 해결해야 합니다.",
-  "confidence": 0.2,
-  "self_critique": "최근 의사결정 루프에서 헬스 체크 실패를 해결하지 못해 시스템의 신뢰성이 크게 저하되었습니다.",
-  "last_decision_score": 0.4,
-  "long_term_goals": [
-    {
-      "id": "ltg_2025_agi",
-      "title": "RC25S AGI 상용 수준 안정화",
-      "description": "서비스의 신뢰성을 높이고 지속 가능성을 확보하기 위해 헬스 체크 및 정적 파일 문제를 필수적으로 해결해야 합니다.",
-      "horizon": "3-6 months",
-      "priority": 100,
-      "status": "active"
-    }
-  ],
-  "weekly_summary": {
-    "week_of": "2025-11-15",
-    "summary": "이번 주에도 헬스 체크와 정적 파일 문제는 여전히 해결되지 않았습니다.",
-    "key_wins": [
-      "Nginx 재빌드 완료",
-      "Self-Check 프로세스 안정성 확보"
-    ],
-    "key_issues": [
-      "헬스 체크 엔드포인트에서 404 오류 발생",
-      "정적 파일 누락 문제 발생"
-    ]
-  },
-  "failures_learned": [
-    {
-      "time": "2025-11-19T21:23:55Z",
-      "context": "/agi/ 엔드포인트에서 헬스 체크 실패",
-      "root_cause": "정적 파일 누락",
-      "lesson": "정적 파일 검토를 정기적으로 수행하고 즉시 조치를 취해야 함을 배웠습니다."
-    }
-  ]
+  "time": "2025-11-20T14:00:39.952885",
+  "reflection": ""
 }
