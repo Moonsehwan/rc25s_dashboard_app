@@ -17529,3 +17529,111 @@ Traceback (most recent call last):
                ^^^^^^
 NameError: name 'client' is not defined
 
+[2025-11-20 09:32:04] 🚀 AutoFix Loop started.
+[2025-11-20 09:32:04] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:32:04] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:32:08] 🚀 AutoFix Loop started.
+[2025-11-20 09:32:08] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:32:08] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:32:30] 🚀 AutoFix Loop started.
+[2025-11-20 09:32:30] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:32:31] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:32:58] 🚀 AutoFix Loop started.
+[2025-11-20 09:32:58] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:32:59] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:33:28] 🚀 AutoFix Loop started.
+[2025-11-20 09:33:28] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:33:28] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:33:57] 🚀 AutoFix Loop started.
+[2025-11-20 09:33:57] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:33:57] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:34:21] 🚀 AutoFix Loop started.
+[2025-11-20 09:34:21] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:34:21] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:34:42] 🚀 AutoFix Loop started.
+[2025-11-20 09:34:42] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:34:42] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:35:07] 🚀 AutoFix Loop started.
+[2025-11-20 09:35:07] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:35:07] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:35:35] 🚀 AutoFix Loop started.
+[2025-11-20 09:35:35] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:35:35] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:36:00] 🚀 AutoFix Loop started.
+[2025-11-20 09:36:00] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:36:00] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
+[2025-11-20 09:36:27] 🚀 AutoFix Loop started.
+[2025-11-20 09:36:27] 🧩 Improvement goal: 1. 헬스 체크 오류 해결 2. 정적 파일 누락 문제 수정
+[2025-11-20 09:36:27] ❌ AutoFix failed: name 'client' is not defined
+Traceback (most recent call last):
+  File "/srv/repo/vibecoding/agi_autofix_loop.py", line 59, in run_autofix
+    response = client.chat.completions.create(
+               ^^^^^^
+NameError: name 'client' is not defined
+
